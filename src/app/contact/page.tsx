@@ -1,31 +1,41 @@
 import type { Metadata } from "next";
-import { Clock3, Mail, MapPin, Phone } from "lucide-react";
-import { ContactForm } from "@/components/forms/ContactForm";
+import { AlertTriangle, Clock3, Mail, MapPin, Phone } from "lucide-react";
+import { InteriorHero } from "@/components/layout/InteriorHero";
 import { EstimateForm } from "@/components/forms/EstimateForm";
 import { Reveal } from "@/components/motion/Reveal";
 import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Contact | Request an Estimate | Safe Home Solutions Edmonton",
-  description: "Contact Safe Home Solutions for a non-urgent estimate or general restoration questions in Edmonton.",
+  title: "Contact | Request an Estimate | Safe Home Solution & Restoration Inc. Edmonton",
+  description: "Contact Safe Home Solution & Restoration Inc. for a non-urgent estimate or general restoration questions in Edmonton.",
   alternates: { canonical: "/contact" },
 };
 
 export default function ContactPage() {
   return (
     <>
-      <section className="bg-[var(--color-brand)] py-16 text-white">
-        <Reveal className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-          <h1 className="text-4xl font-bold text-white">Request a Non-Urgent Estimate</h1>
-          <p className="mt-4 text-lg text-slate-200">
-            Fill out the form below for non-urgent work and general questions. If the damage is active or time-sensitive, call us now because we answer 24/7.
+      <InteriorHero
+        eyebrow="Contact"
+        title="Request a Non-Urgent Estimate"
+        description="Use this page for planned work and general questions. If the damage is active or time-sensitive, call right away instead of waiting on the form."
+      />
+
+      <div className="bg-red-600 text-white">
+        <div className="mx-auto flex max-w-6xl items-center gap-4 px-4 py-4 sm:px-6 lg:px-8">
+          <AlertTriangle size={22} className="shrink-0" />
+          <p className="text-sm font-semibold leading-6">
+            If water is active in your home right now, don&apos;t fill out the form —{" "}
+            <a href={SITE.phoneHref} className="underline underline-offset-2 hover:no-underline">
+              call {SITE.phone} immediately
+            </a>
+            . Every hour matters.
           </p>
-        </Reveal>
-      </section>
+        </div>
+      </div>
 
       <section className="py-16">
         <div className="mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 lg:grid-cols-[1.2fr_0.8fr] lg:px-8">
-          <Reveal className="surface-card rounded-[2rem] border border-slate-200/70 p-8">
+          <Reveal className="surface-card rounded-[1rem] border border-slate-200/70 p-8">
             <h2 className="text-3xl font-bold">Tell us about the project</h2>
             <p className="mt-3 text-sm text-slate-600">Share the basics and we will follow up with the right next step for non-urgent work.</p>
             <div className="mt-6">
@@ -34,7 +44,7 @@ export default function ContactPage() {
           </Reveal>
 
           <div className="space-y-6">
-            <Reveal className="surface-card rounded-[2rem] border border-slate-200/70 p-8" delay={70}>
+            <Reveal className="surface-card rounded-[1rem] border border-slate-200/70 p-8" delay={70}>
               <h2 className="text-2xl font-bold">Contact information</h2>
               <div className="mt-6 space-y-5 text-sm text-slate-700">
                 <div className="flex gap-3"><Phone size={18} className="mt-1 text-[var(--color-accent)]" /><a href={SITE.phoneHref}>{SITE.phone}</a></div>
@@ -44,13 +54,19 @@ export default function ContactPage() {
               </div>
             </Reveal>
 
-            <Reveal className="surface-card rounded-[2rem] border border-slate-200/70 p-8" delay={130}>
-              <h3 className="text-2xl font-bold">Quick message</h3>
-              <p className="mt-3 text-sm text-slate-600">Not an emergency? Send us a note and we will reply soon.</p>
-              <div className="mt-6">
-                <ContactForm />
-              </div>
+            <Reveal className="overflow-hidden rounded-[1rem] border border-slate-200/70" delay={100}>
+              <iframe
+                src="https://maps.google.com/maps?q=9520+174+St+NW+Edmonton+AB+T5T+5Z3&output=embed&z=15"
+                width="100%"
+                height="220"
+                style={{ border: 0, display: "block" }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Safe Home Solution & Restoration Inc. location map"
+              />
             </Reveal>
+
           </div>
         </div>
       </section>

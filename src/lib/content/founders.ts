@@ -2,6 +2,7 @@ export interface Founder {
   name: string;
   role: string;
   bio: string;
+  photoUrl?: string;
 }
 
 export const FOUNDERS: Founder[] = [

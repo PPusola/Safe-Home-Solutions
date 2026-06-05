@@ -3,7 +3,7 @@ import { SITE } from "@/lib/site";
 export function LocalBusinessSchema() {
   const schema = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
     name: SITE.name,
     legalName: SITE.legalName,
     alternateName: SITE.shortName,
@@ -29,6 +29,21 @@ export function LocalBusinessSchema() {
       "Beaumont",
       "Fort Saskatchewan",
     ],
+    sameAs: [
+      SITE.social.facebook,
+      SITE.social.instagram,
+    ],
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Restoration Services",
+      itemListElement: [
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Water Damage Restoration" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Emergency Water Removal" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Structural Drying & Dehumidification" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Mold Remediation" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Storm & Flood Damage" } },
+      ],
+    },
   };
 
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />;

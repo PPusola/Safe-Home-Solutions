@@ -20,6 +20,9 @@ export interface Service {
   cardTone: string;
   imagePosition?: string;
   features: string[];
+  included: string[];
+  notIncluded: string[];
+  typicalTimeline: string[];
   process: string[];
   responseWindow: string;
   whatToExpect: string[];
@@ -52,6 +55,21 @@ export const SERVICES: Service[] = [
       "Selective demolition planning if needed",
       "Insurance documentation support",
     ],
+    included: [
+      "Emergency assessment, moisture checks, and a practical stabilization plan.",
+      "Extraction and structural drying steps based on what was actually affected.",
+      "Progress notes and documentation support that help owners keep the claim and repair conversation organized.",
+    ],
+    notIncluded: [
+      "Permanent rebuild pricing or final finish selection from the first emergency visit alone.",
+      "Unrelated renovation upgrades outside the affected areas.",
+      "A promise that every wet material can be saved without first checking category, saturation, and hidden spread.",
+    ],
+    typicalTimeline: [
+      "Day 1 usually focuses on assessment, extraction, setup, and urgent containment decisions.",
+      "Drying and monitoring often continue for several days depending on materials and how long the water sat.",
+      "Repair or rebuild timing is confirmed after drying results and material conditions are clearer.",
+    ],
     process: ["Emergency call", "Site assessment", "Water extraction", "Drying plan", "Daily monitoring"],
     responseWindow: "Typical Edmonton dispatch within 1 to 2 hours when conditions allow.",
     whatToExpect: [
@@ -82,7 +100,7 @@ export const SERVICES: Service[] = [
       },
     ],
     cta: "Call now for immediate water damage support.",
-    metaTitle: "Water Damage Restoration Edmonton | Safe Home Solutions",
+    metaTitle: "Water Damage Restoration Edmonton | Safe Home Solution & Restoration Inc.",
     metaDescription: "Professional water damage restoration in Edmonton with fast response, structural drying, and practical claim documentation support.",
   },
   {
@@ -103,6 +121,21 @@ export const SERVICES: Service[] = [
       "Basement and crawlspace support",
       "Moisture readings and reporting",
       "Immediate setup for follow-on drying",
+    ],
+    included: [
+      "Fast arrival for active water situations when immediate removal can limit spread.",
+      "Extraction focused on basements, low points, floor assemblies, and visibly affected rooms.",
+      "A handoff into the next drying phase so the emergency work does not stop at water pickup.",
+    ],
+    notIncluded: [
+      "A full rebuild scope during the first urgent extraction visit.",
+      "Long-term drying confirmation without follow-up monitoring.",
+      "Exterior repair work that is separate from interior mitigation.",
+    ],
+    typicalTimeline: [
+      "Initial extraction can begin on the first visit when access and safety conditions allow.",
+      "Follow-up drying equipment is often installed the same day or immediately afterward.",
+      "The full timeline depends on how far moisture traveled under floors, behind walls, or into contents.",
     ],
     process: ["Dispatch", "Safety review", "Extraction", "Affected-area checks", "Drying setup"],
     responseWindow: "Best suited for active water situations where immediate extraction changes the outcome.",
@@ -134,7 +167,7 @@ export const SERVICES: Service[] = [
       },
     ],
     cta: "Call now if water is still present in the home.",
-    metaTitle: "Emergency Water Removal Edmonton | Safe Home Solutions",
+    metaTitle: "Emergency Water Removal Edmonton | Safe Home Solution & Restoration Inc.",
     metaDescription: "24/7 emergency water removal in Edmonton for flooded basements, leaks, and urgent extraction needs.",
   },
   {
@@ -155,6 +188,21 @@ export const SERVICES: Service[] = [
       "Daily equipment adjustments",
       "Drying records for insurance files",
       "Final verification before equipment removal",
+    ],
+    included: [
+      "Moisture-driven equipment placement instead of relying on appearance alone.",
+      "Readings, equipment adjustments, and follow-up checks during the drying phase.",
+      "Final verification before the drying setup is removed.",
+    ],
+    notIncluded: [
+      "Assuming a room is finished drying just because surfaces feel dry.",
+      "Skipping monitoring on assemblies that still show elevated moisture readings.",
+      "Cosmetic repair work beyond the drying scope unless arranged separately.",
+    ],
+    typicalTimeline: [
+      "Equipment is often installed right after extraction or once hidden moisture is confirmed.",
+      "Many drying jobs run for several days, with timing shaped by materials, airflow, and saturation levels.",
+      "Final closeout happens when readings support removal rather than on a fixed calendar alone.",
     ],
     process: ["Moisture mapping", "Equipment placement", "Daily monitoring", "Adjustments", "Final verification"],
     responseWindow: "Often starts immediately after extraction or after a delayed leak is discovered.",
@@ -186,7 +234,7 @@ export const SERVICES: Service[] = [
       },
     ],
     cta: "Book structural drying before hidden moisture spreads further.",
-    metaTitle: "Structural Drying Edmonton | Safe Home Solutions",
+    metaTitle: "Structural Drying Edmonton | Safe Home Solution & Restoration Inc.",
     metaDescription: "Structural drying and dehumidification services for Edmonton homes after leaks and indoor flooding.",
   },
   {
@@ -207,6 +255,21 @@ export const SERVICES: Service[] = [
       "Selective material removal",
       "Cleanup and disposal planning",
       "Post-remediation guidance",
+    ],
+    included: [
+      "A review of the moisture source so the cleanup plan is tied to the actual cause.",
+      "Containment and selective removal planning based on what is affected.",
+      "Clear guidance on the separation between remediation and later repair work.",
+    ],
+    notIncluded: [
+      "Simply wiping visible growth and calling the issue resolved.",
+      "Rebuild finishes, paint, or cabinetry replacement as part of remediation alone.",
+      "Ignoring unresolved moisture conditions behind the affected area.",
+    ],
+    typicalTimeline: [
+      "The first phase is assessment, containment planning, and identifying what needs removal.",
+      "Active remediation timing depends on access, amount of affected material, and source correction.",
+      "Repair timing usually follows after remediation is completed and the area is ready for rebuild.",
     ],
     process: ["Assessment", "Containment", "Selective removal", "Cleanup", "Next-step guidance"],
     responseWindow: "Best when addressed early, especially after unresolved leaks or unfinished drying.",
@@ -238,7 +301,7 @@ export const SERVICES: Service[] = [
       },
     ],
     cta: "Request a mold assessment before the problem grows.",
-    metaTitle: "Mold Remediation Edmonton | Safe Home Solutions",
+    metaTitle: "Mold Remediation Edmonton | Safe Home Solution & Restoration Inc.",
     metaDescription: "Mold remediation support in Edmonton with moisture-source investigation and practical cleanup planning.",
   },
   {
@@ -259,6 +322,21 @@ export const SERVICES: Service[] = [
       "Drying and documentation support",
       "Claim-ready reporting",
       "Stabilization planning before repairs",
+    ],
+    included: [
+      "Interior mitigation focused on the immediate effects of rain, flood, or exterior water entry.",
+      "Documentation that helps connect visible entry points to interior damage and drying work.",
+      "Stabilization planning so urgent mitigation can move ahead before the full repair scope is known.",
+    ],
+    notIncluded: [
+      "A complete exterior reconstruction scope during the first mitigation visit.",
+      "Assuming only the visibly stained area is affected without checking nearby cavities and materials.",
+      "Final repair pricing before the interior impact is properly documented and dried.",
+    ],
+    typicalTimeline: [
+      "Storm events often require a fast first visit to define entry points and control spread.",
+      "Drying and documentation continue after the initial emergency phase depending on the interior impact.",
+      "Exterior and rebuild timing are usually clarified once the property is stabilized.",
     ],
     process: ["Initial call", "Site review", "Mitigation", "Drying", "Reporting and next steps"],
     responseWindow: "Especially helpful after severe weather when multiple rooms or entry points may be affected at once.",
@@ -290,7 +368,7 @@ export const SERVICES: Service[] = [
       },
     ],
     cta: "Call us after storm or flood damage for urgent next steps.",
-    metaTitle: "Storm and Flood Damage Edmonton | Safe Home Solutions",
+    metaTitle: "Storm and Flood Damage Edmonton | Safe Home Solution & Restoration Inc.",
     metaDescription: "Storm and flood damage response in Edmonton for urgent drying, cleanup, and restoration planning.",
   },
 ];

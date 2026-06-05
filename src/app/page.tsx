@@ -1,19 +1,19 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Award, Phone, ShieldCheck } from "lucide-react";
+import { ArrowRight, Award, Phone } from "lucide-react";
 import { Reveal } from "@/components/motion/Reveal";
+import { BeforeAfter } from "@/components/sections/BeforeAfter";
 import { EmergencyCTA } from "@/components/sections/EmergencyCTA";
-import { ProcessDeck } from "@/components/sections/ProcessDeck";
 import { SERVICES } from "@/lib/content/services";
-import { PROCESS_DECK_STEPS, STATS } from "@/lib/content/trust";
+import { STATS } from "@/lib/content/trust";
 import { SITE } from "@/lib/site";
 import iicrcCertificate from "../../iicrc cert.jpg";
 
 export const metadata: Metadata = {
-  title: "Edmonton Water Damage Restoration | 24/7 Emergency Response | Safe Home Solutions",
+  title: "Edmonton Water Damage Restoration | 24/7 Emergency Response | Safe Home Solution & Restoration Inc.",
   description:
-    "Safe Home Solutions helps Edmonton homeowners with emergency water damage restoration, drying, mold remediation, and practical insurance documentation support.",
+    "Safe Home Solution & Restoration Inc. helps Edmonton homeowners with emergency water damage restoration, drying, mold remediation, and practical insurance documentation support.",
   alternates: { canonical: "/" },
 };
 
@@ -22,8 +22,8 @@ export default function HomePage() {
     <>
       <section className="relative overflow-hidden">
         <Image
-          src="https://commons.wikimedia.org/wiki/Special:FilePath/Edmonton%20Skyline.jpg"
-          alt="Edmonton skyline"
+          src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=2400&q=80"
+          alt="Edmonton residential home"
           fill
           priority
           sizes="100vw"
@@ -38,23 +38,23 @@ export default function HomePage() {
                 Calm, organized restoration support when your home takes on water.
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-200">
-                Safe Home Solutions helps Edmonton homeowners move from the first emergency call into a clear drying and recovery plan with local response, practical communication, and organized documentation.
+                Safe Home Solution & Restoration Inc. helps Edmonton homeowners move from the first emergency call into a clear drying and recovery plan with local response, practical communication, and organized documentation.
               </p>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-                <a href={SITE.phoneHref} className="inline-flex items-center justify-center gap-3 rounded-full bg-[var(--color-accent)] px-8 py-4 text-lg font-extrabold text-white hover:bg-[var(--color-accent-dark)]">
+                <a href={SITE.phoneHref} className="inline-flex items-center justify-center gap-3 rounded-[1rem] bg-[var(--color-accent)] px-8 py-4 text-lg font-extrabold text-white hover:bg-[var(--color-accent-dark)]">
                   <Phone size={22} />
                   Call {SITE.phone}
                 </a>
-                <Link href="/contact" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/10 px-8 py-4 text-lg font-bold text-white hover:bg-white/18">
+                <Link href="/contact" className="inline-flex items-center justify-center gap-2 rounded-[1rem] border border-white/20 bg-white/10 px-8 py-4 text-lg font-bold text-white hover:bg-white/18">
                   Request an estimate
                   <ArrowRight size={18} />
                 </Link>
               </div>
-              <div className="mt-8 grid gap-3 sm:grid-cols-3">
-                {STATS.slice(0, 3).map((stat) => (
-                  <div key={stat.label} className="rounded-[1.5rem] border border-white/10 bg-white/10 px-4 py-4 backdrop-blur-sm">
-                    <div className="text-2xl font-extrabold text-white">{stat.value}</div>
-                    <div className="mt-1 text-sm text-slate-200">{stat.label}</div>
+              <div className="mt-8 grid gap-px sm:grid-cols-3 overflow-hidden rounded border border-white/10">
+                {STATS.slice(0, 3).map((stat, i) => (
+                  <div key={stat.label} className={`bg-white/8 px-5 py-4 backdrop-blur-sm ${i < 2 ? "sm:border-r border-white/10" : ""}`}>
+                    <div className="text-2xl font-extrabold tracking-tight text-white">{stat.value}</div>
+                    <div className="mt-0.5 text-xs font-medium uppercase tracking-widest text-slate-300">{stat.label}</div>
                   </div>
                 ))}
               </div>
@@ -67,11 +67,16 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="-mt-6 py-10 sm:py-12">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <Reveal className="surface-card rounded-[2rem] border border-slate-200/70 p-6 sm:p-8">
-            <ProcessDeck steps={PROCESS_DECK_STEPS} />
+      <section className="py-12">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <Reveal className="mb-8 max-w-2xl">
+            <p className="eyebrow text-[var(--color-accent)]">Before &amp; After</p>
+            <h2 className="mt-3 text-3xl font-bold">Real results from Edmonton homes.</h2>
+            <p className="mt-4 text-sm leading-7 text-slate-600">
+              A look at the kind of work we do — from initial damage to completed restoration.
+            </p>
           </Reveal>
+          <BeforeAfter />
         </div>
       </section>
 
@@ -82,7 +87,7 @@ export default function HomePage() {
               <p className="eyebrow text-[var(--color-accent)]">Services</p>
               <h2 className="mt-3 text-3xl font-bold">Focused on the work people usually need most.</h2>
               <p className="mt-4 text-base leading-7 text-slate-600">
-                The homepage stays tighter now. Deeper explanations, scope details, and service FAQs live inside the individual service pages.
+                From water extraction and structural drying to mold remediation and storm recovery — each service page explains the scope, timeline, and what to expect in plain language.
               </p>
             </div>
             <Link href="/services" className="inline-flex items-center gap-2 text-sm font-bold text-[var(--color-brand)]">
@@ -91,12 +96,12 @@ export default function HomePage() {
             </Link>
           </Reveal>
 
-          <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-            {SERVICES.slice(0, 4).map((service, index) => (
+          <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-5">
+            {SERVICES.slice(0, 5).map((service, index) => (
               <Reveal key={service.slug} delay={index * 65}>
                 <Link
                   href={`/services/${service.slug}`}
-                  className="group surface-card block overflow-hidden rounded-[2rem] border border-slate-200/70 transition-transform duration-300 hover:-translate-y-1"
+                  className="group surface-card block overflow-hidden rounded-[1rem] border border-slate-200/70 transition-transform duration-300 hover:-translate-y-1"
                 >
                   <div className="relative aspect-square overflow-hidden">
                     <Image
@@ -126,63 +131,67 @@ export default function HomePage() {
 
       <section className="py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <Reveal className="surface-card overflow-hidden rounded-[2rem] border border-slate-200/70">
+          <Reveal className="surface-card overflow-hidden rounded-[1rem] border border-slate-200/70">
             <div className="grid lg:grid-cols-2">
-              <div className="border-b border-slate-200/70 p-7 sm:p-8 lg:border-b-0 lg:border-r">
-                <div className="flex items-start gap-3">
-                  <ShieldCheck className="mt-1 text-[var(--color-accent)]" />
-                  <div>
-                    <p className="eyebrow text-[var(--color-accent)]">Service area confidence</p>
-                    <h2 className="mt-3 text-3xl font-bold">Edmonton first, with nearby communities covered too.</h2>
-                    <p className="mt-4 text-sm leading-7 text-slate-600">
-                      If you are in Edmonton, Sherwood Park, St. Albert, Spruce Grove, Stony Plain, Leduc, Beaumont, or Fort Saskatchewan, there is a strong chance we can help quickly. If you are unsure, call anyway.
-                    </p>
-                    <Link href="/service-areas" className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-[var(--color-brand)]">
-                      View service areas
-                      <ArrowRight size={14} />
-                    </Link>
-                  </div>
+
+              {/* Service areas */}
+              <div className="border-b border-slate-200/70 p-8 lg:border-b-0 lg:border-r">
+                <p className="eyebrow text-[var(--color-accent)]">Service area</p>
+                <h2 className="mt-2 text-3xl font-bold leading-snug">Edmonton first, nearby communities covered too.</h2>
+                <p className="mt-4 text-sm leading-7 text-slate-600">
+                  If you are unsure whether we cover your area, call anyway — there is a strong chance we can help quickly.
+                </p>
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {["Edmonton", "Sherwood Park", "St. Albert", "Spruce Grove", "Stony Plain", "Leduc", "Beaumont", "Fort Saskatchewan"].map((area) => (
+                    <span key={area} className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-semibold text-slate-700">
+                      {area}
+                    </span>
+                  ))}
                 </div>
+                <Link href="/service-areas" className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-[var(--color-brand)] hover:underline">
+                  View all service areas
+                  <ArrowRight size={14} />
+                </Link>
               </div>
 
-              <div className="p-7 sm:p-8">
-                <div className="grid gap-6 xl:grid-cols-[1fr_240px] xl:items-start">
-                  <div className="flex items-start gap-3">
-                    <Award className="mt-1 text-[var(--color-accent)]" />
+              {/* Certification */}
+              <div className="grid gap-8 p-8 xl:grid-cols-[1fr_220px] xl:items-start">
+                <div>
+                  <p className="eyebrow text-[var(--color-accent)]">Certification</p>
+                  <h2 className="mt-2 text-3xl font-bold leading-snug">IICRC WRT certified.</h2>
+                  <p className="mt-4 text-sm leading-7 text-slate-600">
+                    Safe Home Solution & Restoration Inc. holds IICRC WRT certification — meaning the company follows recognized water restoration and structural drying standards on every job.
+                  </p>
+                  <p className="mt-3 text-sm leading-7 text-slate-600">
+                    Drying decisions, moisture tracking, and equipment use are guided by trained process, not guesswork.
+                  </p>
+                  <Link href="/about" className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-[var(--color-brand)] hover:underline">
+                    Learn about our approach
+                    <ArrowRight size={14} />
+                  </Link>
+                </div>
+
+                <div className="overflow-hidden rounded-[0.95rem] border border-[var(--color-brand)]/12 bg-[linear-gradient(160deg,#f8f3eb,#ede5d6)] p-3 shadow-[0_12px_32px_rgba(39,34,27,0.09)]">
+                  <div className="overflow-hidden rounded-[0.7rem] bg-white shadow-sm">
+                    <Image
+                      src={iicrcCertificate}
+                      alt="IICRC WRT certificate"
+                      className="h-auto w-full object-contain"
+                      sizes="220px"
+                    />
+                  </div>
+                  <div className="mt-3 flex items-center gap-2.5 px-1">
+                    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[var(--color-brand)]">
+                      <Award size={15} className="text-white" />
+                    </div>
                     <div>
-                      <p className="eyebrow text-[var(--color-accent)]">Certification</p>
-                      <h2 className="mt-3 text-3xl font-bold">IICRC WRT certified water restoration support.</h2>
-                      <p className="mt-4 text-sm leading-7 text-slate-600">
-                        Safe Home Solutions is IICRC WRT certified, which means the company follows recognized water restoration and structural drying standards when responding to property damage.
-                      </p>
-                      <p className="mt-4 text-sm leading-7 text-slate-600">
-                        That matters because drying decisions, moisture tracking, and equipment use should be guided by trained process instead of guesswork when the home is under stress.
-                      </p>
+                      <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-[var(--color-accent)]">IICRC</p>
+                      <p className="text-xs font-semibold text-[var(--color-ink)]">Water Restoration Technician</p>
                     </div>
-                  </div>
-
-                  <div className="overflow-hidden rounded-[1.75rem] border border-[var(--color-brand)]/15 bg-[linear-gradient(180deg,#f8f3eb_0%,#efe6d8_100%)] p-4 shadow-[0_18px_40px_rgba(39,34,27,0.08)]">
-                    <div className="relative overflow-hidden rounded-[1.25rem] bg-white">
-                      <Image
-                        src={iicrcCertificate}
-                        alt="IICRC WRT certificate"
-                        className="h-auto w-full object-contain"
-                        sizes="240px"
-                      />
-                    </div>
-                    <div className="mt-4 flex items-center gap-3">
-                      <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[var(--color-brand)] text-white">
-                        <Award size={20} />
-                      </div>
-                      <div>
-                        <p className="text-xs font-bold uppercase tracking-[0.2em] text-[var(--color-accent)]">IICRC</p>
-                        <p className="text-sm font-semibold text-[var(--color-ink)]">WRT Certified</p>
-                      </div>
-                    </div>
-                    <p className="mt-3 text-sm leading-6 text-slate-600">Water Restoration Technician certification displayed alongside the public-facing certification summary.</p>
                   </div>
                 </div>
               </div>
+
             </div>
           </Reveal>
         </div>

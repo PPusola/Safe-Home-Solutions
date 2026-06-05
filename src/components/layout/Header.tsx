@@ -33,7 +33,7 @@ export function Header() {
             </a>
           </div>
         </div>
-        <div className="flex items-center justify-center px-4 py-2 text-sm sm:hidden">
+        <div className="flex items-center justify-center px-4 py-2 text-center text-sm sm:hidden">
           <a href={SITE.phoneHref} className="inline-flex items-center gap-2 font-semibold text-white">
             <Phone size={14} />
             {"24/7 emergency response \u2022 "}{SITE.phone}
@@ -58,7 +58,7 @@ export function Header() {
               <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-[#1c1b1a] p-1 shadow-[0_10px_24px_rgba(15,39,66,0.16)] sm:h-16 sm:w-16">
                 <Image
                   src={logo}
-                  alt="Safe Home Solutions logo"
+                  alt="Safe Home Solution &amp; Restoration Inc. logo"
                   width={56}
                   height={56}
                   className="h-12 w-12 object-contain sm:h-14 sm:w-14"
@@ -67,7 +67,7 @@ export function Header() {
               </div>
               <div className="min-w-0">
                 <div className="font-display text-xl font-bold tracking-tight text-[var(--color-ink)] sm:text-2xl">
-                  Safe Home Solutions
+                  Safe Home Solution &amp; Restoration Inc.
                 </div>
                 <div className="text-xs font-bold uppercase tracking-[0.28em] text-[var(--color-accent)]">
                   Restoration and Rebuild
@@ -90,7 +90,7 @@ export function Header() {
                         key={link.label}
                         href={link.href!}
                         className={cn(
-                          "rounded-full px-4 py-2 text-sm font-semibold transition-colors",
+                          "rounded-[0.95rem] px-4 py-2 text-sm font-semibold transition-colors",
                           isActive
                             ? "bg-[var(--color-brand)] text-white"
                             : "text-slate-700 hover:bg-white hover:text-[var(--color-brand)]",
@@ -103,24 +103,24 @@ export function Header() {
 
                   return (
                     <div key={link.label} className="group relative">
-                      <button className="flex items-center gap-1 rounded-full px-4 py-2 text-sm font-semibold text-slate-700 hover:bg-white hover:text-[var(--color-brand)]">
+                      <Link
+                        href={link.href ?? "#"}
+                        className={cn(
+                          "flex items-center gap-1 rounded-[0.95rem] px-4 py-2 text-sm font-semibold transition-colors",
+                          link.href && (pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href)))
+                            ? "bg-[var(--color-brand)] text-white"
+                            : "text-slate-700 hover:bg-white hover:text-[var(--color-brand)]",
+                        )}
+                      >
                         {link.label}
                         <ChevronDown size={15} className="transition-transform group-hover:rotate-180" />
-                      </button>
-                      <div className="invisible absolute left-1/2 top-full mt-2 w-72 -translate-x-1/2 rounded-2xl border border-slate-200 bg-[var(--color-surface)] p-2 opacity-0 shadow-[0_24px_60px_rgba(16,35,61,0.16)] transition-all duration-150 group-hover:visible group-hover:opacity-100">
-                        {link.href && (
-                          <Link
-                            href={link.href}
-                            className="mb-1 block rounded-xl px-4 py-3 text-sm font-bold text-[var(--color-brand)] hover:bg-slate-100"
-                          >
-                            View all {link.label.toLowerCase()}
-                          </Link>
-                        )}
+                      </Link>
+                      <div className="invisible absolute left-1/2 top-full mt-2 w-72 -translate-x-1/2 rounded-[1rem] border border-slate-200 bg-[var(--color-surface)] p-2 opacity-0 shadow-[0_24px_60px_rgba(16,35,61,0.16)] transition-all duration-150 group-hover:visible group-hover:opacity-100">
                         {link.children?.map((child) => (
                           <Link
                             key={child.href}
                             href={child.href}
-                            className="block rounded-xl px-4 py-3 text-sm text-slate-700 hover:bg-slate-100 hover:text-[var(--color-brand)]"
+                            className="block rounded-[0.8rem] px-4 py-3 text-sm text-slate-700 hover:bg-slate-100 hover:text-[var(--color-brand)]"
                           >
                             {child.label}
                           </Link>
@@ -132,14 +132,14 @@ export function Header() {
               </nav>
               <Link
                 href="/contact"
-                className="inline-flex items-center rounded-full bg-[var(--color-accent)] px-5 py-2.5 text-sm font-bold text-white shadow-[0_10px_30px_rgba(177,115,67,0.2)] hover:bg-[var(--color-accent-dark)]"
+                className="inline-flex items-center rounded-[0.95rem] bg-[var(--color-accent)] px-5 py-2.5 text-sm font-bold text-white shadow-[0_10px_30px_rgba(177,115,67,0.2)] hover:bg-[var(--color-accent-dark)]"
               >
                 Request Estimate
               </Link>
             </div>
 
             <button
-              className="rounded-full border border-slate-200 bg-white p-2.5 text-slate-700 lg:hidden"
+              className="rounded-[0.95rem] border border-slate-200 bg-white p-2.5 text-slate-700 lg:hidden"
               onClick={() => setMobileOpen((value) => !value)}
               aria-label="Toggle menu"
             >
@@ -157,7 +157,7 @@ export function Header() {
                     <Link
                       key={link.label}
                       href={link.href!}
-                      className="block rounded-2xl px-4 py-3 text-sm font-semibold text-slate-800 hover:bg-white"
+                      className="block rounded-[1rem] px-4 py-3 text-sm font-semibold text-slate-800 hover:bg-white"
                       onClick={() => {
                         setMobileOpen(false);
                         setOpenGroup(null);
@@ -171,7 +171,7 @@ export function Header() {
                 const expanded = openGroup === link.label;
 
                 return (
-                  <div key={link.label} className="rounded-2xl border border-slate-200 bg-white">
+                  <div key={link.label} className="rounded-[1rem] border border-slate-200 bg-white">
                     <button
                       className="flex w-full items-center justify-between px-4 py-3 text-left text-sm font-semibold text-slate-800"
                       onClick={() => setOpenGroup(expanded ? null : link.label)}
@@ -181,23 +181,11 @@ export function Header() {
                     </button>
                     {expanded && (
                       <div className="space-y-1 border-t border-slate-100 px-2 py-2">
-                        {link.href && (
-                          <Link
-                            href={link.href}
-                            className="block rounded-xl px-3 py-2 text-sm font-bold text-[var(--color-brand)] hover:bg-slate-50"
-                            onClick={() => {
-                              setMobileOpen(false);
-                              setOpenGroup(null);
-                            }}
-                          >
-                            View all
-                          </Link>
-                        )}
                         {link.children.map((child) => (
                           <Link
                             key={child.href}
                             href={child.href}
-                            className="block rounded-xl px-3 py-2 text-sm text-slate-700 hover:bg-slate-50"
+                            className="block rounded-[0.8rem] px-3 py-2 text-sm text-slate-700 hover:bg-slate-50"
                             onClick={() => {
                               setMobileOpen(false);
                               setOpenGroup(null);
@@ -214,13 +202,13 @@ export function Header() {
             </div>
 
             <div className="mx-auto mt-4 grid max-w-7xl gap-3">
-              <a href={SITE.phoneHref} className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--color-accent)] px-4 py-3 font-bold text-white">
+              <a href={SITE.phoneHref} className="inline-flex items-center justify-center gap-2 rounded-[0.95rem] bg-[var(--color-accent)] px-4 py-3 font-bold text-white">
                 <Phone size={18} />
                 {SITE.phone}
               </a>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-full bg-[var(--color-brand)] px-4 py-3 font-bold text-white"
+                className="inline-flex items-center justify-center rounded-[0.95rem] bg-[var(--color-brand)] px-4 py-3 font-bold text-white"
                 onClick={() => {
                   setMobileOpen(false);
                   setOpenGroup(null);

@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { MapPin, Phone } from "lucide-react";
+import { InteriorHero } from "@/components/layout/InteriorHero";
 import { Reveal } from "@/components/motion/Reveal";
 import { EmergencyCTA } from "@/components/sections/EmergencyCTA";
 import { SERVICE_AREAS } from "@/lib/content/areas";
 import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Service Areas | Edmonton Water Damage Restoration | Safe Home Solutions",
+  title: "Service Areas | Edmonton Water Damage Restoration | Safe Home Solution & Restoration Inc.",
   description: "Service coverage for Edmonton, Sherwood Park, St. Albert, Spruce Grove, Stony Plain, Leduc, Beaumont, and Fort Saskatchewan.",
   alternates: { canonical: "/service-areas" },
 };
@@ -18,17 +19,16 @@ export default function ServiceAreasPage() {
 
   return (
     <>
-      <section className="bg-[var(--color-brand)] py-16 text-white">
-        <Reveal className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-          <h1 className="text-4xl font-bold text-white">Service Areas</h1>
-          <p className="mt-4 text-lg text-slate-200">24/7 restoration coverage across Edmonton and nearby communities.</p>
-        </Reveal>
-      </section>
+      <InteriorHero
+        eyebrow="Coverage"
+        title="Service Areas"
+        description="24/7 restoration coverage across Edmonton and nearby communities, with local response expectations that are easier to understand at a glance."
+      />
 
       {primaryArea && (
         <section className="py-16">
           <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-            <Reveal className="surface-card overflow-hidden rounded-[2rem] border border-slate-200/70">
+            <Reveal className="surface-card overflow-hidden rounded-[1rem] border border-slate-200/70">
               <div className="grid lg:grid-cols-[1.15fr_0.85fr]">
                 <div className="p-8">
                   <div className="flex items-start gap-3">
@@ -38,7 +38,7 @@ export default function ServiceAreasPage() {
                       <p className="mt-3 text-sm leading-8 text-slate-600">{primaryArea.description}</p>
                     </div>
                   </div>
-                  <a href={SITE.phoneHref} className="mt-6 inline-flex items-center gap-2 rounded-full bg-[var(--color-accent)] px-5 py-3 text-sm font-bold text-white hover:bg-[var(--color-accent-dark)]">
+                  <a href={SITE.phoneHref} className="mt-6 inline-flex items-center gap-2 rounded-[0.95rem] bg-[var(--color-accent)] px-5 py-3 text-sm font-bold text-white hover:bg-[var(--color-accent-dark)]">
                     <Phone size={16} />
                     {SITE.phone}
                   </a>
@@ -68,7 +68,7 @@ export default function ServiceAreasPage() {
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {nearbyAreas.map((area, index) => (
               <Reveal key={area.slug} delay={index * 60}>
-                <div className="surface-card overflow-hidden rounded-[1.75rem] border border-slate-200/70">
+                <div className="surface-card overflow-hidden rounded-[0.95rem] border border-slate-200/70">
                   <div className="relative aspect-[1/1]">
                     {area.cardImage && (
                       <>

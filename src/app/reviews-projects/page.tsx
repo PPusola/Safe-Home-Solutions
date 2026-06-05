@@ -1,27 +1,25 @@
 import type { Metadata } from "next";
 import { Camera, MessageSquare, Phone } from "lucide-react";
+import { InteriorHero } from "@/components/layout/InteriorHero";
 import { Reveal } from "@/components/motion/Reveal";
 import { EmergencyCTA } from "@/components/sections/EmergencyCTA";
 import { PROOF_SNIPPETS, REVIEW_THEMES } from "@/lib/content/trust";
 import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Reviews & Latest Projects | Safe Home Solutions Edmonton",
-  description: "See the kinds of restoration projects Safe Home Solutions handles and the client experience themes people value most.",
+  title: "Reviews & Latest Projects | Safe Home Solution & Restoration Inc. Edmonton",
+  description: "See the kinds of restoration projects Safe Home Solution & Restoration Inc. handles and the client experience themes people value most.",
   alternates: { canonical: "/reviews-projects" },
 };
 
 export default function ReviewsProjectsPage() {
   return (
     <>
-      <section className="bg-[var(--color-brand)] py-16 text-white">
-        <Reveal className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-          <h1 className="text-4xl font-bold text-white">Reviews & Latest Projects</h1>
-          <p className="mt-4 text-lg text-slate-200">
-            A cleaner place for project examples, client experience themes, and the kind of work we handle around Edmonton.
-          </p>
-        </Reveal>
-      </section>
+      <InteriorHero
+        eyebrow="Proof"
+        title="Reviews & Latest Projects"
+        description="A cleaner place for project examples, client experience themes, and the kind of work the company handles around Edmonton."
+      />
 
       <section className="py-16">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -29,14 +27,14 @@ export default function ReviewsProjectsPage() {
             <p className="eyebrow text-[var(--color-accent)]">Review themes</p>
             <h2 className="mt-3 text-3xl font-bold">What people tend to value most.</h2>
             <p className="mt-4 text-sm leading-7 text-slate-600">
-              Rather than stuffing this into the homepage, this page keeps client experience and project context together in one calmer place.
+              Read what homeowners value most and see examples of the kinds of jobs we handle across Edmonton and nearby communities.
             </p>
           </Reveal>
 
           <div className="grid gap-6 md:grid-cols-3">
             {REVIEW_THEMES.map((item, index) => (
               <Reveal key={item.title} delay={index * 70}>
-                <div className="surface-card rounded-[1.8rem] border border-slate-200/70 p-6">
+                <div className="surface-card rounded-[0.95rem] border border-slate-200/70 p-6">
                   <MessageSquare className="text-[var(--color-accent)]" />
                   <h3 className="mt-4 text-2xl font-bold">{item.title}</h3>
                   <p className="mt-3 text-sm leading-7 text-slate-600">{item.detail}</p>
@@ -57,7 +55,7 @@ export default function ReviewsProjectsPage() {
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
             {PROOF_SNIPPETS.map((item, index) => (
               <Reveal key={item.title} delay={index * 70}>
-                <div className="surface-card overflow-hidden rounded-[1.9rem] border border-slate-200/70">
+                <div className="surface-card overflow-hidden rounded-[1rem] border border-slate-200/70">
                   <div className="flex h-44 items-center justify-center bg-[linear-gradient(135deg,#dce6f4_0%,#bfd3ee_100%)]">
                     <Camera size={42} className="text-[var(--color-brand)]" />
                   </div>
@@ -72,7 +70,7 @@ export default function ReviewsProjectsPage() {
           </div>
 
           <div className="mt-10 text-center">
-            <a href={SITE.phoneHref} className="inline-flex items-center gap-2 rounded-full bg-[var(--color-accent)] px-6 py-3 text-sm font-bold text-white hover:bg-[var(--color-accent-dark)]">
+            <a href={SITE.phoneHref} className="inline-flex items-center gap-2 rounded-[0.95rem] bg-[var(--color-accent)] px-6 py-3 text-sm font-bold text-white hover:bg-[var(--color-accent-dark)]">
               <Phone size={16} />
               {SITE.phone}
             </a>

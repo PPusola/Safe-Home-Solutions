@@ -11,7 +11,7 @@ export function Button({ href, className, variant = "primary", children, ...prop
     <Link
       href={href}
       className={cn(
-        "inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-bold transition-colors",
+        "inline-flex items-center justify-center rounded-[0.95rem] px-5 py-3 text-sm font-bold transition-colors",
         variant === "primary"
           ? "bg-[var(--color-accent)] text-white hover:bg-[var(--color-accent-dark)]"
           : "bg-[var(--color-brand)] text-white hover:bg-[#0f2742]",

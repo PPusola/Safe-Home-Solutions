@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { InteriorHero } from "@/components/layout/InteriorHero";
 import { Reveal } from "@/components/motion/Reveal";
 import { SERVICES } from "@/lib/content/services";
 
 export const metadata: Metadata = {
-  title: "Restoration Services | Safe Home Solutions Edmonton",
+  title: "Restoration Services | Safe Home Solution & Restoration Inc. Edmonton",
   description: "Browse water damage restoration, emergency water removal, structural drying, mold remediation, and related services in Edmonton.",
   alternates: { canonical: "/services" },
 };
@@ -14,12 +15,11 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <>
-      <section className="bg-[var(--color-brand)] py-16 text-white">
-        <Reveal className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-          <h1 className="text-4xl font-bold text-white">Restoration Services</h1>
-          <p className="mt-4 text-lg text-slate-200">Clear, practical restoration support for Edmonton homes and nearby communities.</p>
-        </Reveal>
-      </section>
+      <InteriorHero
+        eyebrow="Services"
+        title="Restoration Services"
+        description="Clear, practical restoration support for Edmonton homes and nearby communities, organized by the kind of help you actually need."
+      />
 
       <section className="py-16">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -35,7 +35,7 @@ export default function ServicesPage() {
               <Reveal key={service.slug} delay={index * 70}>
                 <Link
                   href={`/services/${service.slug}`}
-                  className="group surface-card block overflow-hidden rounded-[2rem] border border-slate-200/70 transition-transform duration-300 hover:-translate-y-1"
+                  className="group surface-card block overflow-hidden rounded-[1rem] border border-slate-200/70 transition-transform duration-300 hover:-translate-y-1"
                 >
                   <div className="relative aspect-square overflow-hidden">
                     <Image

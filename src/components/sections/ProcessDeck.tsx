@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { ArrowDownRight } from "lucide-react";
 import { cn } from "@/lib/cn";
 import type { ProcessDeckStep } from "@/lib/content/trust";
@@ -11,7 +11,6 @@ interface ProcessDeckProps {
 
 export function ProcessDeck({ steps }: ProcessDeckProps) {
   const [orderedSteps, setOrderedSteps] = useState(steps);
-  const stackPreview = useMemo(() => orderedSteps.slice(1, 4), [orderedSteps]);
 
   function moveStepToBottom(index: number) {
     setOrderedSteps((current) => {
@@ -28,19 +27,13 @@ export function ProcessDeck({ steps }: ProcessDeckProps) {
         <p className="eyebrow text-[var(--color-accent)]">How we solve the problem</p>
         <h2 className="mt-3 text-3xl font-bold">A card deck you can move through in the order that matters to you.</h2>
         <p className="mt-4 max-w-xl text-sm leading-7 text-slate-600">
-          Click any card to send it to the bottom of the deck. The top card is the current focus, and the stack lets people explore the process without reading a long wall of text first.
+          Click the card to send it to the bottom of the deck. The next step is already lined up underneath it, so the process stays clean and easy to follow.
         </p>
       </div>
 
-      <div className="relative min-h-[360px] sm:min-h-[400px]">
+      <div className="relative min-h-[240px] sm:min-h-[260px]">
         {orderedSteps.map((step, index) => {
-          const previewIndex = stackPreview.findIndex((previewStep) => previewStep.title === step.title);
           const isActive = index === 0;
-          const isVisible = isActive || previewIndex !== -1;
-          const offsetY = isActive ? 0 : (previewIndex + 1) * 28;
-          const offsetX = isActive ? 0 : (previewIndex + 1) * 18;
-          const scale = isActive ? 1 : 1 - (previewIndex + 1) * 0.035;
-          const zIndex = isActive ? steps.length + 1 : steps.length - previewIndex;
 
           return (
             <button
@@ -48,13 +41,14 @@ export function ProcessDeck({ steps }: ProcessDeckProps) {
               type="button"
               onClick={() => moveStepToBottom(index)}
               className={cn(
-                "absolute left-0 top-0 w-full rounded-[1.9rem] border border-slate-200/80 bg-[linear-gradient(180deg,rgba(255,255,255,0.96),rgba(248,244,238,0.94))] p-6 text-left shadow-[0_18px_44px_rgba(31,42,55,0.08)] transition-all duration-300",
-                isVisible ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0",
+                "absolute left-0 top-0 w-full rounded-[1rem] border border-slate-200/80 bg-[linear-gradient(180deg,rgba(255,255,255,0.96),rgba(248,244,238,0.94))] p-6 text-left shadow-[0_18px_44px_rgba(31,42,55,0.08)] transition-opacity duration-200",
+                isActive ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0",
               )}
               style={{
-                transform: `translate(${offsetX}px, ${offsetY}px) scale(${scale})`,
-                zIndex,
+                zIndex: isActive ? steps.length + 1 : 1,
               }}
+              aria-hidden={!isActive}
+              tabIndex={isActive ? 0 : -1}
             >
               <div className="flex items-start justify-between gap-4">
                 <div>

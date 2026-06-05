@@ -24,7 +24,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
       "Our home base. We serve neighbourhoods across Edmonton with local dispatch, fast arrival times, and restoration support around the clock.",
     isPrimary: true,
     cardImage:
-      "https://commons.wikimedia.org/wiki/Special:FilePath/Edmonton%20Skyline.jpg",
+      "https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=1200&q=80",
     cardTone: "from-[#20313b]/30 via-[#20313b]/10 to-[#20313b]/60",
     imagePosition: "object-center",
   },

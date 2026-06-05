@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { ViewTransition } from "react";
-import { Bitter, Manrope } from "next/font/google";
+import { Fraunces, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -8,8 +8,8 @@ import { FloatingEmergencyHelp } from "@/components/layout/FloatingEmergencyHelp
 import { LocalBusinessSchema } from "@/components/seo/LocalBusinessSchema";
 import { SITE } from "@/lib/site";
 
-const bodyFont = Manrope({ subsets: ["latin"], variable: "--font-body" });
-const displayFont = Bitter({ subsets: ["latin"], variable: "--font-display" });
+const bodyFont = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--font-body" });
+const displayFont = Fraunces({ subsets: ["latin"], variable: "--font-display" });
 
 export const metadata: Metadata = {
   title: {
@@ -25,6 +25,20 @@ export const metadata: Metadata = {
     siteName: SITE.name,
     title: `${SITE.name} | Edmonton Water Damage Restoration`,
     description: SITE.description,
+    images: [
+      {
+        url: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=1200&h=630&q=80",
+        width: 1200,
+        height: 630,
+        alt: "Safe Home Solution & Restoration Inc. – Edmonton Water Damage Restoration",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${SITE.name} | Edmonton Water Damage Restoration`,
+    description: SITE.description,
+    images: ["https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=1200&h=630&q=80"],
   },
 };
 

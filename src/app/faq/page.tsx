@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { ChevronDown } from "lucide-react";
+import { InteriorHero } from "@/components/layout/InteriorHero";
 import { Reveal } from "@/components/motion/Reveal";
 import { EmergencyCTA } from "@/components/sections/EmergencyCTA";
 import { FAQS, FAQ_CATEGORIES } from "@/lib/content/faqs";
 
 export const metadata: Metadata = {
-  title: "FAQ | Water Damage Restoration Edmonton | Safe Home Solutions",
+  title: "FAQ | Water Damage Restoration Edmonton | Safe Home Solution & Restoration Inc.",
   description: "Answers to common questions about water damage restoration, drying, and claim support in Edmonton.",
   alternates: { canonical: "/faq" },
 };
@@ -13,12 +14,11 @@ export const metadata: Metadata = {
 export default function FAQPage() {
   return (
     <>
-      <section className="bg-[var(--color-brand)] py-16 text-white">
-        <Reveal className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-          <h1 className="text-4xl font-bold text-white">Frequently Asked Questions</h1>
-          <p className="mt-4 text-lg text-slate-200">Straightforward answers about emergency response, drying, insurance support, and service coverage.</p>
-        </Reveal>
-      </section>
+      <InteriorHero
+        eyebrow="FAQ"
+        title="Frequently Asked Questions"
+        description="Straightforward answers about emergency response, drying, insurance support, and service coverage, without making you dig through the whole site."
+      />
 
       <section className="py-16">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
@@ -27,7 +27,7 @@ export default function FAQPage() {
               <h2 className="mb-4 text-2xl font-bold">{category}</h2>
               <div className="space-y-3">
                 {FAQS.filter((faq) => faq.category === category).map((faq) => (
-                  <details key={faq.question} className="surface-card rounded-[1.5rem] border border-slate-200/70 px-5 py-4">
+                  <details key={faq.question} className="surface-card rounded-[0.95rem] border border-slate-200/70 px-5 py-4">
                     <summary className="flex cursor-pointer items-center justify-between gap-4 text-left text-sm font-bold text-[var(--color-brand)]">
                       {faq.question}
                       <ChevronDown size={18} className="shrink-0 text-slate-500" />
