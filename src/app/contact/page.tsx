@@ -14,16 +14,10 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      <InteriorHero
-        eyebrow="Contact"
-        title="Request a Non-Urgent Estimate"
-        description="Use this page for planned work and general questions. If the damage is active or time-sensitive, call right away instead of waiting on the form."
-      />
-
       <div className="bg-red-600 text-white">
-        <div className="mx-auto flex max-w-6xl items-center gap-4 px-4 py-4 sm:px-6 lg:px-8">
+        <div className="mx-auto flex max-w-6xl items-center justify-center gap-4 px-4 py-4 sm:px-6 lg:px-8">
           <AlertTriangle size={22} className="shrink-0" />
-          <p className="text-sm font-semibold leading-6">
+          <p className="text-center text-sm font-semibold leading-6">
             If water is active in your home right now, don&apos;t fill out the form —{" "}
             <a href={SITE.phoneHref} className="underline underline-offset-2 hover:no-underline">
               call {SITE.phone} immediately
@@ -32,6 +26,12 @@ export default function ContactPage() {
           </p>
         </div>
       </div>
+
+      <InteriorHero
+        eyebrow="Contact"
+        title="Request a Non-Urgent Estimate"
+        description="Use this page for planned work and general questions. If the damage is active or time-sensitive, call right away instead of waiting on the form."
+      />
 
       <section className="py-16">
         <div className="mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 lg:grid-cols-[1.2fr_0.8fr] lg:px-8">
@@ -58,7 +58,7 @@ export default function ContactPage() {
               <iframe
                 src="https://maps.google.com/maps?q=9520+174+St+NW+Edmonton+AB+T5T+5Z3&output=embed&z=15"
                 width="100%"
-                height="220"
+                height="525"
                 style={{ border: 0, display: "block" }}
                 allowFullScreen
                 loading="lazy"
