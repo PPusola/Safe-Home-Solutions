@@ -8,6 +8,7 @@ import { ProcessDeck } from "@/components/sections/ProcessDeck";
 import { SERVICES } from "@/lib/content/services";
 import { PROCESS_DECK_STEPS, STATS } from "@/lib/content/trust";
 import { SITE } from "@/lib/site";
+import iicrcCertificate from "../../iicrc cert.jpg";
 
 export const metadata: Metadata = {
   title: "Edmonton Water Damage Restoration | 24/7 Emergency Response | Safe Home Solutions",
@@ -124,7 +125,7 @@ export default function HomePage() {
       </section>
 
       <section className="py-16">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <Reveal className="surface-card overflow-hidden rounded-[2rem] border border-slate-200/70">
             <div className="grid lg:grid-cols-2">
               <div className="border-b border-slate-200/70 p-7 sm:p-8 lg:border-b-0 lg:border-r">
@@ -145,17 +146,40 @@ export default function HomePage() {
               </div>
 
               <div className="p-7 sm:p-8">
-                <div className="flex items-start gap-3">
-                  <Award className="mt-1 text-[var(--color-accent)]" />
-                  <div>
-                    <p className="eyebrow text-[var(--color-accent)]">Certification</p>
-                    <h2 className="mt-3 text-3xl font-bold">IICRC WRT certified water restoration support.</h2>
-                    <p className="mt-4 text-sm leading-7 text-slate-600">
-                      Safe Home Solutions is IICRC WRT certified, which means the company follows recognized water restoration and structural drying standards when responding to property damage.
-                    </p>
-                    <p className="mt-4 text-sm leading-7 text-slate-600">
-                      That matters because drying decisions, moisture tracking, and equipment use should be guided by trained process instead of guesswork when the home is under stress.
-                    </p>
+                <div className="grid gap-6 xl:grid-cols-[1fr_240px] xl:items-start">
+                  <div className="flex items-start gap-3">
+                    <Award className="mt-1 text-[var(--color-accent)]" />
+                    <div>
+                      <p className="eyebrow text-[var(--color-accent)]">Certification</p>
+                      <h2 className="mt-3 text-3xl font-bold">IICRC WRT certified water restoration support.</h2>
+                      <p className="mt-4 text-sm leading-7 text-slate-600">
+                        Safe Home Solutions is IICRC WRT certified, which means the company follows recognized water restoration and structural drying standards when responding to property damage.
+                      </p>
+                      <p className="mt-4 text-sm leading-7 text-slate-600">
+                        That matters because drying decisions, moisture tracking, and equipment use should be guided by trained process instead of guesswork when the home is under stress.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="overflow-hidden rounded-[1.75rem] border border-[var(--color-brand)]/15 bg-[linear-gradient(180deg,#f8f3eb_0%,#efe6d8_100%)] p-4 shadow-[0_18px_40px_rgba(39,34,27,0.08)]">
+                    <div className="relative overflow-hidden rounded-[1.25rem] bg-white">
+                      <Image
+                        src={iicrcCertificate}
+                        alt="IICRC WRT certificate"
+                        className="h-auto w-full object-contain"
+                        sizes="240px"
+                      />
+                    </div>
+                    <div className="mt-4 flex items-center gap-3">
+                      <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[var(--color-brand)] text-white">
+                        <Award size={20} />
+                      </div>
+                      <div>
+                        <p className="text-xs font-bold uppercase tracking-[0.2em] text-[var(--color-accent)]">IICRC</p>
+                        <p className="text-sm font-semibold text-[var(--color-ink)]">WRT Certified</p>
+                      </div>
+                    </div>
+                    <p className="mt-3 text-sm leading-6 text-slate-600">Water Restoration Technician certification displayed alongside the public-facing certification summary.</p>
                   </div>
                 </div>
               </div>
