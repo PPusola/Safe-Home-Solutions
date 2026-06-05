@@ -14,7 +14,7 @@ export function Footer() {
           <div className="min-w-0">
             <div className="font-display text-xl font-bold !text-white sm:text-2xl">Safe Home Solution &amp; Restoration Inc.</div>
             <div className="mt-1 text-xs font-bold uppercase tracking-[0.28em] text-slate-400">
-              Restoration and Rebuild
+              Restoration and Rebuild Services
             </div>
             <p className="mt-4 text-sm leading-7 text-slate-300">
               Water damage restoration, emergency water removal, structural drying, mold remediation, and storm-related interior mitigation support across Edmonton and nearby communities.
