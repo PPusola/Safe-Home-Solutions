@@ -7,6 +7,7 @@ import { Footer } from "@/components/layout/Footer";
 import { FloatingEmergencyHelp } from "@/components/layout/FloatingEmergencyHelp";
 import { LocalBusinessSchema } from "@/components/seo/LocalBusinessSchema";
 import { SITE } from "@/lib/site";
+import { Analytics } from "@vercel/analytics/next";
 
 const bodyFont = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--font-body" });
 const displayFont = Fraunces({ subsets: ["latin"], variable: "--font-display" });
@@ -53,6 +54,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </ViewTransition>
         <FloatingEmergencyHelp />
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
