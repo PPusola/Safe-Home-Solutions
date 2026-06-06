@@ -34,7 +34,7 @@ export default function ResourcesPage() {
               <span className="text-[var(--color-brand)]">for Edmonton homeowners.</span>
             </h1>
             <p className="mt-5 max-w-xl text-base leading-8 text-slate-600">
-              Articles and answers on water damage, mold, insurance claims, and what to expect during a restoration job — written in plain language.
+              Articles and answers on water damage, mold, insurance claims, and what to expect during a restoration job, written in plain language.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-4">
@@ -108,7 +108,7 @@ export default function ResourcesPage() {
                   <h2 className="text-2xl font-bold">FAQ</h2>
                 </div>
                 <p className="mt-3 max-w-lg text-sm leading-7 text-slate-600">
-                  Answers to the questions homeowners ask most — about the process, timing, insurance, costs, and what we actually do on site.
+                  Answers to the questions clients ask most, about the process, timing, insurance, costs, and what we actually do on site.
                 </p>
                 <div className="mt-5 flex flex-wrap gap-2">
                   {faqCategories.map((cat) => (

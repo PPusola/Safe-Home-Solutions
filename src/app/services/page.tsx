@@ -18,7 +18,7 @@ export default function ServicesPage() {
       <InteriorHero
         eyebrow="Services"
         title="Restoration Services"
-        description="Clear, practical restoration support for Edmonton homes and nearby communities, organized by the kind of help you actually need."
+        description="Clear, practical restoration support for Edmontonians and nearby communities (residential, commercial, and industrial), organized by the kind of help you actually need."
       />
 
       <section className="py-16">
@@ -30,12 +30,12 @@ export default function ServicesPage() {
               Each service page now carries the deeper information: what the work includes, what usually happens first, and how documentation and next steps are handled.
             </p>
           </Reveal>
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          <div className="flex flex-wrap justify-center gap-6">
             {SERVICES.map((service, index) => (
-              <Reveal key={service.slug} delay={index * 70}>
+              <Reveal key={service.slug} delay={index * 70} className="w-full md:w-[calc(50%-12px)] xl:w-[calc(33.333%-16px)] h-full">
                 <Link
                   href={`/services/${service.slug}`}
-                  className="group surface-card block overflow-hidden rounded-[1rem] border border-slate-200/70 transition-transform duration-300 hover:-translate-y-1"
+                  className="group surface-card h-full flex flex-col overflow-hidden rounded-[1rem] border border-slate-200/70 transition-transform duration-300 hover:-translate-y-1"
                 >
                   <div className="relative aspect-square overflow-hidden">
                     <Image
@@ -56,8 +56,8 @@ export default function ServicesPage() {
                       <p className="mt-3 max-w-[16rem] text-sm leading-6 text-white/84">{service.tagline}</p>
                     </div>
                   </div>
-                  <div className="grid min-h-[10.5rem] content-between gap-4 p-5">
-                    <p className="text-sm leading-7 text-slate-600">{service.description}</p>
+                  <div className="flex flex-1 flex-col justify-between gap-4 p-5">
+                    <p className="line-clamp-3 text-sm leading-7 text-slate-600">{service.description}</p>
                     <div className="inline-flex items-center gap-2 text-sm font-bold text-[var(--color-accent)]">
                       Read more
                       <ArrowRight size={14} />

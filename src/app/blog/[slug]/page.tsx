@@ -59,7 +59,7 @@ export default async function BlogPostPage({
           </div>
         </article>
       </section>
-      <EmergencyCTA heading="Have water damage right now?" subtext="Call us any time — we will walk you through the next step." />
+      <EmergencyCTA heading="Have water damage right now?" subtext="Call us any time. We will walk you through the next step." />
     </>
   );
 }

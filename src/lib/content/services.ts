@@ -29,6 +29,7 @@ export interface Service {
   insuranceSupport: string[];
   serviceAreaHighlights: string[];
   projectExample: ServiceProjectExample;
+  projectCategory: string;
   faqs: ServiceFaq[];
   cta: string;
   metaTitle: string;
@@ -43,8 +44,7 @@ export const SERVICES: Service[] = [
     tagline: "Fast, calm water damage restoration for Edmonton homes that need structure, not chaos.",
     description:
       "We respond to burst pipes, appliance leaks, overflows, and indoor flooding with extraction, drying, documentation support, and a clear next-step plan.",
-    cardImage:
-      "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=80",
+    cardImage: "/case-images/water-damage/corridor-floor-water-damage.jpg",
     cardLabel: "Interior recovery",
     cardTone: "from-[#30463f] via-[#58685f] to-[#b17343]",
     imagePosition: "object-center",
@@ -89,6 +89,7 @@ export const SERVICES: Service[] = [
       summary:
         "A lower-level leak affected flooring, drywall edges, and adjacent storage. The first visit focused on extraction, moisture mapping, and setting a drying plan before repair discussions started.",
     },
+    projectCategory: "Water Damage Restoration",
     faqs: [
       {
         question: "How fast should water damage cleanup start?",
@@ -110,8 +111,7 @@ export const SERVICES: Service[] = [
     tagline: "Immediate extraction when standing water is still active and every hour matters.",
     description:
       "When water is still present, we focus first on safe access, quick extraction, and reducing how far the damage can travel into nearby rooms and materials.",
-    cardImage:
-      "https://images.unsplash.com/photo-1523413651479-597eb2da0ad6?auto=format&fit=crop&w=1200&q=80",
+    cardImage: "/case-images/emergency-water-removal/garage-floor-water-pooling.jpg",
     cardLabel: "Rapid response",
     cardTone: "from-[#243f56] via-[#496a7f] to-[#a66845]",
     imagePosition: "object-center",
@@ -156,6 +156,7 @@ export const SERVICES: Service[] = [
       summary:
         "The priority was stopping spread, removing standing water quickly, and checking the stairwell, flooring transitions, and basement landing before hidden migration created a larger drying scope.",
     },
+    projectCategory: "Emergency Water Removal",
     faqs: [
       {
         question: "Is water removal different from full restoration?",
@@ -177,8 +178,7 @@ export const SERVICES: Service[] = [
     tagline: "Targeted drying for the moisture that remains after visible water is already gone.",
     description:
       "Once standing water is removed, the deeper job is drying what you cannot easily see. We monitor framing, drywall, insulation, and subfloors so recovery is not rushed.",
-    cardImage:
-      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80",
+    cardImage: "/case-images/structural-damage/wall-base-structural-decay.jpg",
     cardLabel: "Precision drying",
     cardTone: "from-[#3b332b] via-[#6f6255] to-[#ceb99f]",
     imagePosition: "object-bottom",
@@ -223,6 +223,7 @@ export const SERVICES: Service[] = [
       summary:
         "The visible water looked limited, but readings showed moisture had moved beneath adjacent flooring. Drying focused on the concealed spread so the issue did not return later.",
     },
+    projectCategory: "Structural Damage",
     faqs: [
       {
         question: "Why is drying still needed if the room looks dry?",
@@ -244,8 +245,7 @@ export const SERVICES: Service[] = [
     tagline: "Practical mold remediation that starts with the moisture source, not just the visible growth.",
     description:
       "We help identify where the moisture problem began, contain affected zones, remove damaged materials when needed, and support a cleaner path toward repair.",
-    cardImage:
-      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80",
+    cardImage: "/case-images/mold-remediation/wall-floor-mold-growth.jpg",
     cardLabel: "Healthy interiors",
     cardTone: "from-[#2f3a34] via-[#61715d] to-[#9c7b5f]",
     imagePosition: "object-center",
@@ -290,6 +290,7 @@ export const SERVICES: Service[] = [
       summary:
         "What first looked like paint damage turned into a moisture-source issue behind the vanity wall. The work focused on controlled removal, cleanup, and clarifying the rebuild scope.",
     },
+    projectCategory: "Mold Remediation",
     faqs: [
       {
         question: "Do you just clean the visible mold?",
@@ -311,8 +312,7 @@ export const SERVICES: Service[] = [
     tagline: "Emergency help when weather-related water entry disrupts the home all at once.",
     description:
       "Heavy rain, hail, and exterior water entry create fast-moving damage. We help secure the situation, document what happened, and begin mitigation before the interior impact spreads.",
-    cardImage:
-      "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80",
+    cardImage: "/case-images/storm-flood/exterior-concrete-flooding.jpg",
     cardLabel: "Exterior events",
     cardTone: "from-[#1f3242] via-[#52697d] to-[#be8352]",
     imagePosition: "object-top",
@@ -357,6 +357,7 @@ export const SERVICES: Service[] = [
       summary:
         "The visible damage was only part of the issue. The first response focused on tracing the entry path, checking adjacent cavities, and getting the drying scope defined quickly.",
     },
+    projectCategory: "Storm & Flood Damage",
     faqs: [
       {
         question: "Can you help even if roof or exterior repair is still pending?",

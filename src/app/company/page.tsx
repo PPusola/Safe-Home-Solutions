@@ -7,7 +7,7 @@ import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Company | Safe Home Solution & Restoration Inc. Edmonton",
-  description: "Learn about Safe Home Solution & Restoration Inc. — our team, our process, the areas we serve, and how to get in touch.",
+  description: "Learn about Safe Home Solution & Restoration Inc.: our team, our process, the areas we serve, and how to get in touch.",
   alternates: { canonical: "/company" },
 };
 
@@ -29,7 +29,7 @@ const PAGES = [
     label: "Our Process",
     href: "/process",
     icon: ArrowRight,
-    description: "A step-by-step look at how we handle every job — from the first call through drying, documentation, and final review.",
+    description: "A step-by-step look at how we handle every job, from the first call through drying, documentation, and final review.",
   },
   {
     label: "Service Areas",
@@ -68,10 +68,10 @@ export default function CompanyPage() {
               <p className="eyebrow text-[var(--color-accent)]">Company</p>
               <h1 className="mt-3 max-w-2xl text-4xl font-bold leading-tight sm:text-5xl">
                 Edmonton restoration,<br />
-                <span className="text-[var(--color-brand)]">built around the homeowner.</span>
+                <span className="text-[var(--color-brand)]">built around the client.</span>
               </h1>
               <p className="mt-5 max-w-xl text-base leading-8 text-slate-600">
-                {SITE.name} is a locally owned Edmonton company focused on water damage restoration, structural drying, and mold remediation — with clear communication at every stage.
+                {SITE.name} is a locally owned Edmonton company focused on water damage restoration, structural drying, and mold remediation, with clear communication at every stage.
               </p>
               <div className="mt-7 flex flex-wrap gap-3">
                 <Link

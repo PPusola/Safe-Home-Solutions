@@ -136,7 +136,7 @@ export const REVIEW_THEMES: ReviewTheme[] = [
   },
   {
     title: "Organized documentation",
-    detail: "Homeowners appreciate having cleaner records, photos, and moisture notes when insurance or repair decisions come up later.",
+    detail: "Clients appreciate having cleaner records, photos, and moisture notes when insurance or repair decisions come up later.",
   },
 ];
 

@@ -21,7 +21,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     slug: "edmonton",
     name: "Edmonton",
     description:
-      "Our home base. We serve neighbourhoods across Edmonton with local dispatch, fast arrival times, and restoration support around the clock.",
+      "Our home base. We serve residential, commercial, and industrial properties across Edmonton with local dispatch, fast arrival times, and restoration support around the clock.",
     isPrimary: true,
     cardImage:
       "https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=1200&q=80",
@@ -31,7 +31,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
   {
     slug: "sherwood-park",
     name: "Sherwood Park",
-    description: "Emergency water damage restoration, drying, and mold remediation for homes and businesses in Sherwood Park.",
+    description: "Emergency water damage restoration, drying, and mold remediation for residential, commercial, and industrial properties in Sherwood Park.",
     cardImage: sherwoodParkImage.src,
     cardTone: "from-[#30463f]/20 via-transparent to-[#30463f]/75",
     imagePosition: "object-center",

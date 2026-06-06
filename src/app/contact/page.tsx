@@ -18,7 +18,7 @@ export default function ContactPage() {
         <div className="mx-auto flex max-w-6xl items-center justify-center gap-4 px-4 py-4 sm:px-6 lg:px-8">
           <AlertTriangle size={22} className="shrink-0" />
           <p className="text-center text-sm font-semibold leading-6">
-            If water is active in your home right now, don&apos;t fill out the form —{" "}
+            If water is active in your property right now, don&apos;t fill out the form. {" "}
             <a href={SITE.phoneHref} className="underline underline-offset-2 hover:no-underline">
               call {SITE.phone} immediately
             </a>

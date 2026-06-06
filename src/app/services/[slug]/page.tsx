@@ -156,30 +156,35 @@ export default async function ServiceDetailPage({
             <Reveal className="space-y-6" delay={70}>
 
               {/* Project example */}
-              <Link href="/reviews-projects" className="group surface-card block overflow-hidden rounded-[1rem] border border-slate-200/70 transition-shadow hover:shadow-md">
-                <div className="relative aspect-[4/3]">
-                  <Image
-                    src={service.cardImage}
-                    alt={`${service.title} project example`}
-                    fill
-                    sizes="(min-width: 1024px) 320px, 100vw"
-                    className={`${service.imagePosition ?? "object-center"} object-cover`}
-                  />
-                  <div className={`absolute inset-0 bg-gradient-to-t ${service.cardTone} opacity-60`} />
-                  <div className="absolute inset-x-0 bottom-0 p-5 text-white">
-                    <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-white/75">Project example</p>
-                    <h3 className="mt-1 text-lg font-bold leading-snug text-white">{service.projectExample.title}</h3>
-                    <p className="mt-1 inline-flex items-center gap-1.5 text-xs text-white/80">
-                      <MapPin size={11} />
-                      {service.projectExample.location}
-                    </p>
+              <div className="surface-card overflow-hidden rounded-[1rem] border border-slate-200/70">
+                <div className="border-b border-slate-100 px-5 py-3.5">
+                  <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[var(--color-accent)]">Project Example</p>
+                  <h3 className="mt-0.5 text-sm font-bold text-[var(--color-ink)]">{service.projectExample.title}</h3>
+                  <p className="mt-0.5 inline-flex items-center gap-1 text-xs text-slate-500">
+                    <MapPin size={10} />
+                    {service.projectExample.location}
+                  </p>
+                </div>
+                <Link
+                  href={`/reviews-projects?category=${encodeURIComponent(service.projectCategory)}`}
+                  className="group block"
+                >
+                  <div className="relative aspect-[4/3]">
+                    <Image
+                      src={service.cardImage}
+                      alt={`${service.title} project example`}
+                      fill
+                      sizes="(min-width: 1024px) 320px, 100vw"
+                      className={`${service.imagePosition ?? "object-center"} object-cover transition-transform duration-500 group-hover:scale-105`}
+                    />
+                    <div className={`absolute inset-0 bg-gradient-to-t ${service.cardTone} opacity-50`} />
                   </div>
-                </div>
-                <div className="flex items-center justify-between p-5">
-                  <p className="text-sm leading-7 text-slate-600">{service.projectExample.summary}</p>
-                  <ArrowRight size={15} className="ml-3 shrink-0 text-slate-400 transition-transform group-hover:translate-x-0.5 group-hover:text-[var(--color-accent)]" />
-                </div>
-              </Link>
+                  <div className="flex items-start justify-between gap-3 p-5">
+                    <p className="text-sm leading-7 text-slate-600">{service.projectExample.summary}</p>
+                    <ArrowRight size={15} className="mt-1 shrink-0 text-slate-400 transition-transform group-hover:translate-x-0.5 group-hover:text-[var(--color-accent)]" />
+                  </div>
+                </Link>
+              </div>
 
               {/* Process */}
               <div className="surface-card rounded-[1rem] border border-slate-200/70 p-6">

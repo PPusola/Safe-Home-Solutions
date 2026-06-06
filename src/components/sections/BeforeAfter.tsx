@@ -18,14 +18,14 @@ interface Example {
 
 const EXAMPLES: Example[] = [
   {
-    title: "Finished basement after plumbing leak",
-    location: "West Edmonton",
+    title: "Water-damaged flooring after plumbing leak",
+    location: "Edmonton",
     service: "Water Damage Restoration",
     summary: "Extraction, moisture mapping, and a full drying setup after water moved through finished flooring and storage areas.",
     beforePoints: [
-      "Standing water across finished flooring",
+      "Flooring tiles saturated and peeling from subfloor",
       "Moisture elevated under subfloor and baseboards",
-      "Adjacent storage area partially affected",
+      "Water staining spread across multiple floor sections",
     ],
     afterPoints: [
       "Full extraction and structural drying completed",
@@ -33,60 +33,60 @@ const EXAMPLES: Example[] = [
       "Documentation package prepared for insurance",
     ],
     before: {
-      src: "https://images.unsplash.com/photo-1481277542470-605612bd2d61?auto=format&fit=crop&w=800&h=600&crop=center&q=80",
-      alt: "Damaged basement interior before restoration",
+      src: "/case-images/water-damage/corridor-floor-water-damage.jpg",
+      alt: "Water damaged flooring before restoration",
     },
     after: {
       src: "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=800&h=600&crop=center&q=80",
-      alt: "Clean kitchen and living area after restoration",
+      alt: "Clean interior after water damage restoration",
     },
   },
   {
-    title: "Bathroom wall after hidden moisture leak",
+    title: "Mold found behind wall after slow leak",
     location: "Sherwood Park",
     service: "Mold Remediation",
-    summary: "Moisture-source investigation behind the vanity wall, controlled removal of affected drywall, and a clear rebuild scope.",
+    summary: "Moisture-source investigation at wall and floor junction, controlled removal of affected materials, and a clear rebuild scope.",
     beforePoints: [
-      "Visible discoloration and soft drywall at vanity wall",
+      "Visible mold growth at wall and floor junction",
       "Moisture source traced to a slow pipe fitting leak",
-      "Adjacent cavity confirmed affected behind tile",
+      "Adjacent cavity confirmed affected behind drywall",
     ],
     afterPoints: [
-      "Affected drywall removed and area dried",
+      "Affected materials removed and area dried",
       "Moisture source repaired prior to rebuild",
       "Scope documented clearly for repair contractor",
     ],
     before: {
-      src: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=800&h=600&crop=center&q=80",
-      alt: "Bathroom with moisture damage before remediation",
+      src: "/case-images/mold-remediation/wall-floor-mold-growth.jpg",
+      alt: "Mold and moisture damage at wall base before remediation",
     },
     after: {
       src: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=800&h=600&crop=center&q=80",
-      alt: "Clean bathroom after mold remediation and repair",
+      alt: "Clean area after mold remediation and repair",
     },
   },
   {
-    title: "Upper wall and ceiling after storm entry",
+    title: "Flood entry at garage door after heavy rain",
     location: "Northwest Edmonton",
     service: "Storm & Flood Damage",
-    summary: "Interior drying and documentation after rain-driven water affected ceiling finishes and adjacent wall cavities.",
+    summary: "Emergency water removal and drying after storm-driven water entered through the garage door threshold and spread across the concrete floor.",
     beforePoints: [
-      "Rain-driven water entered through roof flashing gap",
-      "Ceiling drywall saturated in two rooms",
-      "Moisture confirmed inside adjacent wall cavity",
+      "Water pooled at garage door threshold and floor drain",
+      "Storm-driven water spread across concrete floor",
+      "Entry point at door seal confirmed compromised",
     ],
     afterPoints: [
-      "Entry point sealed and interior dried",
-      "Ceiling material removed and scope defined",
+      "Water extracted and floor dried thoroughly",
+      "Entry point sealed and interior documented",
       "Full moisture log prepared for insurance adjuster",
     ],
     before: {
-      src: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&h=600&crop=center&q=80",
-      alt: "Home exterior during storm showing water entry",
+      src: "/case-images/emergency-water-removal/garage-floor-water-pooling.jpg",
+      alt: "Water flooding concrete floor at garage door before restoration",
     },
     after: {
       src: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=800&h=600&crop=center&q=80",
-      alt: "Restored home exterior after storm damage mitigation",
+      alt: "Restored property exterior after storm damage mitigation",
     },
   },
 ];
@@ -109,7 +109,7 @@ export function BeforeAfter() {
         <div className="grid lg:grid-cols-2">
 
           {/* ── Image panel ── */}
-          <div className="relative aspect-[4/3] lg:aspect-auto lg:h-full overflow-hidden bg-slate-100">
+          <div className="relative aspect-[4/3] lg:aspect-auto lg:h-full lg:max-h-[650px] overflow-hidden bg-slate-100">
             <img
               key={`${index}-${phase}`}
               src={example[phase].src}

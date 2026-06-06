@@ -13,7 +13,7 @@ import iicrcCertificate from "../../iicrc cert.jpg";
 export const metadata: Metadata = {
   title: "Edmonton Water Damage Restoration | 24/7 Emergency Response | Safe Home Solution & Restoration Inc.",
   description:
-    "Safe Home Solution & Restoration Inc. helps Edmonton homeowners with emergency water damage restoration, drying, mold remediation, and practical insurance documentation support.",
+    "Safe Home Solution & Restoration Inc. helps Edmontonians and nearby communities with emergency water damage restoration, drying, mold remediation, and practical insurance documentation support. We serve residential, commercial, and industrial properties.",
   alternates: { canonical: "/" },
 };
 
@@ -23,7 +23,7 @@ export default function HomePage() {
       <section className="relative overflow-hidden">
         <Image
           src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=2400&q=80"
-          alt="Edmonton residential home"
+          alt="Edmonton property restoration"
           fill
           priority
           sizes="100vw"
@@ -35,10 +35,10 @@ export default function HomePage() {
             <Reveal className="text-white">
               <p className="eyebrow text-[#f6ccb4]">Edmonton water damage restoration</p>
               <h1 className="mt-4 max-w-3xl text-4xl font-bold leading-tight !text-white sm:text-5xl lg:text-6xl">
-                Calm, organized restoration support when your home takes on water.
+                Calm, organized restoration support when your property takes on water.
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-200">
-                Safe Home Solution & Restoration Inc. helps Edmonton homeowners move from the first emergency call into a clear drying and recovery plan with local response, practical communication, and organized documentation.
+                Safe Home Solution & Restoration Inc. is here for Edmontonians and nearby communities. Whether it is a home, a business, or an industrial property, we guide you from the first emergency call through a clear drying and recovery plan with local response, practical communication, and organized documentation.
               </p>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                 <a href={SITE.phoneHref} className="inline-flex items-center justify-center gap-3 rounded-[1rem] bg-[var(--color-accent)] px-8 py-4 text-lg font-extrabold text-white hover:bg-[var(--color-accent-dark)]">
@@ -71,9 +71,9 @@ export default function HomePage() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <Reveal className="mb-8 max-w-2xl">
             <p className="eyebrow text-[var(--color-accent)]">Before &amp; After</p>
-            <h2 className="mt-3 text-3xl font-bold">Real results from Edmonton homes.</h2>
+            <h2 className="mt-3 text-3xl font-bold">Real results from Edmonton properties.</h2>
             <p className="mt-4 text-sm leading-7 text-slate-600">
-              A look at the kind of work we do — from initial damage to completed restoration.
+              A look at the kind of work we do, from initial damage to completed restoration.
             </p>
           </Reveal>
           <BeforeAfter />
@@ -87,7 +87,7 @@ export default function HomePage() {
               <p className="eyebrow text-[var(--color-accent)]">Services</p>
               <h2 className="mt-3 text-3xl font-bold">Focused on the work people usually need most.</h2>
               <p className="mt-4 text-base leading-7 text-slate-600">
-                From water extraction and structural drying to mold remediation and storm recovery — each service page explains the scope, timeline, and what to expect in plain language.
+                From water extraction and structural drying to mold remediation and storm recovery. Each service page explains the scope, timeline, and what to expect in plain language.
               </p>
             </div>
             <Link href="/services" className="inline-flex items-center gap-2 text-sm font-bold text-[var(--color-brand)]">
@@ -129,9 +129,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-16">
+      <section className="pb-16 pt-6">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <Reveal className="surface-card overflow-hidden rounded-[1rem] border border-slate-200/70">
+          <Reveal className="surface-card overflow-hidden rounded-[1rem] border border-slate-200 shadow-sm">
             <div className="grid lg:grid-cols-2">
 
               {/* Service areas */}
@@ -139,7 +139,7 @@ export default function HomePage() {
                 <p className="eyebrow text-[var(--color-accent)]">Service area</p>
                 <h2 className="mt-2 text-3xl font-bold leading-snug">Edmonton first, nearby communities covered too.</h2>
                 <p className="mt-4 text-sm leading-7 text-slate-600">
-                  If you are unsure whether we cover your area, call anyway — there is a strong chance we can help quickly.
+                  If you are unsure whether we cover your area, call anyway. There is a strong chance we can help quickly.
                 </p>
                 <div className="mt-5 flex flex-wrap gap-2">
                   {["Edmonton", "Sherwood Park", "St. Albert", "Spruce Grove", "Stony Plain", "Leduc", "Beaumont", "Fort Saskatchewan"].map((area) => (
@@ -155,12 +155,12 @@ export default function HomePage() {
               </div>
 
               {/* Certification */}
-              <div className="grid gap-8 p-8 xl:grid-cols-[1fr_220px] xl:items-start">
+              <div className="grid gap-8 p-8 xl:grid-cols-[1fr_220px] xl:items-start overflow-hidden">
                 <div>
                   <p className="eyebrow text-[var(--color-accent)]">Certification</p>
                   <h2 className="mt-2 text-3xl font-bold leading-snug">IICRC WRT certified.</h2>
                   <p className="mt-4 text-sm leading-7 text-slate-600">
-                    Safe Home Solution & Restoration Inc. holds IICRC WRT certification — meaning the company follows recognized water restoration and structural drying standards on every job.
+                    Safe Home Solution & Restoration Inc. holds IICRC WRT certification, meaning the company follows recognized water restoration and structural drying standards on every job.
                   </p>
                   <p className="mt-3 text-sm leading-7 text-slate-600">
                     Drying decisions, moisture tracking, and equipment use are guided by trained process, not guesswork.
@@ -171,7 +171,7 @@ export default function HomePage() {
                   </Link>
                 </div>
 
-                <div className="overflow-hidden rounded-[0.95rem] border border-[var(--color-brand)]/12 bg-[linear-gradient(160deg,#f8f3eb,#ede5d6)] p-3 shadow-[0_12px_32px_rgba(39,34,27,0.09)]">
+                <div className="w-full max-w-[220px] overflow-hidden rounded-[0.95rem] border border-[var(--color-brand)]/12 bg-[linear-gradient(160deg,#f8f3eb,#ede5d6)] p-3 shadow-[0_12px_32px_rgba(39,34,27,0.09)]">
                   <div className="overflow-hidden rounded-[0.7rem] bg-white shadow-sm">
                     <Image
                       src={iicrcCertificate}

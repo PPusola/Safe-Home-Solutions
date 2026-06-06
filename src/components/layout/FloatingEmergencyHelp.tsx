@@ -29,7 +29,7 @@ export function FloatingEmergencyHelp() {
             </div>
 
             <p className="mt-3 text-sm leading-6 text-slate-600">
-              Don&apos;t wait on the form — every hour matters. Call us directly for 24/7 emergency response in Edmonton.
+              Don&apos;t wait on the form. Every hour matters. Call us directly for 24/7 emergency response in Edmonton.
             </p>
 
             <a

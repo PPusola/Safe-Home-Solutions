@@ -152,12 +152,22 @@ export function Header() {
           <div className="border-t border-slate-200 bg-[var(--color-surface)] px-4 pb-5 lg:hidden">
             <div className="mx-auto max-w-7xl space-y-2 pt-4">
               {NAV_LINKS.map((link) => {
+                const isParentActive = !!(
+                  link.href &&
+                  (pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href)))
+                );
+
                 if (!link.children?.length) {
                   return (
                     <Link
                       key={link.label}
                       href={link.href!}
-                      className="block rounded-[1rem] px-4 py-3 text-sm font-semibold text-slate-800 hover:bg-white"
+                      className={cn(
+                        "block rounded-[1rem] px-4 py-3 text-sm font-semibold",
+                        isParentActive
+                          ? "bg-[var(--color-brand)] text-white"
+                          : "text-slate-800 hover:bg-white",
+                      )}
                       onClick={() => {
                         setMobileOpen(false);
                         setOpenGroup(null);
@@ -171,29 +181,52 @@ export function Header() {
                 const expanded = openGroup === link.label;
 
                 return (
-                  <div key={link.label} className="rounded-[1rem] border border-slate-200 bg-white">
-                    <button
-                      className="flex w-full items-center justify-between px-4 py-3 text-left text-sm font-semibold text-slate-800"
-                      onClick={() => setOpenGroup(expanded ? null : link.label)}
-                    >
-                      {link.label}
-                      <ChevronDown size={16} className={cn("transition-transform", expanded && "rotate-180")} />
-                    </button>
+                  <div key={link.label} className="overflow-hidden rounded-[1rem] border border-slate-200 bg-white">
+                    <div className="flex items-center">
+                      <Link
+                        href={link.href!}
+                        className={cn(
+                          "flex-1 px-4 py-3 text-sm font-semibold",
+                          isParentActive ? "text-[var(--color-brand)]" : "text-slate-800",
+                        )}
+                        onClick={() => {
+                          setMobileOpen(false);
+                          setOpenGroup(null);
+                        }}
+                      >
+                        {link.label}
+                      </Link>
+                      <button
+                        className="px-3 py-3 text-slate-400"
+                        onClick={() => setOpenGroup(expanded ? null : link.label)}
+                        aria-label={`Toggle ${link.label} submenu`}
+                      >
+                        <ChevronDown size={16} className={cn("transition-transform", expanded && "rotate-180")} />
+                      </button>
+                    </div>
                     {expanded && (
                       <div className="space-y-1 border-t border-slate-100 px-2 py-2">
-                        {link.children.map((child) => (
-                          <Link
-                            key={child.href}
-                            href={child.href}
-                            className="block rounded-[0.8rem] px-3 py-2 text-sm text-slate-700 hover:bg-slate-50"
-                            onClick={() => {
-                              setMobileOpen(false);
-                              setOpenGroup(null);
-                            }}
-                          >
-                            {child.label}
-                          </Link>
-                        ))}
+                        {link.children.map((child) => {
+                          const isChildActive = pathname === child.href;
+                          return (
+                            <Link
+                              key={child.href}
+                              href={child.href}
+                              className={cn(
+                                "block rounded-[0.8rem] px-3 py-2 text-sm font-medium",
+                                isChildActive
+                                  ? "bg-[var(--color-brand)]/10 text-[var(--color-brand)]"
+                                  : "text-slate-700 hover:bg-slate-50",
+                              )}
+                              onClick={() => {
+                                setMobileOpen(false);
+                                setOpenGroup(null);
+                              }}
+                            >
+                              {child.label}
+                            </Link>
+                          );
+                        })}
                       </div>
                     )}
                   </div>
