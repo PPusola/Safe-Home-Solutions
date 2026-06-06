@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowRight, Award, Phone } from "lucide-react";
 import { Reveal } from "@/components/motion/Reveal";
 import { BeforeAfter } from "@/components/sections/BeforeAfter";
+import { CustomerReviews } from "@/components/sections/CustomerReviews";
 import { EmergencyCTA } from "@/components/sections/EmergencyCTA";
 import { SERVICES } from "@/lib/content/services";
 import { STATS } from "@/lib/content/trust";
@@ -71,7 +72,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <Reveal className="mb-8 max-w-2xl">
             <p className="eyebrow text-[var(--color-accent)]">Before &amp; After</p>
-            <h2 className="mt-3 text-3xl font-bold">Real results from Edmonton properties.</h2>
+            <h2 className="mt-3 text-3xl font-bold">Real results from properties across the communities we serve.</h2>
             <p className="mt-4 text-sm leading-7 text-slate-600">
               A look at the kind of work we do, from initial damage to completed restoration.
             </p>
@@ -96,8 +97,8 @@ export default function HomePage() {
             </Link>
           </Reveal>
 
-          <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-5">
-            {SERVICES.slice(0, 5).map((service, index) => (
+          <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {SERVICES.slice(0, 6).map((service, index) => (
               <Reveal key={service.slug} delay={index * 65}>
                 <Link
                   href={`/services/${service.slug}`}
@@ -193,6 +194,31 @@ export default function HomePage() {
               </div>
 
             </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <CustomerReviews />
+
+      <section className="pb-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <Reveal className="flex flex-col gap-5 rounded-[1rem] border border-slate-200 bg-white p-6 shadow-[0_14px_38px_rgba(39,34,27,0.07)] sm:p-7 lg:flex-row lg:items-center lg:justify-between lg:text-left">
+            <div className="text-center lg:text-left">
+              <p className="eyebrow text-[var(--color-accent)]">Ready for the next step?</p>
+              <h2 className="mt-2 text-2xl font-bold leading-tight">
+                Ready to restore your property?
+              </h2>
+              <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-600">
+                Tell us what happened and where you are located. We will help you understand the next practical step.
+              </p>
+            </div>
+            <Link
+              href="/contact"
+              className="inline-flex shrink-0 items-center justify-center gap-2 rounded-[0.85rem] bg-[var(--color-accent)] px-6 py-3 text-sm font-bold text-white shadow-[0_10px_24px_rgba(177,115,67,0.18)] hover:bg-[var(--color-accent-dark)]"
+            >
+              Contact us
+              <ArrowRight size={16} />
+            </Link>
           </Reveal>
         </div>
       </section>

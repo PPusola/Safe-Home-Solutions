@@ -206,9 +206,9 @@ export default async function ServiceDetailPage({
               <div className="surface-card rounded-[1rem] border border-slate-200/70 p-6">
                 <p className="eyebrow text-[var(--color-accent)]">Common areas</p>
                 <h3 className="mt-2 text-lg font-bold">Where we do this work</h3>
-                <div className="mt-4 flex flex-wrap gap-2">
+                <div className="mt-4 grid gap-2">
                   {service.serviceAreaHighlights.map((area) => (
-                    <span key={area} className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-semibold text-slate-600">
+                    <span key={area} className="rounded-[0.75rem] border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-600">
                       {area}
                     </span>
                   ))}

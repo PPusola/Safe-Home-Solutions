@@ -372,6 +372,78 @@ export const SERVICES: Service[] = [
     metaTitle: "Storm and Flood Damage Edmonton | Safe Home Solution & Restoration Inc.",
     metaDescription: "Storm and flood damage response in Edmonton for urgent drying, cleanup, and restoration planning.",
   },
+  {
+    slug: "oxidizing-services",
+    title: "Oxidizing Services",
+    shortTitle: "Oxidizing",
+    tagline: "Advanced oxidation treatment for odors, mold spores, bacteria, and organic contaminants.",
+    description:
+      "Oxidizing treatments are an effective solution for eliminating odors, bacteria, mold spores, and organic contaminants from affected areas. By using advanced oxidation processes, we can target contaminants at the molecular level rather than simply masking odors or surface cleaning.",
+    cardImage: "/case-images/mold-remediation/wall-base-mold-structural.jpg",
+    cardLabel: "Air quality",
+    cardTone: "from-[#243f3c] via-[#4f6f64] to-[#b17343]",
+    imagePosition: "object-center",
+    features: [
+      "Eliminates tough odors from smoke, pets, mold, and water damage",
+      "Helps reduce bacteria, viruses, and other harmful microorganisms",
+      "Improves indoor air quality",
+      "Reaches areas traditional cleaning methods may miss",
+      "Supports mold remediation and restoration efforts",
+      "Leaves spaces fresher, cleaner, and safer for occupants",
+    ],
+    included: [
+      "Advanced oxidation treatment for affected homes, businesses, and restoration areas.",
+      "Odor and contaminant targeting for smoke, pets, mold, water damage, and organic sources.",
+      "A practical treatment plan that supports healthier indoor air after cleanup or remediation work.",
+    ],
+    notIncluded: [
+      "Masking odors with fragrance instead of treating the source.",
+      "Structural repairs, rebuild finishes, or HVAC repairs unrelated to the treatment area.",
+      "Occupancy during active treatment when the area needs controlled access and ventilation.",
+    ],
+    typicalTimeline: [
+      "The first visit confirms the affected area, odor source, and whether oxidation is the right next step.",
+      "Treatment timing depends on room size, contamination level, ventilation, and surrounding materials.",
+      "After treatment, the space is aired out and reviewed before normal use resumes.",
+    ],
+    process: ["Inspection", "Source review", "Treatment setup", "Oxidizing treatment", "Ventilation and review"],
+    responseWindow: "Scheduled quickly after odor, mold, or contamination concerns so indoor environments can recover faster.",
+    whatToExpect: [
+      "A walkthrough to identify affected rooms, odor sources, and sensitive areas.",
+      "Controlled application of oxidation treatment that targets contaminants at the molecular level.",
+      "A fresher, cleaner interior after treatment, ventilation, and final review.",
+    ],
+    insuranceSupport: [
+      "Photos and notes showing where oxidation treatment was applied.",
+      "Documentation of odor, mold, water damage, or contamination concerns connected to the service.",
+      "Clear separation between oxidation treatment, remediation, and any later repair work.",
+    ],
+    serviceAreaHighlights: ["Edmonton", "Sherwood Park", "St. Albert", "Leduc", "Beaumont"],
+    projectExample: {
+      title: "Post-remediation odor and air quality treatment",
+      location: "Edmonton",
+      summary:
+        "After mold-related cleanup, oxidation treatment helped target lingering odors and organic contaminants so the space felt cleaner, fresher, and safer for occupants.",
+    },
+    projectCategory: "Oxidizing Services",
+    faqs: [
+      {
+        question: "What does oxidizing treatment help remove?",
+        answer: "It helps eliminate tough odors and reduce bacteria, viruses, mold spores, and organic contaminants by targeting them at the molecular level.",
+      },
+      {
+        question: "Where are oxidizing treatments commonly used?",
+        answer: "They are commonly used in homes, businesses, and restoration projects after smoke, pet odor, mold, water damage, or other indoor contamination concerns.",
+      },
+      {
+        question: "Is this different from surface cleaning?",
+        answer: "Yes. Surface cleaning only treats what can be reached directly. Oxidizing treatment helps reach areas traditional cleaning methods may miss.",
+      },
+    ],
+    cta: "Request oxidizing treatment for a fresher, cleaner, safer indoor environment.",
+    metaTitle: "Oxidizing Services Edmonton | Safe Home Solution & Restoration Inc.",
+    metaDescription: "Oxidizing services in Edmonton for odor removal, mold spore reduction, organic contaminants, and improved indoor air quality.",
+  },
 ];
 
 export function getService(slug: string) {

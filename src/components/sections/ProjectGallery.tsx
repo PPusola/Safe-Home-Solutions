@@ -18,6 +18,7 @@ const CATEGORIES = [
   "Storm & Flood Damage",
   "Emergency Water Removal",
   "Structural Damage",
+  "Oxidizing Services",
 ];
 
 const PROJECTS: Project[] = [
@@ -116,6 +117,15 @@ const PROJECTS: Project[] = [
     category: "Storm & Flood Damage",
     before: { src: "/case-images/storm-flood/exterior-steps-door-flooding.jpg", alt: "Storm flooding at property entry before restoration" },
     after: { src: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&h=600&crop=center&q=80", alt: "Restored property entry after storm damage mitigation" },
+  },
+
+  // Oxidizing Services
+  {
+    title: "Odor and contamination oxidation treatment",
+    location: "Edmonton",
+    category: "Oxidizing Services",
+    before: { src: "/case-images/mold-remediation/wall-base-mold-structural.jpg", alt: "Affected wall base before oxidizing treatment" },
+    after: { src: "/case-images/mold-remediation/wall-floor-mold-growth.jpg", alt: "Affected area reviewed after oxidizing treatment" },
   },
 
   // Emergency Water Removal

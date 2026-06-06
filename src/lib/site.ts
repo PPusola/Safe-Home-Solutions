@@ -37,6 +37,7 @@ export const NAV_LINKS = [
       { label: "Structural Drying", href: "/services/structural-drying-dehumidification" },
       { label: "Mold Remediation", href: "/services/mold-remediation" },
       { label: "Storm and Flood Damage", href: "/services/storm-flood-damage" },
+      { label: "Oxidizing Services", href: "/services/oxidizing-services" },
     ],
   },
   {
