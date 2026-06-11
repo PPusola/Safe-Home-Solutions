@@ -10,10 +10,8 @@ interface Example {
   location: string;
   service: string;
   summary: string;
-  beforePoints: string[];
-  afterPoints: string[];
-  before: { src: string; alt: string };
-  after: { src: string; alt: string };
+  points: string[];
+  image: { src: string; alt: string };
 }
 
 const EXAMPLES: Example[] = [
@@ -22,23 +20,14 @@ const EXAMPLES: Example[] = [
     location: "Edmonton",
     service: "Water Damage Restoration",
     summary: "Extraction, moisture mapping, and a full drying setup after water moved through finished flooring and storage areas.",
-    beforePoints: [
+    points: [
       "Flooring tiles saturated and peeling from subfloor",
       "Moisture elevated under subfloor and baseboards",
       "Water staining spread across multiple floor sections",
     ],
-    afterPoints: [
-      "Full extraction and structural drying completed",
-      "Moisture readings verified at baseline",
-      "Documentation package prepared for insurance",
-    ],
-    before: {
+    image: {
       src: "/case-images/water-damage/corridor-floor-water-damage.jpg",
       alt: "Water damaged flooring before restoration",
-    },
-    after: {
-      src: "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=800&h=600&crop=center&q=80",
-      alt: "Clean interior after water damage restoration",
     },
   },
   {
@@ -46,23 +35,14 @@ const EXAMPLES: Example[] = [
     location: "Sherwood Park",
     service: "Mold Remediation",
     summary: "Moisture-source investigation at wall and floor junction, controlled removal of affected materials, and a clear rebuild scope.",
-    beforePoints: [
+    points: [
       "Visible mold growth at wall and floor junction",
       "Moisture source traced to a slow pipe fitting leak",
       "Adjacent cavity confirmed affected behind drywall",
     ],
-    afterPoints: [
-      "Affected materials removed and area dried",
-      "Moisture source repaired prior to rebuild",
-      "Scope documented clearly for repair contractor",
-    ],
-    before: {
+    image: {
       src: "/case-images/mold-remediation/wall-floor-mold-growth.jpg",
       alt: "Mold and moisture damage at wall base before remediation",
-    },
-    after: {
-      src: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=800&h=600&crop=center&q=80",
-      alt: "Clean area after mold remediation and repair",
     },
   },
   {
@@ -70,57 +50,41 @@ const EXAMPLES: Example[] = [
     location: "Northwest Edmonton",
     service: "Storm & Flood Damage",
     summary: "Emergency water removal and drying after storm-driven water entered through the garage door threshold and spread across the concrete floor.",
-    beforePoints: [
+    points: [
       "Water pooled at garage door threshold and floor drain",
       "Storm-driven water spread across concrete floor",
       "Entry point at door seal confirmed compromised",
     ],
-    afterPoints: [
-      "Water extracted and floor dried thoroughly",
-      "Entry point sealed and interior documented",
-      "Full moisture log prepared for insurance adjuster",
-    ],
-    before: {
+    image: {
       src: "/case-images/emergency-water-removal/garage-floor-water-pooling.jpg",
       alt: "Water flooding concrete floor at garage door before restoration",
-    },
-    after: {
-      src: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=800&h=600&crop=center&q=80",
-      alt: "Restored property exterior after storm damage mitigation",
     },
   },
 ];
 
-export function BeforeAfter() {
+export function ProjectExamples() {
   const [index, setIndex] = useState(0);
-  const [phase, setPhase] = useState<"before" | "after">("before");
 
   const example = EXAMPLES[index];
-  const isAfter = phase === "after";
 
   function goTo(i: number) {
     setIndex(i);
-    setPhase("before");
   }
 
   return (
     <Reveal>
       <div className="surface-card overflow-hidden rounded-[1rem] border border-slate-200/70">
         <div className="grid lg:grid-cols-2">
-
-          {/* ── Image panel ── */}
           <div className="relative aspect-[4/3] lg:aspect-auto lg:h-full lg:max-h-[650px] overflow-hidden bg-slate-100">
             <img
-              key={`${index}-${phase}`}
-              src={example[phase].src}
-              alt={example[phase].alt}
+              key={index}
+              src={example.image.src}
+              alt={example.image.alt}
               className="h-full w-full object-cover animate-[img-fade_0.3s_ease]"
             />
 
-            {/* Bottom gradient for pill legibility */}
             <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/60 to-transparent" />
 
-            {/* Prev / Next — vertically centred on left/right edges */}
             <button
               onClick={() => goTo((index - 1 + EXAMPLES.length) % EXAMPLES.length)}
               aria-label="Previous example"
@@ -135,31 +99,8 @@ export function BeforeAfter() {
             >
               <ChevronRight size={18} />
             </button>
-
-            {/* Before / After pill — bottom centre */}
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2">
-              <div className="flex overflow-hidden rounded-full border border-white/30 bg-black/50 backdrop-blur-md">
-                <button
-                  onClick={() => setPhase("before")}
-                  className={`px-6 py-2 text-xs font-bold uppercase tracking-widest transition-colors duration-200 ${
-                    !isAfter ? "bg-[var(--color-accent)] text-white" : "text-white/70 hover:text-white"
-                  }`}
-                >
-                  Before
-                </button>
-                <button
-                  onClick={() => setPhase("after")}
-                  className={`px-6 py-2 text-xs font-bold uppercase tracking-widest transition-colors duration-200 ${
-                    isAfter ? "bg-[var(--color-brand)] text-white" : "text-white/70 hover:text-white"
-                  }`}
-                >
-                  After
-                </button>
-              </div>
-            </div>
           </div>
 
-          {/* ── Detail panel ── */}
           <div className="flex flex-col justify-between gap-6 px-7 pt-5 pb-7 sm:p-8">
             <div>
               <div className="flex flex-wrap items-center gap-2">
@@ -173,10 +114,10 @@ export function BeforeAfter() {
 
             <div className="rounded-lg border border-slate-200 bg-slate-50/60 p-4">
               <p className="mb-2.5 text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--color-accent)]">
-                {isAfter ? "What was done" : "What we found"}
+                What we found
               </p>
               <ul className="space-y-2">
-                {(isAfter ? example.afterPoints : example.beforePoints).map((point) => (
+                {example.points.map((point) => (
                   <li key={point} className="flex items-start gap-2.5 text-sm text-slate-600">
                     <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--color-accent)]" />
                     {point}
@@ -186,7 +127,6 @@ export function BeforeAfter() {
             </div>
 
             <div className="flex flex-col items-center gap-4">
-              {/* Navigation dots */}
               <div className="flex items-center gap-2">
                 {EXAMPLES.map((_, i) => (
                   <button
@@ -209,7 +149,6 @@ export function BeforeAfter() {
               </Link>
             </div>
           </div>
-
         </div>
       </div>
     </Reveal>

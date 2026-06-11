@@ -106,7 +106,7 @@ function StarRating({ rating }: { rating: number }) {
   );
 }
 
-export function CustomerReviews() {
+function ReviewCarousel() {
   const [activeReviewIndex, setActiveReviewIndex] = useState(0);
 
   const activeReview = REVIEWS[activeReviewIndex];
@@ -120,78 +120,70 @@ export function CustomerReviews() {
     return () => window.clearTimeout(timer);
   }, [activeReviewIndex]);
 
-  function showPreviousReview() {
-    setActiveReviewIndex((current) => (current - 1 + REVIEWS.length) % REVIEWS.length);
-  }
+  return (
+    <div className="rounded-[0.95rem] border border-slate-200 bg-slate-50 p-6 sm:p-8">
+      <div className="text-center">
+        <p className="text-xs font-bold uppercase tracking-[0.18em] text-[var(--color-accent)]">{activeReview.source} review</p>
+        <h3 className="mt-2 text-xl font-bold">{activeReview.name}</h3>
+        <p className="mt-2 text-sm leading-6 text-slate-600">{activeReview.summary}</p>
+      </div>
 
-  function showNextReview() {
-    setActiveReviewIndex((current) => (current + 1) % REVIEWS.length);
+      <div
+        key={reviewKey}
+        className="mt-6 animate-[fade-in_0.55s_ease] rounded-[0.85rem] border border-slate-200 bg-white p-6"
+        aria-live="polite"
+      >
+        <StarRating rating={activeReview.rating} />
+        <p className="mt-4 text-lg font-semibold leading-8 text-[var(--color-ink)]">&ldquo;{activeReview.comment}&rdquo;</p>
+      </div>
+
+      <div className="mt-5 flex items-center justify-between gap-4">
+        <button
+          type="button"
+          onClick={() => setActiveReviewIndex((c) => (c - 1 + REVIEWS.length) % REVIEWS.length)}
+          className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:border-slate-300 hover:bg-slate-50"
+          aria-label="Previous review"
+        >
+          <ChevronLeft size={18} />
+        </button>
+
+        <div className="flex items-center gap-1.5">
+          {REVIEWS.map((review, index) => (
+            <button
+              key={`${review.name}-${index}`}
+              type="button"
+              onClick={() => setActiveReviewIndex(index)}
+              className={`h-2 rounded-full transition-all ${
+                index === activeReviewIndex ? "w-8 bg-[var(--color-accent)]" : "w-2 bg-slate-300 hover:bg-slate-400"
+              }`}
+              aria-label={`Show review ${index + 1}`}
+            />
+          ))}
+        </div>
+
+        <button
+          type="button"
+          onClick={() => setActiveReviewIndex((c) => (c + 1) % REVIEWS.length)}
+          className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:border-slate-300 hover:bg-slate-50"
+          aria-label="Next review"
+        >
+          <ChevronRight size={18} />
+        </button>
+      </div>
+    </div>
+  );
+}
+
+export function CustomerReviews({ compact = false }: { compact?: boolean }) {
+  if (compact) {
+    return <ReviewCarousel />;
   }
 
   return (
     <section className="pb-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <Reveal className="grid gap-8 rounded-[1rem] border border-slate-200 bg-white p-6 shadow-[0_18px_50px_rgba(39,34,27,0.08)] sm:p-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
-          <div>
-            <p className="eyebrow text-[var(--color-accent)]">Customer reviews</p>
-            <h2 className="mt-3 text-3xl font-bold leading-tight">Trusted by homeowners across the communities we serve.</h2>
-            <p className="mt-4 text-sm leading-7 text-slate-600">
-              Star ratings and customer comments from Google, Facebook, and Yelp.
-            </p>
-          </div>
-
-          <div className="rounded-[0.95rem] border border-slate-200 bg-slate-50 p-5 sm:p-6">
-            <div className="text-center">
-              <div>
-                <p className="text-xs font-bold uppercase tracking-[0.18em] text-[var(--color-accent)]">{activeReview.source} review</p>
-                <h3 className="mt-2 text-xl font-bold">{activeReview.name}</h3>
-                <p className="mt-2 text-sm leading-6 text-slate-600">{activeReview.summary}</p>
-              </div>
-            </div>
-
-            <div
-              key={reviewKey}
-              className="mt-6 animate-[fade-in_0.55s_ease] rounded-[0.85rem] border border-slate-200 bg-white p-5"
-              aria-live="polite"
-            >
-              <StarRating rating={activeReview.rating} />
-              <p className="mt-4 text-lg font-semibold leading-8 text-[var(--color-ink)]">&ldquo;{activeReview.comment}&rdquo;</p>
-            </div>
-
-            <div className="mt-5 flex items-center justify-between gap-4">
-              <button
-                type="button"
-                onClick={showPreviousReview}
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:border-slate-300 hover:bg-slate-50"
-                aria-label="Previous review"
-              >
-                <ChevronLeft size={18} />
-              </button>
-
-              <div className="flex items-center gap-1.5">
-                {REVIEWS.map((review, index) => (
-                  <button
-                    key={`${review.name}-${index}`}
-                    type="button"
-                    onClick={() => setActiveReviewIndex(index)}
-                    className={`h-2 rounded-full transition-all ${
-                      index === activeReviewIndex ? "w-8 bg-[var(--color-accent)]" : "w-2 bg-slate-300 hover:bg-slate-400"
-                    }`}
-                    aria-label={`Show review ${index + 1}`}
-                  />
-                ))}
-              </div>
-
-              <button
-                type="button"
-                onClick={showNextReview}
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:border-slate-300 hover:bg-slate-50"
-                aria-label="Next review"
-              >
-                <ChevronRight size={18} />
-              </button>
-            </div>
-          </div>
+        <Reveal>
+          <ReviewCarousel />
         </Reveal>
       </div>
     </section>

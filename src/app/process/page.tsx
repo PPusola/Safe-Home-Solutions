@@ -2,10 +2,7 @@ import type { Metadata } from "next";
 import { CheckCircle2 } from "lucide-react";
 import { InteriorHero } from "@/components/layout/InteriorHero";
 import { Reveal } from "@/components/motion/Reveal";
-import { EmergencyCTA } from "@/components/sections/EmergencyCTA";
-import { ProcessDeck } from "@/components/sections/ProcessDeck";
-import { PROCESS_STEPS } from "@/lib/content/process";
-import { PROCESS_DECK_STEPS } from "@/lib/content/trust";
+import { WhatHappensNext } from "@/components/sections/WhatHappensNext";
 
 export const metadata: Metadata = {
   title: "Our Restoration Process | Safe Home Solution & Restoration Inc. Edmonton",
@@ -22,29 +19,7 @@ export default function ProcessPage() {
         description="A clear process that keeps you informed from the first call through drying, documentation, and final review."
       />
 
-      <section className="py-10">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <Reveal className="surface-card rounded-[1rem] border border-slate-200/70 p-6 sm:p-8">
-            <ProcessDeck steps={PROCESS_DECK_STEPS} />
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="py-16">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <div className="space-y-8">
-            {PROCESS_STEPS.map((step, index) => (
-              <Reveal key={step.step} delay={index * 70}>
-              <div className="surface-card rounded-[1rem] border border-slate-200/70 p-6 sm:p-8">
-                <div className="text-sm font-bold uppercase tracking-[0.18em] text-[var(--color-accent)]">Step {step.step}</div>
-                <h2 className="mt-2 text-3xl font-bold">{step.title}</h2>
-                <p className="mt-3 text-sm leading-8 text-slate-600">{step.description}</p>
-              </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
+      <WhatHappensNext />
 
       <section className="py-8">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
@@ -66,8 +41,6 @@ export default function ProcessPage() {
           </Reveal>
         </div>
       </section>
-
-      <EmergencyCTA />
     </>
   );
 }

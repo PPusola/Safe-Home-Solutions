@@ -4,7 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowRight, CheckCircle2, MapPin, Phone } from "lucide-react";
 import { Reveal } from "@/components/motion/Reveal";
-import { EmergencyCTA } from "@/components/sections/EmergencyCTA";
+
 import { getService, SERVICES } from "@/lib/content/services";
 import { SITE } from "@/lib/site";
 
@@ -224,7 +224,6 @@ export default async function ServiceDetailPage({
         </div>
       </section>
 
-      <EmergencyCTA />
     </>
   );
 }

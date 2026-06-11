@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, BookOpen, HelpCircle } from "lucide-react";
 import { Reveal } from "@/components/motion/Reveal";
-import { EmergencyCTA } from "@/components/sections/EmergencyCTA";
 import { BLOG_POSTS } from "@/lib/content/blog";
 import { FAQS } from "@/lib/content/faqs";
 
@@ -136,7 +135,6 @@ export default function ResourcesPage() {
         </div>
       </section>
 
-      <EmergencyCTA />
     </>
   );
 }

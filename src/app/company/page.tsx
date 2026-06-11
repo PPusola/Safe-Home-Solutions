@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Award, MapPin, Phone, Users } from "lucide-react";
 import { Reveal } from "@/components/motion/Reveal";
-import { EmergencyCTA } from "@/components/sections/EmergencyCTA";
 import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -41,7 +40,7 @@ const PAGES = [
     label: "Reviews & Projects",
     href: "/reviews-projects",
     icon: Award,
-    description: "Client feedback and before/after examples from real restoration jobs across the Edmonton area.",
+    description: "Client feedback and project examples from real restoration jobs across the Edmonton area.",
   },
   {
     label: "Contact",
@@ -140,8 +139,6 @@ export default function CompanyPage() {
           </div>
         </div>
       </section>
-
-      <EmergencyCTA />
     </>
   );
 }

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ChevronDown } from "lucide-react";
 import { InteriorHero } from "@/components/layout/InteriorHero";
 import { Reveal } from "@/components/motion/Reveal";
-import { EmergencyCTA } from "@/components/sections/EmergencyCTA";
+
 import { FAQS, FAQ_CATEGORIES } from "@/lib/content/faqs";
 
 export const metadata: Metadata = {
@@ -41,7 +41,6 @@ export default function FAQPage() {
         </div>
       </section>
 
-      <EmergencyCTA heading="Still have questions?" subtext="Call us any time and we will help you understand the next step before you commit to anything." />
     </>
   );
 }

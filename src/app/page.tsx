@@ -3,9 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Award, Phone } from "lucide-react";
 import { Reveal } from "@/components/motion/Reveal";
-import { BeforeAfter } from "@/components/sections/BeforeAfter";
+import { ProjectExamples } from "@/components/sections/ProjectExamples";
 import { CustomerReviews } from "@/components/sections/CustomerReviews";
-import { EmergencyCTA } from "@/components/sections/EmergencyCTA";
 import { SERVICES } from "@/lib/content/services";
 import { STATS } from "@/lib/content/trust";
 import { SITE } from "@/lib/site";
@@ -32,38 +31,38 @@ export default function HomePage() {
         />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(177,115,67,0.16),transparent_26%),linear-gradient(135deg,rgba(19,45,73,0.9)_0%,rgba(16,37,62,0.82)_48%,rgba(31,53,47,0.84)_100%)]" />
         <div className="relative mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-22">
-          <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
-            <Reveal className="text-white">
-              <p className="eyebrow text-[#f6ccb4]">Edmonton water damage restoration</p>
-              <h1 className="mt-4 max-w-3xl text-4xl font-bold leading-tight !text-white sm:text-5xl lg:text-6xl">
-                Calm, organized restoration support when your property takes on water.
-              </h1>
-              <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-200">
-                Safe Home Solution & Restoration Inc. is here for Edmontonians and nearby communities. Whether it is a home, a business, or an industrial property, we guide you from the first emergency call through a clear drying and recovery plan with local response, practical communication, and organized documentation.
-              </p>
-              <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-                <a href={SITE.phoneHref} className="inline-flex items-center justify-center gap-3 rounded-[1rem] bg-[var(--color-accent)] px-8 py-4 text-lg font-extrabold text-white hover:bg-[var(--color-accent-dark)]">
-                  <Phone size={22} />
-                  Call {SITE.phone}
-                </a>
-                <Link href="/contact" className="inline-flex items-center justify-center gap-2 rounded-[1rem] border border-white/20 bg-white/10 px-8 py-4 text-lg font-bold text-white hover:bg-white/18">
-                  Request an estimate
-                  <ArrowRight size={18} />
-                </Link>
-              </div>
-              <div className="mt-8 grid gap-px sm:grid-cols-3 overflow-hidden rounded border border-white/10">
-                {STATS.slice(0, 3).map((stat, i) => (
-                  <div key={stat.label} className={`bg-white/8 px-5 py-4 backdrop-blur-sm ${i < 2 ? "sm:border-r border-white/10" : ""}`}>
-                    <div className="text-2xl font-extrabold tracking-tight text-white">{stat.value}</div>
-                    <div className="mt-0.5 text-xs font-medium uppercase tracking-widest text-slate-300">{stat.label}</div>
-                  </div>
-                ))}
-              </div>
-            </Reveal>
+          <Reveal className="text-white lg:max-w-[calc(100%-460px)]">
+            <p className="eyebrow text-[#f6ccb4]">Edmonton water damage restoration</p>
+            <h1 className="mt-4 max-w-3xl text-4xl font-bold leading-tight !text-white sm:text-5xl lg:text-6xl">
+              Calm, organized restoration support when your property takes on water.
+            </h1>
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-200">
+              Safe Home Solution & Restoration Inc. is here for Edmontonians and nearby communities. Whether it is a home, a business, or an industrial property, we guide you from the first emergency call through a clear drying and recovery plan with local response, practical communication, and organized documentation.
+            </p>
+            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+              <a href={SITE.phoneHref} className="inline-flex items-center justify-center gap-3 rounded-[1rem] bg-[var(--color-accent)] px-8 py-4 text-lg font-extrabold text-white hover:bg-[var(--color-accent-dark)]">
+                <Phone size={22} />
+                Call {SITE.phone}
+              </a>
+              <Link href="/contact" className="inline-flex items-center justify-center gap-2 rounded-[1rem] border border-white/20 bg-white/10 px-8 py-4 text-lg font-bold text-white hover:bg-white/18">
+                Request an estimate
+                <ArrowRight size={18} />
+              </Link>
+            </div>
+            <div className="mt-8 max-w-xl grid gap-px sm:grid-cols-3 overflow-hidden rounded border border-white/10">
+              {STATS.slice(0, 3).map((stat, i) => (
+                <div key={stat.label} className={`bg-white/8 px-5 py-4 backdrop-blur-sm ${i < 2 ? "sm:border-r border-white/10" : ""}`}>
+                  <div className="text-2xl font-extrabold tracking-tight text-white">{stat.value}</div>
+                  <div className="mt-0.5 text-xs font-medium uppercase tracking-widest text-slate-300">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+          </Reveal>
+        </div>
 
-            <Reveal className="hidden lg:block" delay={90}>
-              <div className="min-h-[340px]" />
-            </Reveal>
+        <div className="absolute right-6 top-1/2 hidden -translate-y-1/2 lg:block xl:right-10">
+          <div className="w-[26rem] xl:w-[28rem]">
+            <CustomerReviews compact />
           </div>
         </div>
       </section>
@@ -71,13 +70,13 @@ export default function HomePage() {
       <section className="py-12">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <Reveal className="mb-8 max-w-2xl">
-            <p className="eyebrow text-[var(--color-accent)]">Before &amp; After</p>
-            <h2 className="mt-3 text-3xl font-bold">Real results from properties across the communities we serve.</h2>
+            <p className="eyebrow text-[var(--color-accent)]">Project examples</p>
+            <h2 className="mt-3 text-3xl font-bold">Real job photos from properties across the communities we serve.</h2>
             <p className="mt-4 text-sm leading-7 text-slate-600">
-              A look at the kind of work we do, from initial damage to completed restoration.
+              A look at the kinds of damage and site conditions our team is called to assess and restore.
             </p>
           </Reveal>
-          <BeforeAfter />
+          <ProjectExamples />
         </div>
       </section>
 
@@ -198,8 +197,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      <CustomerReviews />
-
       <section className="pb-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <Reveal className="flex flex-col gap-5 rounded-[1rem] border border-slate-200 bg-white p-6 shadow-[0_14px_38px_rgba(39,34,27,0.07)] sm:p-7 lg:flex-row lg:items-center lg:justify-between lg:text-left">
@@ -222,8 +219,6 @@ export default function HomePage() {
           </Reveal>
         </div>
       </section>
-
-      <EmergencyCTA />
     </>
   );
 }

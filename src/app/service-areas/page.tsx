@@ -3,7 +3,7 @@ import Image from "next/image";
 import { MapPin, Phone } from "lucide-react";
 import { InteriorHero } from "@/components/layout/InteriorHero";
 import { Reveal } from "@/components/motion/Reveal";
-import { EmergencyCTA } from "@/components/sections/EmergencyCTA";
+
 import { SERVICE_AREAS } from "@/lib/content/areas";
 import { SITE } from "@/lib/site";
 
@@ -99,7 +99,6 @@ export default function ServiceAreasPage() {
         </div>
       </section>
 
-      <EmergencyCTA heading="Not sure if you are in our service area?" subtext="Call us anyway. If we can help, we will." />
     </>
   );
 }

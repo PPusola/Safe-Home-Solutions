@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { CheckCircle } from "lucide-react";
+import { CheckCircle, Phone } from "lucide-react";
 import { cn } from "@/lib/cn";
 
 const schema = z.object({
@@ -12,6 +12,7 @@ const schema = z.object({
   phone: z.string().min(10, "Please enter a valid phone number"),
   email: z.string().email("Please enter a valid email address"),
   address: z.string().min(5, "Please enter the property address"),
+  situation: z.string().min(1, "Please select your situation"),
   service: z.string().min(1, "Please select a service"),
   urgency: z.string().min(1, "Please select urgency"),
   description: z.string().min(10, "Please describe the damage"),
@@ -20,6 +21,17 @@ const schema = z.object({
 });
 
 type FormData = z.infer<typeof schema>;
+
+const SITUATION_OPTIONS = [
+  "Active leak or burst pipe",
+  "Standing water in the property",
+  "Mold visible or suspected",
+  "Sewage or drain backup",
+  "Storm or flood entry",
+  "Insurance claim already started",
+  "Damage is dry — planning work",
+  "Not sure yet",
+];
 
 const SERVICES = [
   "Water Damage Restoration",
@@ -91,6 +103,23 @@ export function EstimateForm({ className, compact = false }: Props) {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={cn("space-y-4", className)}>
+      <div className="flex items-center justify-between gap-4 rounded-2xl border border-red-100 bg-red-50 px-4 py-3">
+        <p className="text-sm font-semibold text-red-800">Active emergency? Call first. Don&apos;t wait on the form.</p>
+        <a href="tel:7803942156" className="inline-flex shrink-0 items-center gap-2 rounded-full bg-red-600 px-4 py-2 text-xs font-extrabold text-white hover:bg-red-700">
+          <Phone size={13} />
+          780-394-2156
+        </a>
+      </div>
+
+      <Field label="What is happening?" error={errors.situation?.message}>
+        <select {...register("situation")} className={inputClass(!!errors.situation)}>
+          <option value="">Select your situation</option>
+          {SITUATION_OPTIONS.map((opt) => (
+            <option key={opt} value={opt}>{opt}</option>
+          ))}
+        </select>
+      </Field>
+
       <div className={cn("grid gap-4", compact ? "grid-cols-1" : "grid-cols-1 sm:grid-cols-2")}>
         <Field label="Full Name" error={errors.name?.message}>
           <input {...register("name")} placeholder="Jane Smith" className={inputClass(!!errors.name)} />
@@ -159,13 +188,6 @@ export function EstimateForm({ className, compact = false }: Props) {
         {submitting ? "Sending..." : "Request My Estimate"}
       </button>
 
-      <p className="text-center text-xs text-gray-500">
-        Emergency instead? Call us directly:{" "}
-        <a href="tel:7803942156" className="font-semibold text-red-600 hover:underline">
-          780-394-2156
-        </a>{" "}
-        and we answer 24/7.
-      </p>
     </form>
   );
 }

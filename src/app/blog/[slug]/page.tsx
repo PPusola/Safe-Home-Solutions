@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { notFound } from "next/navigation";
 import { BLOG_POSTS, getBlogPost } from "@/lib/content/blog";
-import { EmergencyCTA } from "@/components/sections/EmergencyCTA";
+
 
 export async function generateStaticParams() {
   return BLOG_POSTS.map((post) => ({ slug: post.slug }));
@@ -59,7 +59,6 @@ export default async function BlogPostPage({
           </div>
         </article>
       </section>
-      <EmergencyCTA heading="Have water damage right now?" subtext="Call us any time. We will walk you through the next step." />
     </>
   );
 }

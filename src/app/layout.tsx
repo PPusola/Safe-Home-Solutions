@@ -5,6 +5,7 @@ import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { FloatingEmergencyHelp } from "@/components/layout/FloatingEmergencyHelp";
+import { EmergencyCTA } from "@/components/sections/EmergencyCTA";
 import { LocalBusinessSchema } from "@/components/seo/LocalBusinessSchema";
 import { SITE } from "@/lib/site";
 import { Analytics } from "@vercel/analytics/next";
@@ -49,6 +50,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="min-h-full bg-[var(--color-canvas)] text-slate-900">
         <LocalBusinessSchema />
         <Header />
+        <EmergencyCTA />
         <ViewTransition name="page-shell" enter="page-shell" exit="page-shell">
           <main>{children}</main>
         </ViewTransition>

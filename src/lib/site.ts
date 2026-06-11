@@ -21,7 +21,7 @@ export const SITE = {
   hours: "24/7 Emergency Response",
   license: "Fully Insured & Certified",
   social: {
-    facebook: "https://www.facebook.com/safehomesolutionsedmonton",
+    facebook: "https://www.facebook.com/profile.php?id=61590866844682",
     instagram: "https://www.instagram.com/safehomesolutionsca",
   },
 };

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { MessageSquare } from "lucide-react";
 import { InteriorHero } from "@/components/layout/InteriorHero";
 import { Reveal } from "@/components/motion/Reveal";
-import { EmergencyCTA } from "@/components/sections/EmergencyCTA";
 import { ProjectGallery } from "@/components/sections/ProjectGallery";
 import { REVIEW_THEMES } from "@/lib/content/trust";
 
@@ -56,15 +55,13 @@ export default async function ReviewsProjectsPage({
             <p className="eyebrow text-[var(--color-accent)]">Project examples</p>
             <h2 className="mt-3 text-3xl font-bold">Examples of the work people call us for.</h2>
             <p className="mt-4 text-sm leading-7 text-slate-600">
-              Real photos from jobs across Edmonton. Filter by category and toggle each card to see before and after.
+              Real photos from jobs across Edmonton. Filter by category to see examples of common restoration calls.
             </p>
           </Reveal>
 
           <ProjectGallery initialCategory={category} />
         </div>
       </section>
-
-      <EmergencyCTA />
     </>
   );
 }

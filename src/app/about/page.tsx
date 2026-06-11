@@ -4,7 +4,7 @@ import { InteriorHero } from "@/components/layout/InteriorHero";
 import { Reveal } from "@/components/motion/Reveal";
 import { FOUNDERS } from "@/lib/content/founders";
 import { TRUST_POINTS, WHY_HOMEOWNERS_CHOOSE_US } from "@/lib/content/trust";
-import { EmergencyCTA } from "@/components/sections/EmergencyCTA";
+
 
 export const metadata: Metadata = {
   title: "About Safe Home Solution & Restoration Inc. | Edmonton",
@@ -90,7 +90,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <EmergencyCTA heading="Need restoration help in Edmonton?" subtext="Call us any time and we will walk you through the next step." />
     </>
   );
 }

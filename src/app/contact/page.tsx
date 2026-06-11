@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { AlertTriangle, Clock3, Mail, MapPin, Phone } from "lucide-react";
+import { Clock3, Mail, MapPin, Phone } from "lucide-react";
 import { InteriorHero } from "@/components/layout/InteriorHero";
 import { EstimateForm } from "@/components/forms/EstimateForm";
 import { Reveal } from "@/components/motion/Reveal";
@@ -14,19 +14,6 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      <div className="bg-red-600 text-white">
-        <div className="mx-auto flex max-w-6xl items-center justify-center gap-4 px-4 py-4 sm:px-6 lg:px-8">
-          <AlertTriangle size={22} className="shrink-0" />
-          <p className="text-center text-sm font-semibold leading-6">
-            If water is active in your property right now, don&apos;t fill out the form. {" "}
-            <a href={SITE.phoneHref} className="underline underline-offset-2 hover:no-underline">
-              call {SITE.phone} immediately
-            </a>
-            . Every hour matters.
-          </p>
-        </div>
-      </div>
-
       <InteriorHero
         eyebrow="Contact"
         title="Request a Non-Urgent Estimate"
