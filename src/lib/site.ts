@@ -22,7 +22,7 @@ export const SITE = {
   license: "Fully Insured & Certified",
   social: {
     facebook: "https://www.facebook.com/profile.php?id=61590866844682",
-    instagram: "https://www.instagram.com/safehomesolutionsca",
+    instagram: "https://www.instagram.com/safehomesolutionsrestorations/",
   },
 };
 
