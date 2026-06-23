@@ -8,7 +8,7 @@ export const SITE = {
   url: "https://www.safehomesolutions.ca",
   phone: "780-394-2156",
   phoneHref: "tel:7803942156",
-  email: "info@safehomesolutions.ca",
+  email: "safehomesolutionrestorations@gmail.com",
   estimateEmail: "safehomesolutionrestorations@gmail.com",
   address: {
     street: "9520 174 St NW",
