@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { Reveal } from "@/components/motion/Reveal";
@@ -26,7 +27,7 @@ const EXAMPLES: Example[] = [
       "Water staining spread across multiple floor sections",
     ],
     image: {
-      src: "/case-images/water-damage/corridor-floor-water-damage.jpg",
+      src: "/photos/case-images/water-damage/corridor-floor-water-damage.jpg",
       alt: "Water damaged flooring before restoration",
     },
   },
@@ -41,7 +42,7 @@ const EXAMPLES: Example[] = [
       "Adjacent cavity confirmed affected behind drywall",
     ],
     image: {
-      src: "/case-images/mold-remediation/wall-floor-mold-growth.jpg",
+      src: "/photos/case-images/mold-remediation/wall-floor-mold-growth.jpg",
       alt: "Mold and moisture damage at wall base before remediation",
     },
   },
@@ -56,7 +57,7 @@ const EXAMPLES: Example[] = [
       "Entry point at door seal confirmed compromised",
     ],
     image: {
-      src: "/case-images/emergency-water-removal/garage-floor-water-pooling.jpg",
+      src: "/photos/case-images/emergency-water-removal/garage-floor-water-pooling.jpg",
       alt: "Water flooding concrete floor at garage door before restoration",
     },
   },
@@ -76,11 +77,14 @@ export function ProjectExamples() {
       <div className="surface-card overflow-hidden rounded-[1rem] border border-slate-200/70">
         <div className="grid lg:grid-cols-2">
           <div className="relative aspect-[4/3] lg:aspect-auto lg:h-full lg:max-h-[650px] overflow-hidden bg-slate-100">
-            <img
+            <Image
               key={index}
               src={example.image.src}
               alt={example.image.alt}
-              className="h-full w-full object-cover animate-[img-fade_0.3s_ease]"
+              fill
+              priority={index === 0}
+              sizes="(min-width: 1024px) 560px, 100vw"
+              className="object-cover animate-[img-fade_0.3s_ease]"
             />
 
             <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/60 to-transparent" />

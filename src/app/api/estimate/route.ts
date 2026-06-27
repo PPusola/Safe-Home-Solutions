@@ -1,64 +1,54 @@
 import { NextResponse } from "next/server";
-import nodemailer from "nodemailer";
+import { z } from "zod";
+import { deliverFormSubmission } from "@/lib/formDelivery";
 
-const transporter = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
-    user: process.env.GMAIL_USER,
-    pass: process.env.GMAIL_APP_PASSWORD,
-  },
+export const runtime = "nodejs";
+
+const estimateSchema = z.object({
+  name: z.string().min(2),
+  phone: z.string().min(10),
+  email: z.string().email(),
+  address: z.string().min(5),
+  situation: z.string().min(1),
+  service: z.string().min(1),
+  urgency: z.string().min(1),
+  description: z.string().min(10),
+  affectedArea: z.string().optional(),
+  roomsAffected: z.string().optional(),
 });
 
 export async function POST(request: Request) {
-  const body = await request.json();
-  const { name, phone, email, address, service, urgency, description, affectedArea, roomsAffected } = body;
+  const parsed = estimateSchema.safeParse(await request.json());
 
-  // Send email
-  try {
-    await transporter.sendMail({
-      from: `"Safehome Website" <${process.env.GMAIL_USER}>`,
-      to: process.env.GMAIL_USER,
-      subject: `New Estimate Request: ${name}`,
-      html: `
-        <h2>New Estimate Request</h2>
-        <table cellpadding="8" style="border-collapse:collapse;width:100%">
-          <tr><td><strong>Name</strong></td><td>${name}</td></tr>
-          <tr><td><strong>Phone</strong></td><td>${phone}</td></tr>
-          <tr><td><strong>Email</strong></td><td>${email}</td></tr>
-          <tr><td><strong>Property Address</strong></td><td>${address}</td></tr>
-          <tr><td><strong>Service</strong></td><td>${service}</td></tr>
-          <tr><td><strong>Urgency</strong></td><td>${urgency}</td></tr>
-          <tr><td><strong>Affected Area</strong></td><td>${affectedArea || "—"}</td></tr>
-          <tr><td><strong>Rooms Affected</strong></td><td>${roomsAffected || "—"}</td></tr>
-          <tr><td><strong>Description</strong></td><td>${description}</td></tr>
-        </table>
-      `,
-    });
-  } catch (err) {
-    console.error("Email send failed:", err);
-    return NextResponse.json({ ok: false, error: "Email failed" }, { status: 500 });
+  if (!parsed.success) {
+    return NextResponse.json(
+      { ok: false, code: "INVALID_ESTIMATE_REQUEST", error: "Invalid estimate request" },
+      { status: 400 },
+    );
   }
 
-  // Log to Google Sheets via Apps Script
-  if (process.env.GOOGLE_SCRIPT_URL) {
-    try {
-      const res = await fetch(process.env.GOOGLE_SCRIPT_URL, {
-        method: "POST",
-        redirect: "follow",
-        headers: { "Content-Type": "text/plain" },
-        body: JSON.stringify({
-          timestamp: new Date().toISOString(),
-          name, phone, email, address, service, urgency,
-          affectedArea: affectedArea || "",
-          roomsAffected: roomsAffected || "",
-          description,
-        }),
-      });
-      console.log("Sheets response:", res.status, await res.text());
-    } catch (err) {
-      console.error("Sheets log failed:", err);
-    }
-  }
+  const data = parsed.data;
+  const result = await deliverFormSubmission({
+    type: "Estimate Request",
+    subject: `New Estimate Request: ${data.name}`,
+    fields: {
+      Name: data.name,
+      Phone: data.phone,
+      Email: data.email,
+      "Property Address": data.address,
+      Situation: data.situation,
+      Service: data.service,
+      Urgency: data.urgency,
+      "Affected Area": data.affectedArea,
+      "Rooms Affected": data.roomsAffected,
+      Description: data.description,
+    },
+  });
 
-  return NextResponse.json({ ok: true }, { status: 200 });
+  const ok = result.emailSent && result.sheetsLogged;
+
+  return NextResponse.json(
+    { ok, code: ok ? "ESTIMATE_DELIVERED" : "ESTIMATE_DELIVERY_FAILED", ...result },
+    { status: ok ? 200 : 502 },
+  );
 }

@@ -1,11 +1,3 @@
-import stAlbertImage from "../../../St_Albert.jpg";
-import stonyPlainImage from "../../../stony plain.jpg";
-import fortSaskatchewanImage from "../../../Fort_Saskatchewan_Downtown.jpg";
-import spruceGroveImage from "../../../spruce_grove.jpg";
-import leducImage from "../../../leduc.jpg";
-import sherwoodParkImage from "../../../sherwood park.jpg";
-import beaumontImage from "../../../beaumont.jpg";
-
 export interface ServiceArea {
   slug: string;
   name: string;
@@ -32,7 +24,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     slug: "sherwood-park",
     name: "Sherwood Park",
     description: "Emergency water damage restoration, drying, and mold remediation for residential, commercial, and industrial properties in Sherwood Park.",
-    cardImage: sherwoodParkImage.src,
+    cardImage: "/photos/sherwood-park.jpg",
     cardTone: "from-[#30463f]/20 via-transparent to-[#30463f]/75",
     imagePosition: "object-center",
   },
@@ -40,7 +32,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     slug: "st-albert",
     name: "St. Albert",
     description: "Local response for water extraction, structural drying, and restoration work throughout St. Albert.",
-    cardImage: stAlbertImage.src,
+    cardImage: "/photos/st-albert.jpg",
     cardTone: "from-[#243f56]/20 via-transparent to-[#243f56]/75",
     imagePosition: "object-center",
   },
@@ -48,7 +40,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     slug: "spruce-grove",
     name: "Spruce Grove",
     description: "Rapid service for flooded basements, plumbing failures, and moisture-related damage in Spruce Grove.",
-    cardImage: spruceGroveImage.src,
+    cardImage: "/photos/spruce-grove.jpg",
     cardTone: "from-[#43352b]/20 via-transparent to-[#43352b]/78",
     imagePosition: "object-center",
   },
@@ -56,7 +48,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     slug: "stony-plain",
     name: "Stony Plain",
     description: "Certified restoration support for residential and light commercial properties in Stony Plain.",
-    cardImage: stonyPlainImage.src,
+    cardImage: "/photos/stony-plain.jpg",
     cardTone: "from-[#2f3a34]/20 via-transparent to-[#2f3a34]/78",
     imagePosition: "object-center",
   },
@@ -64,7 +56,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     slug: "leduc",
     name: "Leduc",
     description: "Emergency drying and cleanup services for homeowners and businesses in Leduc.",
-    cardImage: leducImage.src,
+    cardImage: "/photos/leduc.jpg",
     cardTone: "from-[#3b332b]/20 via-transparent to-[#3b332b]/78",
     imagePosition: "object-center",
   },
@@ -72,7 +64,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     slug: "beaumont",
     name: "Beaumont",
     description: "Trusted support for water damage, mold concerns, and drying projects in Beaumont.",
-    cardImage: beaumontImage.src,
+    cardImage: "/photos/beaumont.jpg",
     cardTone: "from-[#52697d]/20 via-transparent to-[#52697d]/78",
     imagePosition: "object-center",
   },
@@ -80,7 +72,7 @@ export const SERVICE_AREAS: ServiceArea[] = [
     slug: "fort-saskatchewan",
     name: "Fort Saskatchewan",
     description: "Restoration response and claim documentation support for Fort Saskatchewan properties.",
-    cardImage: fortSaskatchewanImage.src,
+    cardImage: "/photos/fort-saskatchewan-downtown.jpg",
     cardTone: "from-[#7a6652]/20 via-transparent to-[#7a6652]/78",
     imagePosition: "object-center",
   },

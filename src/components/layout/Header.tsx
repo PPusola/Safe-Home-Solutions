@@ -7,7 +7,6 @@ import { usePathname } from "next/navigation";
 import { ChevronDown, Clock3, MapPin, Menu, Phone, X } from "lucide-react";
 import { cn } from "@/lib/cn";
 import { NAV_LINKS, SITE } from "@/lib/site";
-import logo from "../../../safe-home-logo.png";
 
 export function Header() {
   const pathname = usePathname();
@@ -57,7 +56,7 @@ export function Header() {
             >
               <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-[#1c1b1a] p-1 shadow-[0_10px_24px_rgba(15,39,66,0.16)] sm:h-16 sm:w-16">
                 <Image
-                  src={logo}
+                  src="/photos/safe-home-logo.png"
                   alt="Safe Home Solution &amp; Restoration Inc. logo"
                   width={56}
                   height={56}

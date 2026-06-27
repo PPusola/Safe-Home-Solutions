@@ -8,7 +8,7 @@ export function Footer() {
   return (
     <footer className="bg-[#0f2742] text-slate-200">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid gap-10 border-b border-white/10 pb-10 lg:grid-cols-[minmax(240px,300px)_1fr_minmax(200px,260px)] lg:gap-16 lg:items-start">
+        <div className="grid gap-10 border-b border-white/10 pb-10 lg:grid-cols-[minmax(240px,300px)_minmax(0,1fr)_minmax(220px,280px)] lg:gap-20 lg:items-start">
 
           {/* Brand column */}
           <div className="min-w-0">
@@ -22,14 +22,18 @@ export function Footer() {
           </div>
 
           {/* Contact column */}
-          <div className="grid gap-4 sm:grid-cols-2 lg:pt-14">
+          <div className="grid min-w-0 gap-x-10 gap-y-4 sm:grid-cols-[minmax(180px,0.8fr)_minmax(260px,1.2fr)] lg:pt-14">
             <a href={SITE.phoneHref} className="inline-flex min-w-0 items-center gap-3 text-sm leading-6 text-slate-300 hover:text-white">
               <Phone size={16} className="shrink-0 text-[var(--color-accent)]" />
               {SITE.phone}
             </a>
             <a href={`mailto:${SITE.email}`} className="inline-flex min-w-0 items-center gap-3 text-sm leading-6 text-slate-300 hover:text-white">
               <Mail size={16} className="shrink-0 text-[var(--color-accent)]" />
-              {SITE.email}
+              <span className="min-w-0 break-words">
+                {SITE.email.replace("@gmail.com", "")}
+                <br />
+                @gmail.com
+              </span>
             </a>
             <span className="inline-flex min-w-0 items-start gap-3 text-sm leading-6 text-slate-300">
               <MapPin size={16} className="mt-0.5 shrink-0 text-[var(--color-accent)]" />

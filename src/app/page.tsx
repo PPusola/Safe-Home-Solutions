@@ -8,7 +8,6 @@ import { CustomerReviews } from "@/components/sections/CustomerReviews";
 import { SERVICES } from "@/lib/content/services";
 import { STATS } from "@/lib/content/trust";
 import { SITE } from "@/lib/site";
-import iicrcCertificate from "../../iicrc cert.jpg";
 
 export const metadata: Metadata = {
   title: "Edmonton Water Damage Restoration | 24/7 Emergency Response | Safe Home Solution & Restoration Inc.",
@@ -174,8 +173,10 @@ export default function HomePage() {
                 <div className="w-full max-w-[220px] overflow-hidden rounded-[0.95rem] border border-[var(--color-brand)]/12 bg-[linear-gradient(160deg,#f8f3eb,#ede5d6)] p-3 shadow-[0_12px_32px_rgba(39,34,27,0.09)]">
                   <div className="overflow-hidden rounded-[0.7rem] bg-white shadow-sm">
                     <Image
-                      src={iicrcCertificate}
+                      src="/photos/iicrc-cert.jpg"
                       alt="IICRC WRT certificate"
+                      width={220}
+                      height={293}
                       className="h-auto w-full object-contain"
                       sizes="220px"
                     />

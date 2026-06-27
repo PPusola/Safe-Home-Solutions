@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
 interface Project {
@@ -29,7 +30,7 @@ const PROJECTS: Project[] = [
     category: "Water Damage Restoration",
     summary: "A sustained pipe leak caused water migration under finished flooring and into the subfloor cavity across multiple corridor sections.",
     workDone: ["Water extraction from flooring surface", "Moisture mapping of subfloor and baseboard zones", "Industrial air mover placement for structural drying", "Dehumidification over 3-day dry cycle", "Daily moisture readings logged", "Photo documentation for insurance claim"],
-    image: { src: "/case-images/water-damage/corridor-floor-water-damage.jpg", alt: "Water damaged corridor flooring before restoration" },
+    image: { src: "/photos/case-images/water-damage/corridor-floor-water-damage.jpg", alt: "Water damaged corridor flooring before restoration" },
   },
   {
     title: "Tile floor staining from water intrusion",
@@ -37,7 +38,7 @@ const PROJECTS: Project[] = [
     category: "Water Damage Restoration",
     summary: "Water intrusion through grout lines caused tile staining and elevated moisture beneath the finished floor surface.",
     workDone: ["Surface moisture assessment", "Targeted drying under tile layer", "Moisture boundary mapping", "Photo documentation of full affected extent"],
-    image: { src: "/case-images/water-damage/damaged-tiles-water-stain.jpg", alt: "Stained tiles from water damage before restoration" },
+    image: { src: "/photos/case-images/water-damage/damaged-tiles-water-stain.jpg", alt: "Stained tiles from water damage before restoration" },
   },
   {
     title: "Peeling flooring after water damage",
@@ -45,7 +46,7 @@ const PROJECTS: Project[] = [
     category: "Water Damage Restoration",
     summary: "Water exposure caused flooring adhesive to fail, with material peeling and moisture trapped between floor layers.",
     workDone: ["Extraction of trapped moisture", "Removal of compromised flooring sections", "Subfloor drying with air movers", "Moisture clearance readings before reinstall prep", "Scope documented for flooring contractor"],
-    image: { src: "/case-images/water-damage/flooring-peeling-water-damage.jpg", alt: "Peeling flooring before water damage restoration" },
+    image: { src: "/photos/case-images/water-damage/flooring-peeling-water-damage.jpg", alt: "Peeling flooring before water damage restoration" },
   },
   {
     title: "Floor staining from slow water leak",
@@ -53,7 +54,7 @@ const PROJECTS: Project[] = [
     category: "Water Damage Restoration",
     summary: "A slow pipe fitting leak went undetected for weeks, causing widespread floor staining and elevated subfloor moisture across the affected zone.",
     workDone: ["Leak source identified and isolated", "Moisture mapping of full affected area", "Drying equipment placement", "Daily moisture tracking until clearance", "Documentation for contractor handoff"],
-    image: { src: "/case-images/water-damage/floor-staining-water-damage.jpg", alt: "Floor staining from water leak before restoration" },
+    image: { src: "/photos/case-images/water-damage/floor-staining-water-damage.jpg", alt: "Floor staining from water leak before restoration" },
   },
   {
     title: "Baseboard water staining at wall corner",
@@ -61,7 +62,7 @@ const PROJECTS: Project[] = [
     category: "Water Damage Restoration",
     summary: "Water wicking from a slow leak stained baseboards and elevated moisture in the adjacent wall cavity.",
     workDone: ["Moisture readings at wall cavity and baseboard", "Targeted drying at wall-floor junction", "Dehumidifier placement", "Moisture readings logged over full dry cycle"],
-    image: { src: "/case-images/water-damage/baseboard-water-stain.jpg", alt: "Baseboard water staining before restoration" },
+    image: { src: "/photos/case-images/water-damage/baseboard-water-stain.jpg", alt: "Baseboard water staining before restoration" },
   },
   {
     title: "Floor damage and debris after pipe burst",
@@ -69,7 +70,7 @@ const PROJECTS: Project[] = [
     category: "Water Damage Restoration",
     summary: "A burst pipe released high-volume water that spread across finished flooring and displaced debris across the space.",
     workDone: ["Emergency extraction of standing water", "Debris removal and site clean-up", "Subfloor moisture mapping", "Air mover and dehumidifier placement", "Daily monitoring over dry cycle", "Full insurance documentation package"],
-    image: { src: "/case-images/water-damage/floor-debris-water-damage.jpg", alt: "Floor damage and debris before restoration" },
+    image: { src: "/photos/case-images/water-damage/floor-debris-water-damage.jpg", alt: "Floor damage and debris before restoration" },
   },
   {
     title: "Mold at wall and floor junction",
@@ -77,7 +78,7 @@ const PROJECTS: Project[] = [
     category: "Mold Remediation",
     summary: "A slow pipe fitting leak behind the wall created sustained moisture conditions leading to visible mold growth at the wall-floor junction.",
     workDone: ["Leak source traced and isolated", "Containment barrier installed", "Affected drywall and baseboard removed", "HEPA air scrubbing during removal", "Antimicrobial treatment applied to framing", "Clearance documentation provided"],
-    image: { src: "/case-images/mold-remediation/wall-floor-mold-growth.jpg", alt: "Mold growth at wall and floor junction before remediation" },
+    image: { src: "/photos/case-images/mold-remediation/wall-floor-mold-growth.jpg", alt: "Mold growth at wall and floor junction before remediation" },
   },
   {
     title: "Mold and structural damage at baseboard",
@@ -85,7 +86,7 @@ const PROJECTS: Project[] = [
     category: "Mold Remediation",
     summary: "Long-term moisture accumulation at the baseboard caused structural degradation and significant mold colonization in the cavity behind.",
     workDone: ["Containment of affected area", "Structural assessment of wall cavity", "Removal of affected materials and framing", "HEPA filtration maintained during work", "Antimicrobial treatment applied", "Rebuild scope documented for contractor"],
-    image: { src: "/case-images/mold-remediation/baseboard-mold-structural.jpg", alt: "Mold and structural damage at baseboard before remediation" },
+    image: { src: "/photos/case-images/mold-remediation/baseboard-mold-structural.jpg", alt: "Mold and structural damage at baseboard before remediation" },
   },
   {
     title: "Mold growth in bathroom grout",
@@ -93,7 +94,7 @@ const PROJECTS: Project[] = [
     category: "Mold Remediation",
     summary: "Persistent mold colonization in shower grout and tile joints, with moisture elevated behind the tile substrate.",
     workDone: ["Moisture testing behind tile surface", "Grout and tile removed in affected zone", "HEPA air scrubbing throughout", "Antimicrobial treatment of substrate", "Drying of substrate before regrout prep"],
-    image: { src: "/case-images/mold-remediation/grout-mold-bathroom.jpg", alt: "Mold in bathroom grout before remediation" },
+    image: { src: "/photos/case-images/mold-remediation/grout-mold-bathroom.jpg", alt: "Mold in bathroom grout before remediation" },
   },
   {
     title: "Structural mold damage at wall base",
@@ -101,7 +102,7 @@ const PROJECTS: Project[] = [
     category: "Mold Remediation",
     summary: "A slow long-term leak caused structural wood rot and mold growth at the base of an exterior wall.",
     workDone: ["Containment barrier set up", "Affected drywall and framing removed", "HEPA filtration during demolition", "Antimicrobial treatment of remaining framing", "Moisture monitoring post-removal", "Documentation for insurance and contractor"],
-    image: { src: "/case-images/mold-remediation/wall-base-mold-structural.jpg", alt: "Structural mold damage at wall base before remediation" },
+    image: { src: "/photos/case-images/mold-remediation/wall-base-mold-structural.jpg", alt: "Structural mold damage at wall base before remediation" },
   },
   {
     title: "Water seepage at exterior steps",
@@ -109,7 +110,7 @@ const PROJECTS: Project[] = [
     category: "Storm & Flood Damage",
     summary: "Storm-driven water entered through the gap between exterior steps and the foundation, causing pooling in the adjacent interior space.",
     workDone: ["Water extraction at entry zone", "Moisture mapping of adjacent floor and wall", "Drying equipment placed at entry point", "Entry source documented for contractor repair"],
-    image: { src: "/case-images/storm-flood/exterior-steps-water-seepage.jpg", alt: "Water seepage at exterior steps before restoration" },
+    image: { src: "/photos/case-images/storm-flood/exterior-steps-water-seepage.jpg", alt: "Water seepage at exterior steps before restoration" },
   },
   {
     title: "Exterior concrete flooding after storm",
@@ -117,7 +118,7 @@ const PROJECTS: Project[] = [
     category: "Storm & Flood Damage",
     summary: "A heavy storm overwhelmed site drainage and caused water to pool across the exterior surface and seep under the entry threshold.",
     workDone: ["Extraction at entry zone", "Drying setup at concrete-to-interior transition", "Moisture readings at floor slab", "Photo documentation of full extent"],
-    image: { src: "/case-images/storm-flood/exterior-concrete-flooding.jpg", alt: "Flooded exterior concrete before restoration" },
+    image: { src: "/photos/case-images/storm-flood/exterior-concrete-flooding.jpg", alt: "Flooded exterior concrete before restoration" },
   },
   {
     title: "Storm flooding at property entry",
@@ -125,7 +126,7 @@ const PROJECTS: Project[] = [
     category: "Storm & Flood Damage",
     summary: "Storm-driven flooding overwhelmed the entry threshold, with water entering the vestibule and spreading across the entryway floor.",
     workDone: ["Emergency water extraction", "Entry zone drying setup", "Moisture mapping of spread area", "Daily monitoring over full dry cycle", "Insurance documentation package"],
-    image: { src: "/case-images/storm-flood/exterior-steps-door-flooding.jpg", alt: "Storm flooding at property entry before restoration" },
+    image: { src: "/photos/case-images/storm-flood/exterior-steps-door-flooding.jpg", alt: "Storm flooding at property entry before restoration" },
   },
   {
     title: "Odor and contamination oxidation treatment",
@@ -133,7 +134,7 @@ const PROJECTS: Project[] = [
     category: "Oxidizing Services",
     summary: "Persistent odor and surface contamination from water damage and organic material required oxidizing treatment to neutralize the source.",
     workDone: ["Odor source identified and mapped", "Oxidizing agent applied to all affected surfaces", "HEPA air scrubbing during treatment", "Post-treatment clearance verification"],
-    image: { src: "/case-images/mold-remediation/wall-base-mold-structural.jpg", alt: "Affected wall base before oxidizing treatment" },
+    image: { src: "/photos/case-images/mold-remediation/wall-base-mold-structural.jpg", alt: "Affected wall base before oxidizing treatment" },
   },
   {
     title: "Water pooling at garage floor",
@@ -141,7 +142,7 @@ const PROJECTS: Project[] = [
     category: "Emergency Water Removal",
     summary: "Storm-driven water entered through the garage door threshold and pooled across the concrete floor, with the door seal confirmed compromised.",
     workDone: ["Emergency water extraction", "Concrete floor drying setup", "Entry point documented for contractor repair", "Moisture clearance readings", "Photo documentation for insurance"],
-    image: { src: "/case-images/emergency-water-removal/garage-floor-water-pooling.jpg", alt: "Water pooling at garage floor before emergency removal" },
+    image: { src: "/photos/case-images/emergency-water-removal/garage-floor-water-pooling.jpg", alt: "Water pooling at garage floor before emergency removal" },
   },
   {
     title: "Structural decay at wall base",
@@ -149,7 +150,7 @@ const PROJECTS: Project[] = [
     category: "Structural Damage",
     summary: "Long-term water exposure caused wood rot and structural failure at the base of an interior wall, requiring removal and drying before rebuild.",
     workDone: ["Structural assessment of wall base", "Removal of decayed framing and drywall", "Drying of remaining structure", "Moisture tracking post-removal", "Scope documented for contractor"],
-    image: { src: "/case-images/structural-damage/wall-base-structural-decay.jpg", alt: "Structural decay at wall base before restoration" },
+    image: { src: "/photos/case-images/structural-damage/wall-base-structural-decay.jpg", alt: "Structural decay at wall base before restoration" },
   },
   {
     title: "Structural damage at wall corner",
@@ -157,7 +158,7 @@ const PROJECTS: Project[] = [
     category: "Structural Damage",
     summary: "Water intrusion at a wall corner compromised the structural framing, with significant material damage and active moisture in the cavity.",
     workDone: ["Moisture mapping of corner cavity", "Removal of damaged materials", "Structural drying setup", "Daily readings during dry cycle", "Full documentation for insurance and contractor handoff"],
-    image: { src: "/case-images/structural-damage/wall-corner-structural-damage.jpg", alt: "Structural damage at wall corner before restoration" },
+    image: { src: "/photos/case-images/structural-damage/wall-corner-structural-damage.jpg", alt: "Structural damage at wall corner before restoration" },
   },
 ];
 
@@ -189,10 +190,12 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
 
         <div className="grid sm:grid-cols-[1.1fr_0.9fr]">
           <div className="relative aspect-[4/3] sm:aspect-auto sm:h-full overflow-hidden bg-slate-100">
-            <img
+            <Image
               src={project.image.src}
               alt={project.image.alt}
-              className="h-full w-full object-cover"
+              fill
+              sizes="(min-width: 640px) 55vw, 100vw"
+              className="object-cover"
             />
           </div>
 
@@ -227,17 +230,20 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
   );
 }
 
-function ProjectCard({ project, onClick }: { project: Project; onClick: () => void }) {
+function ProjectCard({ project, onClick, priority = false }: { project: Project; onClick: () => void; priority?: boolean }) {
   return (
     <button
       onClick={onClick}
       className="group surface-card w-full overflow-hidden rounded-[1rem] border border-slate-200/70 text-left transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]"
     >
       <div className="relative aspect-[4/3] overflow-hidden bg-slate-100">
-        <img
+        <Image
           src={project.image.src}
           alt={project.image.alt}
-          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105 animate-[img-fade_0.3s_ease]"
+          fill
+          priority={priority}
+          sizes="(min-width: 768px) 33vw, 100vw"
+          className="object-cover transition-transform duration-500 group-hover:scale-105 animate-[img-fade_0.3s_ease]"
         />
         <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/60 to-transparent" />
         <div className="absolute bottom-3 right-3 rounded-full bg-white/15 px-2.5 py-1 text-[10px] font-bold text-white backdrop-blur-sm">
@@ -307,10 +313,11 @@ export function ProjectGallery({ initialCategory = "All" }: { initialCategory?: 
         </div>
 
         <div className="grid gap-6 md:grid-cols-3">
-          {visible.map((project) => (
+          {visible.map((project, index) => (
             <ProjectCard
               key={`${project.category}-${project.title}`}
               project={project}
+              priority={page === 0 && index === 0}
               onClick={() => setSelected(project)}
             />
           ))}

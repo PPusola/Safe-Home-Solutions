@@ -4,7 +4,9 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import { AlertTriangle, CheckCircle } from "lucide-react";
 import { cn } from "@/lib/cn";
+import { getSubmissionError } from "@/lib/submissionFeedback";
 
 const schema = z.object({
   name: z.string().min(2, "Please enter your name"),
@@ -17,6 +19,7 @@ type FormData = z.infer<typeof schema>;
 export function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
   const {
     register,
     handleSubmit,
@@ -26,6 +29,7 @@ export function ContactForm() {
 
   async function onSubmit(data: FormData) {
     setSubmitting(true);
+    setSubmitError("");
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
@@ -36,16 +40,31 @@ export function ContactForm() {
       if (response.ok) {
         setSubmitted(true);
         reset();
+      } else {
+        setSubmitError(await getSubmissionError(response, "We could not send your message."));
       }
     } catch {
-      setSubmitted(true);
+      setSubmitError("Network Error: We could not reach the form server. Please call 780-394-2156 or try again in a moment.");
     } finally {
       setSubmitting(false);
     }
   }
 
   if (submitted) {
-    return <p className="rounded-2xl bg-green-50 px-4 py-3 text-sm text-green-700">Thanks. We will reply soon.</p>;
+    return (
+      <div className="form-success-panel flex items-center gap-3 rounded-2xl border border-green-200 bg-green-50 px-4 py-4 text-sm text-green-800">
+        <div className="relative flex h-11 w-11 shrink-0 items-center justify-center">
+          <span className="absolute inset-0 rounded-full bg-green-400/25 animate-[success-ring_0.8s_ease-out]" />
+          <span className="flex h-9 w-9 items-center justify-center rounded-full bg-green-100 text-green-600">
+            <CheckCircle size={22} />
+          </span>
+        </div>
+        <div>
+          <p className="font-bold">Message sent successfully.</p>
+          <p className="mt-1">Thanks. We will reply soon.</p>
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -69,6 +88,16 @@ export function ContactForm() {
       >
         {submitting ? "Sending..." : "Send message"}
       </button>
+      {submitError && (
+        <div className="form-error-panel flex gap-3 rounded-2xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800">
+          <AlertTriangle size={18} className="mt-0.5 shrink-0" />
+          <div>
+            <p className="font-bold">Form submission failed</p>
+            <p className="mt-1 break-words">{submitError}</p>
+            <p className="mt-1">Please call 780-394-2156 if this is urgent.</p>
+          </div>
+        </div>
+      )}
     </form>
   );
 }

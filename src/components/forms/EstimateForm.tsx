@@ -4,8 +4,9 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { CheckCircle, Phone } from "lucide-react";
+import { AlertTriangle, CheckCircle, Phone } from "lucide-react";
 import { cn } from "@/lib/cn";
+import { getSubmissionError } from "@/lib/submissionFeedback";
 
 const schema = z.object({
   name: z.string().min(2, "Please enter your full name"),
@@ -57,6 +58,7 @@ interface Props {
 export function EstimateForm({ className, compact = false }: Props) {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   const {
     register,
@@ -67,6 +69,7 @@ export function EstimateForm({ className, compact = false }: Props) {
 
   async function onSubmit(data: FormData) {
     setSubmitting(true);
+    setSubmitError("");
     try {
       const response = await fetch("/api/estimate", {
         method: "POST",
@@ -77,9 +80,11 @@ export function EstimateForm({ className, compact = false }: Props) {
       if (response.ok) {
         setSubmitted(true);
         reset();
+      } else {
+        setSubmitError(await getSubmissionError(response, "We could not send your request."));
       }
     } catch {
-      setSubmitted(true);
+      setSubmitError("Network Error: We could not reach the form server. Please call 780-394-2156 or try again in a moment.");
     } finally {
       setSubmitting(false);
     }
@@ -87,8 +92,13 @@ export function EstimateForm({ className, compact = false }: Props) {
 
   if (submitted) {
     return (
-      <div className={cn("flex flex-col items-center justify-center px-6 py-10 text-center", className)}>
-        <CheckCircle size={48} className="mb-4 text-green-500" />
+      <div className={cn("form-success-panel flex flex-col items-center justify-center px-6 py-10 text-center", className)}>
+        <div className="relative mb-5 flex h-16 w-16 items-center justify-center">
+          <span className="absolute inset-0 rounded-full bg-green-400/25 animate-[success-ring_0.8s_ease-out]" />
+          <span className="flex h-14 w-14 items-center justify-center rounded-full bg-green-100 text-green-600 shadow-sm">
+            <CheckCircle size={34} />
+          </span>
+        </div>
         <h3 className="text-xl font-bold text-gray-900">We received your request.</h3>
         <p className="mt-2 max-w-sm text-gray-600">
           A member of our team will be in touch shortly. For immediate help, call{" "}
@@ -188,6 +198,16 @@ export function EstimateForm({ className, compact = false }: Props) {
         {submitting ? "Sending..." : "Request My Estimate"}
       </button>
 
+      {submitError && (
+        <div className="form-error-panel flex gap-3 rounded-2xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800">
+          <AlertTriangle size={18} className="mt-0.5 shrink-0" />
+          <div>
+            <p className="font-bold">Form submission failed</p>
+            <p className="mt-1 break-words">{submitError}</p>
+            <p className="mt-1">Please call 780-394-2156 if this is urgent.</p>
+          </div>
+        </div>
+      )}
     </form>
   );
 }

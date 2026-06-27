@@ -44,7 +44,7 @@ export const SERVICES: Service[] = [
     tagline: "Fast, calm water damage restoration for Edmonton homes that need structure, not chaos.",
     description:
       "We respond to burst pipes, appliance leaks, overflows, and indoor flooding with extraction, drying, documentation support, and a clear next-step plan.",
-    cardImage: "/case-images/water-damage/corridor-floor-water-damage.jpg",
+    cardImage: "/photos/case-images/water-damage/corridor-floor-water-damage.jpg",
     cardLabel: "Interior recovery",
     cardTone: "from-[#30463f] via-[#58685f] to-[#b17343]",
     imagePosition: "object-center",
@@ -111,7 +111,7 @@ export const SERVICES: Service[] = [
     tagline: "Immediate extraction when standing water is still active and every hour matters.",
     description:
       "When water is still present, we focus first on safe access, quick extraction, and reducing how far the damage can travel into nearby rooms and materials.",
-    cardImage: "/case-images/emergency-water-removal/garage-floor-water-pooling.jpg",
+    cardImage: "/photos/case-images/emergency-water-removal/garage-floor-water-pooling.jpg",
     cardLabel: "Rapid response",
     cardTone: "from-[#243f56] via-[#496a7f] to-[#a66845]",
     imagePosition: "object-center",
@@ -178,7 +178,7 @@ export const SERVICES: Service[] = [
     tagline: "Targeted drying for the moisture that remains after visible water is already gone.",
     description:
       "Once standing water is removed, the deeper job is drying what you cannot easily see. We monitor framing, drywall, insulation, and subfloors so recovery is not rushed.",
-    cardImage: "/case-images/structural-damage/wall-base-structural-decay.jpg",
+    cardImage: "/photos/case-images/structural-damage/wall-base-structural-decay.jpg",
     cardLabel: "Precision drying",
     cardTone: "from-[#3b332b] via-[#6f6255] to-[#ceb99f]",
     imagePosition: "object-bottom",
@@ -245,7 +245,7 @@ export const SERVICES: Service[] = [
     tagline: "Practical mold remediation that starts with the moisture source, not just the visible growth.",
     description:
       "We help identify where the moisture problem began, contain affected zones, remove damaged materials when needed, and support a cleaner path toward repair.",
-    cardImage: "/case-images/mold-remediation/wall-floor-mold-growth.jpg",
+    cardImage: "/photos/case-images/mold-remediation/wall-floor-mold-growth.jpg",
     cardLabel: "Healthy interiors",
     cardTone: "from-[#2f3a34] via-[#61715d] to-[#9c7b5f]",
     imagePosition: "object-center",
@@ -312,7 +312,7 @@ export const SERVICES: Service[] = [
     tagline: "Emergency help when weather-related water entry disrupts the home all at once.",
     description:
       "Heavy rain, hail, and exterior water entry create fast-moving damage. We help secure the situation, document what happened, and begin mitigation before the interior impact spreads.",
-    cardImage: "/case-images/storm-flood/exterior-concrete-flooding.jpg",
+    cardImage: "/photos/case-images/storm-flood/exterior-concrete-flooding.jpg",
     cardLabel: "Exterior events",
     cardTone: "from-[#1f3242] via-[#52697d] to-[#be8352]",
     imagePosition: "object-top",
@@ -379,7 +379,7 @@ export const SERVICES: Service[] = [
     tagline: "Advanced oxidation treatment for odors, mold spores, bacteria, and organic contaminants.",
     description:
       "Oxidizing treatments are an effective solution for eliminating odors, bacteria, mold spores, and organic contaminants from affected areas. By using advanced oxidation processes, we can target contaminants at the molecular level rather than simply masking odors or surface cleaning.",
-    cardImage: "/case-images/mold-remediation/wall-base-mold-structural.jpg",
+    cardImage: "/photos/case-images/mold-remediation/wall-base-mold-structural.jpg",
     cardLabel: "Air quality",
     cardTone: "from-[#243f3c] via-[#4f6f64] to-[#b17343]",
     imagePosition: "object-center",

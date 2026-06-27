@@ -16,6 +16,18 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## Form Delivery
+
+The estimate and contact forms send notifications to the business email in `src/lib/site.ts` and log submissions to Google Sheets through the company's Apps Script webhook. Configure these environment variables locally and in Vercel:
+
+```bash
+GMAIL_USER=your-sending-gmail-address@gmail.com
+GMAIL_APP_PASSWORD=your-gmail-app-password
+GOOGLE_SCRIPT_URL=https://script.google.com/macros/s/your-script-id/exec
+```
+
+`GOOGLE_SCRIPT_URL` should be the company's deployed Apps Script URL for the spreadsheet that should receive form submissions.
+
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
