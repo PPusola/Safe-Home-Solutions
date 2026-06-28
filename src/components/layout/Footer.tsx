@@ -30,9 +30,7 @@ export function Footer() {
             <a href={`mailto:${SITE.email}`} className="inline-flex min-w-0 items-center gap-3 text-sm leading-6 text-slate-300 hover:text-white">
               <Mail size={16} className="shrink-0 text-[var(--color-accent)]" />
               <span className="min-w-0 break-words">
-                {SITE.email.replace("@gmail.com", "")}
-                <br />
-                @gmail.com
+                {SITE.email}
               </span>
             </a>
             <span className="inline-flex min-w-0 items-start gap-3 text-sm leading-6 text-slate-300">

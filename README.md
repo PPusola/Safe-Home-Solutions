@@ -18,10 +18,10 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Form Delivery
 
-The estimate and contact forms send notifications to the business email in `src/lib/site.ts` and log submissions to Google Sheets through the company's Apps Script webhook. Configure these environment variables locally and in Vercel:
+The estimate and contact forms send notifications to the form email in `src/lib/site.ts` and log submissions to Google Sheets through the company's Apps Script webhook. Configure these environment variables locally and in Vercel:
 
 ```bash
-GMAIL_USER=your-sending-gmail-address@gmail.com
+GMAIL_USER=safehomesolutionsrestorations@gmail.com
 GMAIL_APP_PASSWORD=your-gmail-app-password
 GOOGLE_SCRIPT_URL=https://script.google.com/macros/s/your-script-id/exec
 ```
