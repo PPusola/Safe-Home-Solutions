@@ -21,6 +21,7 @@ export interface Service {
   imagePosition?: string;
   features: string[];
   included: string[];
+  notIncludedTitle?: string;
   notIncluded: string[];
   typicalTimeline: string[];
   process: string[];
@@ -37,6 +38,82 @@ export interface Service {
 }
 
 export const SERVICES: Service[] = [
+  {
+    slug: "basement-crack-repair",
+    title: "Basement Crack Repair",
+    shortTitle: "Basement Crack Repair",
+    tagline: "Leaking basement crack? Don't panic. Repair it for a fraction of the cost.",
+    description:
+      "Edmonton homeowners, if you have a vertical foundation crack letting water into your basement, ignoring it will cost you thousands in structural damage, mold growth, and expensive demolition down the road.",
+    cardImage: "/photos/case-images/storm-flood/exterior-steps-water-seepage.jpg",
+    cardLabel: "Foundation leaks",
+    cardTone: "from-[#283b4b] via-[#526b70] to-[#b17343]",
+    imagePosition: "object-center",
+    features: [
+      "Interior repair alternative to excavation",
+      "Vertical foundation crack assessment",
+      "Professional remediation and drying first",
+      "Premium polyurethane liquid resin injection",
+      "Flexible seal for Canada's freeze-thaw cycles",
+    ],
+    included: [
+      "Most people think fixing a foundation requires digging up their entire yard with heavy machinery. Safe Home Solution & Restoration Inc. offers a fast, affordable, professional alternative that seals the problem right from the inside.",
+      "If water has already seeped into your basement, simply plugging the hole isn't enough. Trapped moisture rots framing, destroys drywall, and breeds dangerous mold.",
+      "We don't just fix the crack; we ensure the area is properly dried, mitigated, and cleared of structural damage before completing the repair, saving you from hidden headaches later.",
+    ],
+    notIncludedTitle: "Why SafeHome Solutions",
+    notIncluded: [
+      "We don't use epoxy like cheap DIY kits. Many cheap DIY kits use epoxy, which hardens like concrete.",
+      "Your home moves and settles with Canada's extreme freeze-thaw cycles. Epoxy is rigid and can easily re-crack when the ground shifts.",
+      "Our polyurethane liquid resin penetrates deep into the entire thickness of the wall. It cures into a flexible, heavy-duty seal that expands and moves with your foundation.",
+      "This is a premium liquid resin pack, not standard hardware-store foam.",
+    ],
+    typicalTimeline: [
+      "The first step is checking the vertical foundation crack, water entry, and any basement materials already affected by moisture.",
+      "Professional remediation and drying happen first when water has already seeped into the basement.",
+      "Polyurethane liquid resin injection is completed after the area is ready for repair and the scope is confirmed.",
+    ],
+    process: ["Assess the crack", "Check moisture damage", "Dry and mitigate", "Inject polyurethane resin", "Confirm the seal"],
+    responseWindow: "Best for Edmonton homeowners with a vertical foundation crack letting water into the basement.",
+    whatToExpect: [
+      "A review of the foundation crack and the water that has already entered the basement.",
+      "Drying and mitigation before sealing when trapped moisture, damaged drywall, framing, or mold risk is present.",
+      "A premium polyurethane liquid resin repair designed to seal from the inside.",
+    ],
+    insuranceSupport: [
+      "Photos and notes showing the crack, water entry, and affected basement materials.",
+      "Documentation of drying, mitigation, and structural damage concerns before repair.",
+      "Clear separation between crack repair, remediation, and any later rebuild decisions.",
+    ],
+    serviceAreaHighlights: ["Edmonton", "Sherwood Park", "St. Albert", "Spruce Grove", "Leduc"],
+    projectExample: {
+      title: "Vertical foundation crack letting water into the basement",
+      location: "Edmonton",
+      summary:
+        "The work starts by reviewing water entry, drying and mitigation needs, and whether a polyurethane liquid resin injection can seal the problem from the inside.",
+    },
+    projectCategory: "Storm & Flood Damage",
+    faqs: [
+      {
+        question: "Why does professional remediation and drying matter first?",
+        answer:
+          "If water has already seeped into your basement, simply plugging the hole isn't enough. Trapped moisture rots framing, destroys drywall, and breeds dangerous mold.",
+      },
+      {
+        question: "Why use premium polyurethane injection instead of epoxy?",
+        answer:
+          "Many cheap DIY kits use epoxy, which hardens like concrete. But guess what? Your home moves and settles with Canada's extreme freeze-thaw cycles. Epoxy is rigid and can easily re-crack when the ground shifts.",
+      },
+      {
+        question: "What does polyurethane liquid resin do?",
+        answer:
+          "Our polyurethane liquid resin penetrates deep into the entire thickness of the wall. It cures into a flexible, heavy-duty seal that expands and moves with your foundation. It permanently stops water intrusion while handling the natural shifting of your home. This is a premium liquid resin pack, not standard hardware-store foam.",
+      },
+    ],
+    cta: "Request basement crack repair before water intrusion causes hidden damage.",
+    metaTitle: "Basement Crack Repair Edmonton | Safe Home Solution & Restoration Inc.",
+    metaDescription: "Basement crack repair in Edmonton for leaking vertical foundation cracks using interior polyurethane injection, drying, and mitigation.",
+  },
   {
     slug: "water-damage-restoration",
     title: "Water Damage Restoration",

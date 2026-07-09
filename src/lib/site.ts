@@ -32,6 +32,7 @@ export const NAV_LINKS = [
     label: "Services",
     href: "/services",
     children: [
+      { label: "Basement Crack Repair", href: "/services/basement-crack-repair" },
       { label: "Water Damage Restoration", href: "/services/water-damage-restoration" },
       { label: "Emergency Water Removal", href: "/services/emergency-water-removal" },
       { label: "Structural Drying", href: "/services/structural-drying-dehumidification" },

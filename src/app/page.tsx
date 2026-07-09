@@ -5,6 +5,7 @@ import { ArrowRight, Award, Phone } from "lucide-react";
 import { Reveal } from "@/components/motion/Reveal";
 import { ProjectExamples } from "@/components/sections/ProjectExamples";
 import { CustomerReviews } from "@/components/sections/CustomerReviews";
+import { ServiceSpotlightCarousel } from "@/components/sections/ServiceSpotlightCarousel";
 import { SERVICES } from "@/lib/content/services";
 import { STATS } from "@/lib/content/trust";
 import { SITE } from "@/lib/site";
@@ -81,6 +82,10 @@ export default function HomePage() {
 
       <section className="py-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <Reveal>
+            <ServiceSpotlightCarousel />
+          </Reveal>
+
           <Reveal className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-2xl">
               <p className="eyebrow text-[var(--color-accent)]">Services</p>

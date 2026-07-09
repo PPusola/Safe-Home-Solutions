@@ -37,6 +37,7 @@ export function LocalBusinessSchema() {
       "@type": "OfferCatalog",
       name: "Restoration Services",
       itemListElement: [
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Basement Crack Repair" } },
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "Water Damage Restoration" } },
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "Emergency Water Removal" } },
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "Structural Drying & Dehumidification" } },

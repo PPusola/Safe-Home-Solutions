@@ -121,7 +121,9 @@ export default async function ServiceDetailPage({
                 </ul>
                 {service.notIncluded.length > 0 && (
                   <>
-                    <p className="mt-6 text-xs font-bold uppercase tracking-widest text-slate-400">Not included in initial visit</p>
+                    <p className="mt-6 text-xs font-bold uppercase tracking-widest text-slate-400">
+                      {service.notIncludedTitle ?? "Not included in initial visit"}
+                    </p>
                     <ul className="mt-3 space-y-2">
                       {service.notIncluded.map((item) => (
                         <li key={item} className="flex items-start gap-3 text-sm leading-7 text-slate-500">

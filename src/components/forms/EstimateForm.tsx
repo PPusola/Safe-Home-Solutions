@@ -25,6 +25,7 @@ type FormData = z.infer<typeof schema>;
 
 const SITUATION_OPTIONS = [
   "Active leak or burst pipe",
+  "Leaking basement foundation crack",
   "Standing water in the property",
   "Mold visible or suspected",
   "Sewage or drain backup",
@@ -35,6 +36,7 @@ const SITUATION_OPTIONS = [
 ];
 
 const SERVICES = [
+  "Basement Crack Repair",
   "Water Damage Restoration",
   "Emergency Water Removal",
   "Structural Drying & Dehumidification",
