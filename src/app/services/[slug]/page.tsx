@@ -173,7 +173,7 @@ export default async function ServiceDetailPage({
                 >
                   <div className="relative aspect-[4/3]">
                     <Image
-                      src={service.cardImage}
+                      src={service.projectExampleImage ?? service.cardImage}
                       alt={`${service.title} project example`}
                       fill
                       sizes="(min-width: 1024px) 320px, 100vw"

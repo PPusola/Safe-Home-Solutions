@@ -30,6 +30,7 @@ export interface Service {
   insuranceSupport: string[];
   serviceAreaHighlights: string[];
   projectExample: ServiceProjectExample;
+  projectExampleImage?: string;
   projectCategory: string;
   faqs: ServiceFaq[];
   cta: string;
@@ -45,7 +46,7 @@ export const SERVICES: Service[] = [
     tagline: "Leaking basement crack? Don't panic. Repair it for a fraction of the cost.",
     description:
       "Edmonton homeowners, if you have a vertical foundation crack letting water into your basement, ignoring it will cost you thousands in structural damage, mold growth, and expensive demolition down the road.",
-    cardImage: "/photos/case-images/storm-flood/exterior-steps-water-seepage.jpg",
+    cardImage: "/photos/case-images/foundation-cracks/basement-wall-crack-leaking.jpg",
     cardLabel: "Foundation leaks",
     cardTone: "from-[#283b4b] via-[#526b70] to-[#b17343]",
     imagePosition: "object-center",
@@ -92,6 +93,7 @@ export const SERVICES: Service[] = [
       summary:
         "The work starts by reviewing water entry, drying and mitigation needs, and whether a polyurethane liquid resin injection can seal the problem from the inside.",
     },
+    projectExampleImage: "/photos/case-images/foundation-cracks/wall-crack-water-seepage.jpg",
     projectCategory: "Storm & Flood Damage",
     faqs: [
       {

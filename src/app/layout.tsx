@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ViewTransition } from "react";
 import { Fraunces, Plus_Jakarta_Sans } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -12,6 +13,7 @@ import { Analytics } from "@vercel/analytics/next";
 
 const bodyFont = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--font-body" });
 const displayFont = Fraunces({ subsets: ["latin"], variable: "--font-display" });
+const googleAnalyticsId = "G-9B96HVEGXL";
 
 export const metadata: Metadata = {
   title: {
@@ -48,6 +50,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en-CA" className={`${bodyFont.variable} ${displayFont.variable} h-full antialiased`}>
       <body className="min-h-full bg-[var(--color-canvas)] text-slate-900">
+        <Script src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`} strategy="afterInteractive" />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${googleAnalyticsId}');
+          `}
+        </Script>
         <LocalBusinessSchema />
         <Header />
         <EmergencyCTA />
