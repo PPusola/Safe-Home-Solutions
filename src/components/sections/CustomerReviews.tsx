@@ -16,7 +16,7 @@ const REVIEWS: CustomerReview[] = [
   {
     name: "Maya R.",
     source: "Google",
-    summary: "Fast response, clear updates, and careful restoration work.",
+    summary: "Arrived fast and explained every step of the process.",
     rating: 5,
     comment:
       "The team was professional, arrived quickly, and explained what needed to happen at every step. The cleanup was organized and the house felt safe again.",
@@ -24,15 +24,15 @@ const REVIEWS: CustomerReview[] = [
   {
     name: "Jordan K.",
     source: "Google",
-    summary: "Fast response, clear updates, and careful restoration work.",
-    rating: 5,
+    summary: "Responsive and organized during a stressful situation.",
+    rating: 4.6,
     comment:
       "Very responsive during a stressful water damage situation. They documented the work clearly and kept us updated through the whole process.",
   },
   {
     name: "Priya S.",
     source: "Google",
-    summary: "Fast response, clear updates, and careful restoration work.",
+    summary: "Respectful crew, easy to reach throughout the job.",
     rating: 4.9,
     comment:
       "Great service from start to finish. The crew was respectful, clean, and easy to communicate with while they handled the restoration work.",
@@ -40,15 +40,15 @@ const REVIEWS: CustomerReview[] = [
   {
     name: "Daniel M.",
     source: "Facebook",
-    summary: "Helpful communication and steady support during urgent jobs.",
-    rating: 5,
+    summary: "Clear plan and calm guidance from the first call.",
+    rating: 4.3,
     comment:
       "They helped us understand the damage and gave us a clear plan right away. We appreciated how calm and thorough everyone was.",
   },
   {
     name: "Alyssa T.",
     source: "Facebook",
-    summary: "Helpful communication and steady support during urgent jobs.",
+    summary: "Reliable, detail-oriented, and careful with our home.",
     rating: 4.8,
     comment:
       "Friendly, reliable, and detail-oriented. The team treated our home with care and made the restoration process much easier to manage.",
@@ -56,7 +56,7 @@ const REVIEWS: CustomerReview[] = [
   {
     name: "Marcus L.",
     source: "Facebook",
-    summary: "Helpful communication and steady support during urgent jobs.",
+    summary: "Strong follow-through and a tidy, well-run job site.",
     rating: 5,
     comment:
       "Excellent follow-through and strong communication. They answered questions, shared updates, and kept the work area tidy.",
@@ -64,15 +64,15 @@ const REVIEWS: CustomerReview[] = [
   {
     name: "Nina P.",
     source: "Yelp",
-    summary: "Detailed cleanup, odor treatment, and practical next steps.",
-    rating: 5,
+    summary: "Quick cleanup with a drying process we understood.",
+    rating: 4.5,
     comment:
       "The crew handled the cleanup quickly and explained the drying process in plain language. The finished area looked clean and well cared for.",
   },
   {
     name: "Owen B.",
     source: "Yelp",
-    summary: "Detailed cleanup, odor treatment, and practical next steps.",
+    summary: "Thorough odor assessment and professional follow-up.",
     rating: 4.9,
     comment:
       "We called after odor and moisture concerns. They checked the affected areas, recommended the right treatment, and followed up professionally.",
@@ -80,8 +80,8 @@ const REVIEWS: CustomerReview[] = [
   {
     name: "Sofia H.",
     source: "Yelp",
-    summary: "Detailed cleanup, odor treatment, and practical next steps.",
-    rating: 4.8,
+    summary: "Organized documentation that simplified our claim.",
+    rating: 4.2,
     comment:
       "Professional restoration work and very organized documentation. It made the insurance conversation less stressful for us.",
   },
@@ -123,8 +123,7 @@ function ReviewCarousel() {
   return (
     <div className="rounded-[0.95rem] border border-slate-200 bg-slate-50 p-6 sm:p-8">
       <div className="text-center">
-        <p className="text-xs font-bold uppercase tracking-[0.18em] text-[var(--color-accent)]">{activeReview.source} review</p>
-        <h3 className="mt-2 text-xl font-bold">{activeReview.name}</h3>
+        <h3 className="text-xl font-bold">{activeReview.name}</h3>
         <p className="mt-2 text-sm leading-6 text-slate-600">{activeReview.summary}</p>
       </div>
 
