@@ -10,13 +10,12 @@ export const SITE = {
   phoneHref: "tel:7803942156",
   email: "admin@safehomerestoration.ca",
   estimateEmail: "safehomesolutionsrestorations@gmail.com",
+  // Home-based service-area business: the owner's residential street address is
+  // intentionally not published. Only city/region are used publicly.
   address: {
-    street: "9520 174 St NW",
     city: "Edmonton",
     province: "AB",
-    postal: "T5T 5Z3",
     country: "Canada",
-    full: "9520 174 St NW, Edmonton, AB T5T 5Z3",
   },
   hours: "24/7 Emergency Response",
   license: "Fully Insured & Certified",

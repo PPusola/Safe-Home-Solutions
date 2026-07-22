@@ -35,7 +35,7 @@ export function Footer() {
             </a>
             <span className="inline-flex min-w-0 items-start gap-3 text-sm leading-6 text-slate-300">
               <MapPin size={16} className="mt-0.5 shrink-0 text-[var(--color-accent)]" />
-              {SITE.address.full}
+              Serving {SITE.address.city} and surrounding areas
             </span>
             <span className="inline-flex min-w-0 items-start gap-3 text-sm leading-6 text-slate-300">
               <Clock3 size={16} className="mt-0.5 shrink-0 text-[var(--color-accent)]" />

@@ -36,22 +36,9 @@ export default function ContactPage() {
               <div className="mt-6 space-y-5 text-sm text-slate-700">
                 <div className="flex gap-3"><Phone size={18} className="mt-1 text-[var(--color-accent)]" /><a href={SITE.phoneHref}>{SITE.phone}</a></div>
                 <div className="flex gap-3"><Mail size={18} className="mt-1 text-[var(--color-accent)]" /><a href={`mailto:${SITE.email}`}>{SITE.email}</a></div>
-                <div className="flex gap-3"><MapPin size={18} className="mt-1 text-[var(--color-accent)]" /><span>{SITE.address.full}</span></div>
+                <div className="flex gap-3"><MapPin size={18} className="mt-1 text-[var(--color-accent)]" /><span>Serving {SITE.address.city} and surrounding areas</span></div>
                 <div className="flex gap-3"><Clock3 size={18} className="mt-1 text-[var(--color-accent)]" /><span>{SITE.hours}</span></div>
               </div>
-            </Reveal>
-
-            <Reveal className="overflow-hidden rounded-[1rem] border border-slate-200/70" delay={100}>
-              <iframe
-                src="https://maps.google.com/maps?q=9520+174+St+NW+Edmonton+AB+T5T+5Z3&output=embed&z=15"
-                width="100%"
-                height="525"
-                style={{ border: 0, display: "block" }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Safe Home Solution & Restoration Inc. location map"
-              />
             </Reveal>
 
           </div>

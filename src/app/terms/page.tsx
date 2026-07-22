@@ -75,7 +75,7 @@ export default function TermsPage() {
             <br />
             <strong>{SITE.name}</strong>
             <br />
-            {SITE.address.full}
+            {SITE.address.city}, {SITE.address.province}
             <br />
             <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
             <br />

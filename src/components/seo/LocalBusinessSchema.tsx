@@ -11,12 +11,12 @@ export function LocalBusinessSchema() {
     email: SITE.email,
     url: SITE.url,
     openingHours: "Mo-Su 00:00-23:59",
+    // Service-area business: no street address published (owner works from a
+    // private residence and travels to customers). Locality is kept for SEO.
     address: {
       "@type": "PostalAddress",
-      streetAddress: SITE.address.street,
       addressLocality: SITE.address.city,
       addressRegion: SITE.address.province,
-      postalCode: SITE.address.postal,
       addressCountry: SITE.address.country,
     },
     areaServed: [
