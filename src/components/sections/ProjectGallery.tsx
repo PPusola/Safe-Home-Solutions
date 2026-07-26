@@ -19,6 +19,7 @@ const CATEGORIES = [
   "Mold Remediation",
   "Storm & Flood Damage",
   "Emergency Water Removal",
+  "Structural Drying & Dehumidification",
   "Structural Damage",
   "Oxidizing Services",
 ];
@@ -105,6 +106,30 @@ const PROJECTS: Project[] = [
     image: { src: "/photos/case-images/mold-remediation/wall-base-mold-structural.jpg", alt: "Structural mold damage at wall base before remediation" },
   },
   {
+    title: "Mold under carpet on a basement slab",
+    location: "Edmonton",
+    category: "Mold Remediation",
+    summary: "Carpet lifted after a flood revealed widespread mold across the concrete slab underneath, hidden until the flooring was pulled up.",
+    workDone: ["Affected carpet and underlay removed", "Extent of slab mold mapped", "HEPA air scrubbing during removal", "Antimicrobial treatment of the slab", "Drying before rebuild prep"],
+    image: { src: "/photos/case-images/mold-remediation/concrete-floor-mold-under-carpet.jpg", alt: "Mold on a basement concrete slab revealed under lifted carpet" },
+  },
+  {
+    title: "Mold and drying after a flood dry-out",
+    location: "Edmonton",
+    category: "Mold Remediation",
+    summary: "A DIY dry-out left moisture trapped behind walls and under floors, leading to mold growth that required full removal and professional drying.",
+    workDone: ["Wet insulation and baseboard removed", "Mold-affected surfaces treated", "Air movers set across the slab", "HEPA filtration during work", "Moisture monitored to clearance"],
+    image: { src: "/photos/case-images/mold-remediation/basement-floor-mold-air-movers.jpg", alt: "Mold-stained basement floor with air movers during remediation" },
+  },
+  {
+    title: "Widespread floor mold after a basement flood",
+    location: "Edmonton",
+    category: "Mold Remediation",
+    summary: "Standing water left untreated led to extensive mold spreading across the basement slab once the carpet was removed.",
+    workDone: ["Flooring removed to expose the slab", "Full extent of mold documented", "HEPA air scrubbing throughout", "Antimicrobial treatment applied", "Drying and clearance readings"],
+    image: { src: "/photos/case-images/mold-remediation/basement-floor-widespread-mold.jpg", alt: "Widespread mold across a basement floor before remediation" },
+  },
+  {
     title: "Water seepage at exterior steps",
     location: "Edmonton",
     category: "Storm & Flood Damage",
@@ -145,6 +170,14 @@ const PROJECTS: Project[] = [
     image: { src: "/photos/case-images/emergency-water-removal/garage-floor-water-pooling.jpg", alt: "Water pooling at garage floor before emergency removal" },
   },
   {
+    title: "Standing water at the utility room",
+    location: "Edmonton",
+    category: "Emergency Water Removal",
+    summary: "Water pooled across the utility room floor around the water heater and needed immediate extraction before it spread into adjacent finished areas.",
+    workDone: ["Emergency water extraction", "Source checked at the water heater area", "Concrete drying setup", "Moisture readings at adjacent transitions", "Photo documentation for insurance"],
+    image: { src: "/photos/case-images/emergency-water-removal/utility-room-standing-water-heater.jpg", alt: "Standing water pooling around a utility room water heater" },
+  },
+  {
     title: "Structural decay at wall base",
     location: "Edmonton",
     category: "Structural Damage",
@@ -159,6 +192,22 @@ const PROJECTS: Project[] = [
     summary: "Water intrusion at a wall corner compromised the structural framing, with significant material damage and active moisture in the cavity.",
     workDone: ["Moisture mapping of corner cavity", "Removal of damaged materials", "Structural drying setup", "Daily readings during dry cycle", "Full documentation for insurance and contractor handoff"],
     image: { src: "/photos/case-images/structural-damage/wall-corner-structural-damage.jpg", alt: "Structural damage at wall corner before restoration" },
+  },
+  {
+    title: "Structural drying setup in a finished basement",
+    location: "Edmonton",
+    category: "Structural Drying & Dehumidification",
+    summary: "After water spread through a finished basement, commercial dehumidification was set up to pull trapped moisture out of the slab and framing.",
+    workDone: ["Moisture mapping across affected rooms", "Commercial dehumidifier and air movers positioned", "Daily moisture readings logged", "Drying continued until slab and framing reached target", "Clearance documentation provided"],
+    image: { src: "/photos/case-images/structural-drying/basement-dehumidifier-clean.jpg", alt: "Commercial dehumidifier drying a basement after water damage" },
+  },
+  {
+    title: "Air movers drying a stripped basement floor",
+    location: "Edmonton",
+    category: "Structural Drying & Dehumidification",
+    summary: "Following water intrusion and material removal, air movers were run across the exposed concrete to dry the slab before any rebuild began.",
+    workDone: ["Affected flooring and baseboard removed", "Air movers positioned across the slab", "Moisture monitored daily", "Drying confirmed before rebuild scope"],
+    image: { src: "/photos/case-images/structural-drying/basement-hallway-air-mover-drying.jpg", alt: "Air mover drying a stripped basement concrete floor" },
   },
 ];
 

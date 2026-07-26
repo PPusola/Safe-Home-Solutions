@@ -42,8 +42,8 @@ const EXAMPLES: Example[] = [
       "Adjacent cavity confirmed affected behind drywall",
     ],
     image: {
-      src: "/photos/case-images/mold-remediation/wall-floor-mold-growth.jpg",
-      alt: "Mold and moisture damage at wall base before remediation",
+      src: "/photos/case-images/mold-remediation/drywall-cut-mold-behind-wall.jpg",
+      alt: "Mold found behind drywall after wall opened for remediation",
     },
   },
   {

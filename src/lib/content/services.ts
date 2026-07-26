@@ -257,7 +257,7 @@ export const SERVICES: Service[] = [
     tagline: "Targeted drying for the moisture that remains after visible water is already gone.",
     description:
       "Once standing water is removed, the deeper job is drying what you cannot easily see. We monitor framing, drywall, insulation, and subfloors so recovery is not rushed.",
-    cardImage: "/photos/case-images/structural-damage/wall-base-structural-decay.jpg",
+    cardImage: "/photos/case-images/structural-drying/basement-dehumidifier-clean.jpg",
     cardLabel: "Precision drying",
     cardTone: "from-[#3b332b] via-[#6f6255] to-[#ceb99f]",
     imagePosition: "object-bottom",
@@ -324,7 +324,7 @@ export const SERVICES: Service[] = [
     tagline: "Practical mold remediation that starts with the moisture source, not just the visible growth.",
     description:
       "We help identify where the moisture problem began, contain affected zones, remove damaged materials when needed, and support a cleaner path toward repair.",
-    cardImage: "/photos/case-images/mold-remediation/wall-floor-mold-growth.jpg",
+    cardImage: "/photos/case-images/mold-remediation/concrete-floor-mold-under-carpet.jpg",
     cardLabel: "Healthy interiors",
     cardTone: "from-[#2f3a34] via-[#61715d] to-[#9c7b5f]",
     imagePosition: "object-center",
