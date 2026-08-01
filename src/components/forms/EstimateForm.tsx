@@ -7,6 +7,7 @@ import { z } from "zod";
 import { AlertTriangle, CheckCircle, Phone } from "lucide-react";
 import { cn } from "@/lib/cn";
 import { getSubmissionError } from "@/lib/submissionFeedback";
+import { reportMetaLead } from "@/lib/meta";
 
 const schema = z.object({
   name: z.string().min(2, "Please enter your full name"),
@@ -80,6 +81,7 @@ export function EstimateForm({ className, compact = false }: Props) {
       });
 
       if (response.ok) {
+        reportMetaLead("estimate");
         setSubmitted(true);
         reset();
       } else {

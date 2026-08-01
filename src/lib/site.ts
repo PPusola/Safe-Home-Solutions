@@ -5,7 +5,7 @@ export const SITE = {
   tagline: "Edmonton's 24/7 Emergency Restoration Experts",
   description:
     "Safe Home Solution & Restoration Inc. helps Edmontonians and nearby communities with water damage restoration, structural drying, mold remediation, and emergency response. We serve residential, commercial, and industrial properties.",
-  url: "https://www.safehomesolutions.ca",
+  url: "https://safehomerestoration.ca",
   phone: "780-394-2156",
   phoneHref: "tel:7803942156",
   email: "admin@safehomerestoration.ca",

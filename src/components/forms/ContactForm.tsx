@@ -7,6 +7,7 @@ import { z } from "zod";
 import { AlertTriangle, CheckCircle } from "lucide-react";
 import { cn } from "@/lib/cn";
 import { getSubmissionError } from "@/lib/submissionFeedback";
+import { reportMetaLead } from "@/lib/meta";
 
 const schema = z.object({
   name: z.string().min(2, "Please enter your name"),
@@ -38,6 +39,7 @@ export function ContactForm() {
       });
 
       if (response.ok) {
+        reportMetaLead("contact");
         setSubmitted(true);
         reset();
       } else {
