@@ -7,8 +7,11 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { FloatingEmergencyHelp } from "@/components/layout/FloatingEmergencyHelp";
 import { EmergencyCTA } from "@/components/sections/EmergencyCTA";
+import { SpecialsBanner } from "@/components/sections/SpecialsBanner";
+import { PhoneClickTracker } from "@/components/analytics/PhoneClickTracker";
 import { LocalBusinessSchema } from "@/components/seo/LocalBusinessSchema";
 import { SITE } from "@/lib/site";
+import { specialsActive } from "@/lib/content/specials";
 import { Analytics } from "@vercel/analytics/next";
 
 const bodyFont = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--font-body" });
@@ -32,10 +35,10 @@ export const metadata: Metadata = {
     description: SITE.description,
     images: [
       {
-        url: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=1200&h=630&q=80",
+        url: "/images/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Safe Home Solution & Restoration Inc. – Edmonton Water Damage Restoration",
+        alt: "Drying equipment set up in a basement after water damage by Safe Home Solution & Restoration Inc.",
       },
     ],
   },
@@ -43,7 +46,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${SITE.name} | Edmonton Water Damage Restoration`,
     description: SITE.description,
-    images: ["https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=1200&h=630&q=80"],
+    images: ["/images/og-image.jpg"],
   },
 };
 
@@ -76,14 +79,22 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             `}
           </Script>
         )}
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-[0.85rem] focus:bg-white focus:px-4 focus:py-3 focus:font-bold focus:text-[var(--color-brand)] focus:shadow-lg"
+        >
+          Skip to main content
+        </a>
         <LocalBusinessSchema />
         <Header />
         <EmergencyCTA />
+        <SpecialsBanner serverActive={specialsActive()} />
         <ViewTransition name="page-shell" enter="page-shell" exit="page-shell">
-          <main>{children}</main>
+          <main id="main" tabIndex={-1} className="outline-none">{children}</main>
         </ViewTransition>
         <FloatingEmergencyHelp />
         <Footer />
+        <PhoneClickTracker />
         <Analytics />
       </body>
     </html>

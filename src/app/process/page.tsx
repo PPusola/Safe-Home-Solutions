@@ -5,7 +5,7 @@ import { Reveal } from "@/components/motion/Reveal";
 import { WhatHappensNext } from "@/components/sections/WhatHappensNext";
 
 export const metadata: Metadata = {
-  title: "Our Restoration Process | Safe Home Solution & Restoration Inc. Edmonton",
+  title: "Our Restoration Process | Edmonton",
   description: "Learn how Safe Home Solution & Restoration Inc. handles water damage and restoration work from first call to project closeout.",
   alternates: { canonical: "/process" },
 };

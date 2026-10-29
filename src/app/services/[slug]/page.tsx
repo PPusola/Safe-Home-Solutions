@@ -74,7 +74,7 @@ export default async function ServiceDetailPage({
                   href="/contact"
                   className="inline-flex items-center justify-center gap-2 rounded-[0.95rem] border border-white/20 bg-white/10 px-5 py-3 text-sm font-bold text-white"
                 >
-                  Request estimate
+                  Request an inspection
                   <ArrowRight size={14} />
                 </Link>
               </div>
@@ -121,7 +121,7 @@ export default async function ServiceDetailPage({
                 </ul>
                 {service.notIncluded.length > 0 && (
                   <>
-                    <p className="mt-6 text-xs font-bold uppercase tracking-widest text-slate-400">
+                    <p className="mt-6 text-xs font-bold uppercase tracking-widest text-slate-500">
                       {service.notIncludedTitle ?? "Not included in initial visit"}
                     </p>
                     <ul className="mt-3 space-y-2">

@@ -20,11 +20,6 @@ export interface ProcessDeckStep {
   detail: string;
 }
 
-export interface ReviewTheme {
-  title: string;
-  detail: string;
-}
-
 export const TRUST_POINTS: TrustPoint[] = [
   {
     title: "24/7 Emergency Response",
@@ -122,21 +117,6 @@ export const PROOF_SNIPPETS: ProofSnippet[] = [
     title: "Storm-entry drying setup",
     area: "Northwest Edmonton",
     detail: "Interior drying and documentation after rain affected upper finishes and nearby wall cavities.",
-  },
-];
-
-export const REVIEW_THEMES: ReviewTheme[] = [
-  {
-    title: "Clear communication",
-    detail: "Clients value knowing what happens first, what can wait, and how the job is progressing without having to chase updates.",
-  },
-  {
-    title: "Fast, calm response",
-    detail: "Emergency work feels less stressful when the first call leads to clear direction instead of more confusion.",
-  },
-  {
-    title: "Organized documentation",
-    detail: "Clients appreciate having cleaner records, photos, and moisture notes when insurance or repair decisions come up later.",
   },
 ];
 

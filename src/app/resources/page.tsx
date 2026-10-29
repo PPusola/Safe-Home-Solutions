@@ -6,7 +6,7 @@ import { BLOG_POSTS } from "@/lib/content/blog";
 import { FAQS } from "@/lib/content/faqs";
 
 export const metadata: Metadata = {
-  title: "Resources | Safe Home Solution & Restoration Inc. Edmonton",
+  title: "Resources | Edmonton",
   description: "Helpful articles and answers about water damage restoration, mold remediation, insurance claims, and what to do in an emergency.",
   alternates: { canonical: "/resources" },
 };
@@ -61,7 +61,7 @@ export default function ResourcesPage() {
                 </div>
                 <h2 className="text-2xl font-bold">Blog</h2>
               </div>
-              <p className="mt-1.5 text-sm text-slate-500">Guides and articles on restoration, insurance, and prevention.</p>
+              <p className="mt-1.5 text-sm text-slate-600">Guides and articles on restoration, insurance, and prevention.</p>
             </div>
             <Link href="/blog" className="hidden items-center gap-1.5 text-sm font-semibold text-[var(--color-brand)] hover:underline sm:flex">
               All articles <ArrowRight size={13} />
@@ -127,7 +127,7 @@ export default function ResourcesPage() {
               <div className="hidden items-center justify-center border-l border-slate-200/70 bg-[var(--color-brand-soft)]/40 px-10 sm:flex">
                 <div className="text-center">
                   <div className="text-5xl font-extrabold text-[var(--color-brand)]">{faqCount}</div>
-                  <div className="mt-1 text-xs font-bold uppercase tracking-widest text-slate-500">Questions answered</div>
+                  <div className="mt-1 text-xs font-bold uppercase tracking-widest text-slate-600">Questions answered</div>
                 </div>
               </div>
             </div>

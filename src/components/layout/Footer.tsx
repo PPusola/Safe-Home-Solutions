@@ -6,7 +6,7 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#0f2742] text-slate-200">
+    <footer className="bg-[#0f2742] pb-14 text-slate-200 lg:pb-0">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid gap-10 border-b border-white/10 pb-10 lg:grid-cols-[minmax(240px,300px)_minmax(0,1fr)_minmax(220px,280px)] lg:gap-20 lg:items-start">
 
@@ -24,37 +24,37 @@ export function Footer() {
           {/* Contact column */}
           <div className="grid min-w-0 gap-x-10 gap-y-4 sm:grid-cols-[minmax(180px,0.8fr)_minmax(260px,1.2fr)] lg:pt-14">
             <a href={SITE.phoneHref} className="inline-flex min-w-0 items-center gap-3 text-sm leading-6 text-slate-300 hover:text-white">
-              <Phone size={16} className="shrink-0 text-[var(--color-accent)]" />
+              <Phone size={16} className="shrink-0 text-[#f6ccb4]" />
               {SITE.phone}
             </a>
             <a href={`mailto:${SITE.email}`} className="inline-flex min-w-0 items-center gap-3 text-sm leading-6 text-slate-300 hover:text-white">
-              <Mail size={16} className="shrink-0 text-[var(--color-accent)]" />
+              <Mail size={16} className="shrink-0 text-[#f6ccb4]" />
               <span className="min-w-0 break-words">
                 {SITE.email}
               </span>
             </a>
             <span className="inline-flex min-w-0 items-start gap-3 text-sm leading-6 text-slate-300">
-              <MapPin size={16} className="mt-0.5 shrink-0 text-[var(--color-accent)]" />
+              <MapPin size={16} className="mt-0.5 shrink-0 text-[#f6ccb4]" />
               Serving {SITE.address.city} and surrounding areas
             </span>
             <span className="inline-flex min-w-0 items-start gap-3 text-sm leading-6 text-slate-300">
-              <Clock3 size={16} className="mt-0.5 shrink-0 text-[var(--color-accent)]" />
+              <Clock3 size={16} className="mt-0.5 shrink-0 text-[#f6ccb4]" />
               {SITE.hours}
             </span>
             <span className="inline-flex min-w-0 items-start gap-3 text-sm leading-6 text-slate-300 sm:col-span-2">
-              <ShieldCheck size={16} className="mt-0.5 shrink-0 text-[var(--color-accent)]" />
+              <ShieldCheck size={16} className="mt-0.5 shrink-0 text-[#f6ccb4]" />
               {SITE.license}
             </span>
           </div>
 
           {/* Quick access column */}
           <div className="flex flex-col gap-3">
-            <div className="text-xs font-bold uppercase tracking-[0.22em] text-[var(--color-accent)]">Quick Access</div>
+            <div className="text-xs font-bold uppercase tracking-[0.22em] text-[#f6ccb4]">Quick Access</div>
             <Link href="/services" className="text-base text-slate-300 hover:text-white">Services</Link>
             <Link href="/service-areas" className="text-base text-slate-300 hover:text-white">Service Areas</Link>
             <Link href="/faq" className="text-base text-slate-300 hover:text-white">FAQ</Link>
-            <Link href="/contact" className="text-base text-slate-300 hover:text-white">Non-Urgent Estimate</Link>
-            <a href={SITE.phoneHref} className="text-base font-semibold text-white hover:text-[var(--color-accent)]">Emergency Call: {SITE.phone}</a>
+            <Link href="/contact" className="text-base text-slate-300 hover:text-white">Book a Free Inspection</Link>
+            <a href={SITE.phoneHref} className="text-base font-semibold text-white hover:text-[#f6ccb4]">Emergency Call: {SITE.phone}</a>
             <div className="mt-2 flex items-center gap-4 border-t border-white/10 pt-3">
               <a href={SITE.social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="inline-flex items-center gap-2 text-slate-300 hover:text-white">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
@@ -68,12 +68,16 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-2 pt-6 text-sm text-slate-400 lg:flex-row lg:items-center lg:justify-between">
+        {/* Right padding on desktop keeps this row clear of the floating Emergency Call button. */}
+        <div className="flex flex-col gap-2 pt-6 text-sm text-slate-400 lg:flex-row lg:items-center lg:justify-between lg:pr-52">
           <p>&copy; {year} {SITE.name}. All rights reserved.</p>
           <div className="flex items-center divide-x divide-slate-600">
             <Link href="/privacy" className="pr-3 hover:text-white">Privacy Policy</Link>
             <Link href="/terms" className="pl-3 hover:text-white">Terms of Use</Link>
           </div>
+          <a href="https://booyaa.net" target="_blank" rel="noopener" className="hover:text-white">
+            Made by Booyaa
+          </a>
         </div>
       </div>
 
@@ -83,7 +87,7 @@ export function Footer() {
           Call now
         </a>
         <Link href="/contact" className="inline-flex items-center justify-center bg-[var(--color-brand)] px-3 py-4 text-sm font-bold text-white">
-          Estimate
+          Free inspection
         </Link>
       </div>
     </footer>

@@ -6,7 +6,7 @@ import { Reveal } from "@/components/motion/Reveal";
 import { FAQS, FAQ_CATEGORIES } from "@/lib/content/faqs";
 
 export const metadata: Metadata = {
-  title: "FAQ | Water Damage Restoration Edmonton | Safe Home Solution & Restoration Inc.",
+  title: "FAQ | Water Damage Restoration Edmonton",
   description: "Answers to common questions about water damage restoration, drying, and claim support in Edmonton.",
   alternates: { canonical: "/faq" },
 };

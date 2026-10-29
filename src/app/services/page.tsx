@@ -7,7 +7,7 @@ import { Reveal } from "@/components/motion/Reveal";
 import { SERVICES } from "@/lib/content/services";
 
 export const metadata: Metadata = {
-  title: "Restoration Services | Safe Home Solution & Restoration Inc. Edmonton",
+  title: "Restoration Services | Edmonton",
   description: "Browse water damage restoration, emergency water removal, structural drying, mold remediation, and related services in Edmonton.",
   alternates: { canonical: "/services" },
 };

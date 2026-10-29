@@ -5,7 +5,7 @@ import { Reveal } from "@/components/motion/Reveal";
 import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Company | Safe Home Solution & Restoration Inc. Edmonton",
+  title: "Company | Edmonton",
   description: "Learn about Safe Home Solution & Restoration Inc.: our team, our process, the areas we serve, and how to get in touch.",
   alternates: { canonical: "/company" },
 };
@@ -46,7 +46,7 @@ const PAGES = [
     label: "Contact",
     href: "/contact",
     icon: Phone,
-    description: "Send a non-urgent estimate request or find our phone number and address for emergency response.",
+    description: "Book a free inspection or find our phone number and address for emergency response.",
   },
 ];
 
@@ -111,7 +111,7 @@ export default function CompanyPage() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <Reveal className="mb-8">
             <h2 className="text-2xl font-bold">Explore the company</h2>
-            <p className="mt-2 text-sm leading-7 text-slate-500">Everything you need to know about who we are and how we work.</p>
+            <p className="mt-2 text-sm leading-7 text-slate-600">Everything you need to know about who we are and how we work.</p>
           </Reveal>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {PAGES.map((page, i) => {

@@ -77,22 +77,26 @@ export function ServiceSpotlightCarousel() {
               href="/contact"
               className="inline-flex items-center justify-center gap-2 rounded-[0.95rem] border border-[var(--color-brand)]/15 bg-white/55 px-5 py-3 text-sm font-bold text-[var(--color-brand)] hover:bg-white"
             >
-              Request estimate
+              Request an inspection
               <ArrowRight size={15} />
             </Link>
           </div>
-          <div className="mt-6 flex items-center gap-2" aria-label="Featured service slides">
+          <div className="mt-6 flex items-center" aria-label="Featured service slides">
             {slides.map((service, index) => (
               <button
                 key={service.slug}
                 type="button"
                 onClick={() => setActiveIndex(index)}
-                className={`h-2.5 rounded-full transition-all duration-300 ${
-                  index === activeIndex ? "w-7 bg-[var(--color-accent)]" : "w-2.5 bg-[var(--color-brand)]/20 hover:bg-[var(--color-brand)]/35"
-                }`}
+                className="group flex h-6 min-w-6 items-center justify-center"
                 aria-label={`Show ${service.title}`}
                 aria-current={index === activeIndex ? "true" : undefined}
-              />
+              >
+                <span
+                  className={`h-2.5 rounded-full transition-all duration-300 ${
+                    index === activeIndex ? "w-7 bg-[var(--color-accent)]" : "w-2.5 bg-[var(--color-brand)]/20 group-hover:bg-[var(--color-brand)]/35"
+                  }`}
+                />
+              </button>
             ))}
           </div>
         </div>

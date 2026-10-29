@@ -8,7 +8,7 @@ import { SERVICE_AREAS } from "@/lib/content/areas";
 import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Service Areas | Edmonton Water Damage Restoration | Safe Home Solution & Restoration Inc.",
+  title: "Service Areas | Edmonton Water Damage Restoration",
   description: "Service coverage for Edmonton, Sherwood Park, St. Albert, Spruce Grove, Stony Plain, Leduc, Beaumont, and Fort Saskatchewan.",
   alternates: { canonical: "/service-areas" },
 };

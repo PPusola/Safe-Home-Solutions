@@ -4,7 +4,7 @@ import { InteriorHero } from "@/components/layout/InteriorHero";
 import { BLOG_POSTS } from "@/lib/content/blog";
 
 export const metadata: Metadata = {
-  title: "Blog | Safe Home Solution & Restoration Inc. Edmonton",
+  title: "Blog | Edmonton",
   description: "Helpful articles about water damage, drying, mold, and insurance support for Edmonton homeowners.",
   alternates: { canonical: "/blog" },
 };

@@ -45,8 +45,8 @@ export function WhatHappensNext() {
 
           <ol className="space-y-8">
             {STEPS.map((step, i) => (
-              <Reveal key={step.step} delay={i * 70}>
-                <li className="flex gap-6">
+              <li key={step.step}>
+                <Reveal delay={i * 70} className="flex gap-6">
                   <div className="relative flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[var(--color-accent)] text-xs font-extrabold text-white shadow-[0_0_0_4px_rgb(248_245_240),0_0_0_5px_var(--color-accent)]">
                     {step.step}
                   </div>
@@ -54,8 +54,8 @@ export function WhatHappensNext() {
                     <h3 className="text-lg font-bold">{step.heading}</h3>
                     <p className="mt-1.5 max-w-2xl text-sm leading-7 text-slate-600">{step.body}</p>
                   </div>
-                </li>
-              </Reveal>
+                </Reveal>
+              </li>
             ))}
           </ol>
         </div>

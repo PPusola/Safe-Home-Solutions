@@ -48,7 +48,7 @@ export const SERVICES: Service[] = [
       "Edmonton homeowners, if you have a vertical foundation crack letting water into your basement, ignoring it will cost you thousands in structural damage, mold growth, and expensive demolition down the road.",
     cardImage: "/photos/case-images/foundation-cracks/basement-wall-crack-leaking.jpg",
     cardLabel: "Foundation leaks",
-    cardTone: "from-[#283b4b] via-[#526b70] to-[#b17343]",
+    cardTone: "from-[#283b4b] via-[#526b70] to-[#93592f]",
     imagePosition: "object-center",
     features: [
       "Interior repair alternative to excavation",
@@ -113,7 +113,7 @@ export const SERVICES: Service[] = [
       },
     ],
     cta: "Request basement crack repair before water intrusion causes hidden damage.",
-    metaTitle: "Basement Crack Repair Edmonton | Safe Home Solution & Restoration Inc.",
+    metaTitle: "Basement Crack Repair Edmonton",
     metaDescription: "Basement crack repair in Edmonton for leaking vertical foundation cracks using interior polyurethane injection, drying, and mitigation.",
   },
   {
@@ -125,7 +125,7 @@ export const SERVICES: Service[] = [
       "We respond to burst pipes, appliance leaks, overflows, and indoor flooding with extraction, drying, documentation support, and a clear next-step plan.",
     cardImage: "/photos/case-images/water-damage/corridor-floor-water-damage.jpg",
     cardLabel: "Interior recovery",
-    cardTone: "from-[#30463f] via-[#58685f] to-[#b17343]",
+    cardTone: "from-[#30463f] via-[#58685f] to-[#93592f]",
     imagePosition: "object-center",
     features: [
       "Emergency response across Edmonton",
@@ -161,7 +161,7 @@ export const SERVICES: Service[] = [
       "Clear notes on affected materials, equipment placement, and drying progress.",
       "A straightforward record of what was done first and what may come next.",
     ],
-    serviceAreaHighlights: ["West Edmonton", "Terwillegar", "Windermere", "Sherwood Park", "St. Albert"],
+    serviceAreaHighlights: ["West Edmonton", "Terwillegar", "Windermere", "Sherwood Park", "St. Albert", "Spruce Grove", "Leduc"],
     projectExample: {
       title: "Finished basement stabilization after a plumbing leak",
       location: "West Edmonton",
@@ -180,7 +180,7 @@ export const SERVICES: Service[] = [
       },
     ],
     cta: "Call now for immediate water damage support.",
-    metaTitle: "Water Damage Restoration Edmonton | Safe Home Solution & Restoration Inc.",
+    metaTitle: "Water Damage Restoration Edmonton",
     metaDescription: "Professional water damage restoration in Edmonton with fast response, structural drying, and practical claim documentation support.",
   },
   {
@@ -247,7 +247,7 @@ export const SERVICES: Service[] = [
       },
     ],
     cta: "Call now if water is still present in the home.",
-    metaTitle: "Emergency Water Removal Edmonton | Safe Home Solution & Restoration Inc.",
+    metaTitle: "Emergency Water Removal Edmonton",
     metaDescription: "24/7 emergency water removal in Edmonton for flooded basements, leaks, and urgent extraction needs.",
   },
   {
@@ -314,7 +314,7 @@ export const SERVICES: Service[] = [
       },
     ],
     cta: "Book structural drying before hidden moisture spreads further.",
-    metaTitle: "Structural Drying Edmonton | Safe Home Solution & Restoration Inc.",
+    metaTitle: "Structural Drying Edmonton",
     metaDescription: "Structural drying and dehumidification services for Edmonton homes after leaks and indoor flooding.",
   },
   {
@@ -362,7 +362,7 @@ export const SERVICES: Service[] = [
       "Clear separation between remediation work and later rebuild decisions.",
       "Documentation support for owners sorting through cause, scope, and timeline questions.",
     ],
-    serviceAreaHighlights: ["Edmonton", "Sherwood Park", "Beaumont", "Leduc"],
+    serviceAreaHighlights: ["Edmonton", "Sherwood Park", "St. Albert", "Spruce Grove", "Beaumont", "Leduc"],
     projectExample: {
       title: "Bathroom wall remediation after a long-running hidden leak",
       location: "Sherwood Park",
@@ -381,7 +381,7 @@ export const SERVICES: Service[] = [
       },
     ],
     cta: "Request a mold assessment before the problem grows.",
-    metaTitle: "Mold Remediation Edmonton | Safe Home Solution & Restoration Inc.",
+    metaTitle: "Mold Remediation Edmonton",
     metaDescription: "Mold remediation support in Edmonton with moisture-source investigation and practical cleanup planning.",
   },
   {
@@ -448,7 +448,7 @@ export const SERVICES: Service[] = [
       },
     ],
     cta: "Call us after storm or flood damage for urgent next steps.",
-    metaTitle: "Storm and Flood Damage Edmonton | Safe Home Solution & Restoration Inc.",
+    metaTitle: "Storm and Flood Damage Edmonton",
     metaDescription: "Storm and flood damage response in Edmonton for urgent drying, cleanup, and restoration planning.",
   },
   {
@@ -460,7 +460,7 @@ export const SERVICES: Service[] = [
       "Oxidizing treatments are an effective solution for eliminating odors, bacteria, mold spores, and organic contaminants from affected areas. By using advanced oxidation processes, we can target contaminants at the molecular level rather than simply masking odors or surface cleaning.",
     cardImage: "/photos/case-images/mold-remediation/wall-base-mold-structural.jpg",
     cardLabel: "Air quality",
-    cardTone: "from-[#243f3c] via-[#4f6f64] to-[#b17343]",
+    cardTone: "from-[#243f3c] via-[#4f6f64] to-[#93592f]",
     imagePosition: "object-center",
     features: [
       "Eliminates tough odors from smoke, pets, mold, and water damage",
@@ -520,7 +520,7 @@ export const SERVICES: Service[] = [
       },
     ],
     cta: "Request oxidizing treatment for a fresher, cleaner, safer indoor environment.",
-    metaTitle: "Oxidizing Services Edmonton | Safe Home Solution & Restoration Inc.",
+    metaTitle: "Oxidizing Services Edmonton",
     metaDescription: "Oxidizing services in Edmonton for odor removal, mold spore reduction, organic contaminants, and improved indoor air quality.",
   },
 ];

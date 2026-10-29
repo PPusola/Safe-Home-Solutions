@@ -7,7 +7,7 @@ export const SITE = {
     "Safe Home Solution & Restoration Inc. helps Edmontonians and nearby communities with water damage restoration, structural drying, mold remediation, and emergency response. We serve residential, commercial, and industrial properties.",
   url: "https://safehomerestoration.ca",
   phone: "780-394-2156",
-  phoneHref: "tel:7803942156",
+  phoneHref: "tel:+17803942156",
   email: "admin@safehomerestoration.ca",
   estimateEmail: "safehomesolutionsrestorations@gmail.com",
   // Home-based service-area business: the owner's residential street address is
@@ -23,7 +23,13 @@ export const SITE = {
     facebook: "https://www.facebook.com/profile.php?id=61590866844682",
     instagram: "https://www.instagram.com/safehomesolutionsrestorations/",
   },
+  // Google Business Profile review link (opens the profile with the review dialog).
+  googleReviewsUrl: "https://g.page/r/CavK0P-uZA0cEAE/review",
 };
+
+// Average star rating shown on Google Business Profile (5.0 as of Oct 2026).
+// Update or set to null if the Google rating changes.
+export const GOOGLE_RATING: string | null = "5.0";
 
 export const NAV_LINKS = [
   { label: "Home", href: "/" },
@@ -48,6 +54,7 @@ export const NAV_LINKS = [
       { label: "Our Process", href: "/process" },
       { label: "Service Areas", href: "/service-areas" },
       { label: "Reviews & Projects", href: "/reviews-projects" },
+      { label: "Before & After Gallery", href: "/gallery" },
       { label: "Contact", href: "/contact" },
     ],
   },

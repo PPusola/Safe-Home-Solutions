@@ -6,8 +6,8 @@ import { Reveal } from "@/components/motion/Reveal";
 import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Contact | Request an Estimate | Safe Home Solution & Restoration Inc. Edmonton",
-  description: "Contact Safe Home Solution & Restoration Inc. for a non-urgent estimate or general restoration questions in Edmonton.",
+  title: "Contact | Book a Free Inspection in Edmonton",
+  description: "Contact Safe Home Solution & Restoration Inc. for a free inspection or general restoration questions in Edmonton.",
   alternates: { canonical: "/contact" },
 };
 
@@ -16,14 +16,14 @@ export default function ContactPage() {
     <>
       <InteriorHero
         eyebrow="Contact"
-        title="Request a Non-Urgent Estimate"
+        title="Book a Free Inspection"
         description="Use this page for planned work and general questions. If the damage is active or time-sensitive, call right away instead of waiting on the form."
       />
 
       <section className="py-16">
         <div className="mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 lg:grid-cols-[1.2fr_0.8fr] lg:px-8">
           <Reveal className="surface-card rounded-[1rem] border border-slate-200/70 p-8">
-            <h2 className="text-3xl font-bold">Tell us about the project</h2>
+            <h2 className="text-3xl font-bold">Request an inspection</h2>
             <p className="mt-3 text-sm text-slate-600">Share the basics and we will follow up with the right next step for non-urgent work.</p>
             <div className="mt-6">
               <EstimateForm />

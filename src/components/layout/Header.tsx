@@ -15,7 +15,7 @@ export function Header() {
 
   return (
     <>
-      <div className="border-b border-white/10 bg-[#27221c] text-white">
+      <section aria-label="Contact details" className="border-b border-white/10 bg-[#27221c] text-white">
         <div className="hidden items-center justify-end gap-4 px-4 py-2 text-sm text-white/75 sm:flex sm:px-6 xl:px-10">
           <div className="flex flex-wrap items-center justify-end gap-4">
             <span className="inline-flex items-center gap-1.5">
@@ -26,7 +26,7 @@ export function Header() {
               <MapPin size={14} />
               Edmonton and surrounding area
             </span>
-            <a href={SITE.phoneHref} className="inline-flex items-center gap-2 font-semibold text-white hover:text-[var(--color-accent)]">
+            <a href={SITE.phoneHref} className="inline-flex items-center gap-2 font-semibold text-white hover:text-[#f6ccb4]">
               <Phone size={14} />
               {SITE.phone}
             </a>
@@ -38,7 +38,7 @@ export function Header() {
             {"24/7 emergency response \u2022 "}{SITE.phone}
           </a>
         </div>
-      </div>
+      </section>
 
       <header
         className="sticky top-0 z-50 border-b border-[#d5ccbe] bg-[rgba(251,248,243,0.94)] backdrop-blur"
@@ -129,11 +129,18 @@ export function Header() {
                   );
                 })}
               </nav>
+              <a
+                href={SITE.phoneHref}
+                className="inline-flex items-center gap-2 whitespace-nowrap rounded-[0.95rem] border border-[var(--color-brand)]/15 bg-white px-4 py-2.5 text-sm font-extrabold text-[var(--color-brand)] hover:border-[var(--color-brand)]/30"
+              >
+                <Phone size={15} className="shrink-0 text-[var(--color-accent)]" />
+                {SITE.phone}
+              </a>
               <Link
                 href="/contact"
-                className="inline-flex items-center rounded-[0.95rem] bg-[var(--color-accent)] px-5 py-2.5 text-sm font-bold text-white shadow-[0_10px_30px_rgba(177,115,67,0.2)] hover:bg-[var(--color-accent-dark)]"
+                className="hidden items-center whitespace-nowrap rounded-[0.95rem] bg-[var(--color-accent)] px-5 py-2.5 text-sm font-bold text-white shadow-[0_10px_30px_rgba(177,115,67,0.2)] hover:bg-[var(--color-accent-dark)] xl:inline-flex"
               >
-                Request Estimate
+                Book a free inspection
               </Link>
             </div>
 
@@ -246,7 +253,7 @@ export function Header() {
                   setOpenGroup(null);
                 }}
               >
-                Non-Urgent Estimate
+                Book a free inspection
               </Link>
             </div>
           </div>

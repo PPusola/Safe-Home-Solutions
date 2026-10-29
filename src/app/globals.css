@@ -6,8 +6,9 @@
   --color-canvas: #efe7dc;
   --color-surface: #fbf8f3;
   --color-ink: #27221b;
-  --color-accent: #b17343;
-  --color-accent-dark: #8d5731;
+  /* Deeper copper so white text and small labels meet WCAG AA (4.5:1) contrast. */
+  --color-accent: #93592f;
+  --color-accent-dark: #7a4826;
   --color-brand: #2f3a34;
   --color-brand-soft: #e4dbce;
 }

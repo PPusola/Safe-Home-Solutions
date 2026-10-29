@@ -7,7 +7,7 @@ import { TRUST_POINTS, WHY_HOMEOWNERS_CHOOSE_US } from "@/lib/content/trust";
 
 
 export const metadata: Metadata = {
-  title: "About Safe Home Solution & Restoration Inc. | Edmonton",
+  title: "About Us | Edmonton",
   description: "Learn about Safe Home Solution & Restoration Inc., an Edmonton-based restoration company focused on water damage, structural drying, and mold remediation.",
   alternates: { canonical: "/about" },
 };

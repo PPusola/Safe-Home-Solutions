@@ -382,16 +382,20 @@ export function ProjectGallery({ initialCategory = "All" }: { initialCategory?: 
             <ChevronLeft size={16} />
           </button>
 
-          <div className="flex items-center gap-1.5">
+          <div className="flex items-center">
             {Array.from({ length: totalPages }).map((_, i) => (
               <button
                 key={i}
                 onClick={() => setPage(i)}
                 aria-label={`Go to page ${i + 1}`}
-                className={`h-1.5 rounded-full transition-all duration-300 ${
-                  i === page ? "w-6 bg-[var(--color-accent)]" : "w-1.5 bg-slate-300 hover:bg-slate-400"
-                }`}
-              />
+                className="group flex h-6 min-w-6 items-center justify-center"
+              >
+                <span
+                  className={`h-1.5 rounded-full transition-all duration-300 ${
+                    i === page ? "w-6 bg-[var(--color-accent)]" : "w-1.5 bg-slate-300 group-hover:bg-slate-400"
+                  }`}
+                />
+              </button>
             ))}
           </div>
 

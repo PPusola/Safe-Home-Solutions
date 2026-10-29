@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Award, Phone } from "lucide-react";
+import { ArrowRight, Award, Phone, Tag } from "lucide-react";
 import { Reveal } from "@/components/motion/Reveal";
 import { ProjectExamples } from "@/components/sections/ProjectExamples";
 import { CustomerReviews } from "@/components/sections/CustomerReviews";
 import { ServiceSpotlightCarousel } from "@/components/sections/ServiceSpotlightCarousel";
+import { SpecialsGate } from "@/components/sections/SpecialsGate";
+import { SpecialsSection } from "@/components/sections/SpecialsSection";
+import { SPECIALS, specialsActive } from "@/lib/content/specials";
 import { SERVICES } from "@/lib/content/services";
 import { STATS } from "@/lib/content/trust";
 import { SITE } from "@/lib/site";
@@ -17,21 +20,36 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
 };
 
+// Re-render hourly so the specials section disappears on its own after its end date.
+export const revalidate = 3600;
+
 export default function HomePage() {
   return (
     <>
       <section className="relative overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=2400&q=80"
-          alt="Edmonton property restoration"
+          src="/images/gallery/drying-equipment.webp"
+          alt="Drying equipment set up in a basement after water damage"
           fill
           priority
           sizes="100vw"
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(177,115,67,0.16),transparent_26%),linear-gradient(135deg,rgba(19,45,73,0.9)_0%,rgba(16,37,62,0.82)_48%,rgba(31,53,47,0.84)_100%)]" />
-        <div className="relative mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-22">
-          <Reveal className="text-white lg:max-w-[calc(100%-460px)]">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(177,115,67,0.16),transparent_26%),linear-gradient(135deg,rgba(19,45,73,0.8)_0%,rgba(16,37,62,0.6)_48%,rgba(31,53,47,0.55)_100%)]" />
+        <div className="relative mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:grid lg:grid-cols-[minmax(0,1fr)_24rem] lg:items-center lg:gap-10 lg:px-8 lg:py-22 xl:grid-cols-[minmax(0,1fr)_26rem] xl:gap-12">
+          <Reveal className="text-white">
+            {specialsActive() && (
+              <SpecialsGate serverActive>
+                <a
+                  href="#specials"
+                  className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#f6ccb4]/40 bg-white/10 px-4 py-1.5 text-sm font-bold text-white backdrop-blur-sm hover:bg-white/18"
+                >
+                  <Tag size={14} className="shrink-0 text-[#f6ccb4]" aria-hidden="true" />
+                  {SPECIALS.title}: free inspection
+                  <ArrowRight size={14} className="shrink-0" />
+                </a>
+              </SpecialsGate>
+            )}
             <p className="eyebrow text-[#f6ccb4]">Edmonton water damage restoration</p>
             <h1 className="mt-4 max-w-3xl text-4xl font-bold leading-tight !text-white sm:text-5xl lg:text-6xl">
               Calm, organized restoration support when your property takes on water.
@@ -39,13 +57,13 @@ export default function HomePage() {
             <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-200">
               Safe Home Solution & Restoration Inc. is here for Edmontonians and nearby communities. Whether it is a home, a business, or an industrial property, we guide you from the first emergency call through a clear drying and recovery plan with local response, practical communication, and organized documentation.
             </p>
-            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-              <a href={SITE.phoneHref} className="inline-flex items-center justify-center gap-3 rounded-[1rem] bg-[var(--color-accent)] px-8 py-4 text-lg font-extrabold text-white hover:bg-[var(--color-accent-dark)]">
-                <Phone size={22} />
-                Call {SITE.phone}
+            <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
+              <a href={SITE.phoneHref} className="inline-flex items-center justify-center gap-3 rounded-[1rem] bg-[var(--color-accent)] px-6 py-4 text-center text-lg font-extrabold text-white hover:bg-[var(--color-accent-dark)] sm:px-8">
+                <Phone size={22} className="shrink-0" />
+                Call or text {SITE.phone}, day or night
               </a>
               <Link href="/contact" className="inline-flex items-center justify-center gap-2 rounded-[1rem] border border-white/20 bg-white/10 px-8 py-4 text-lg font-bold text-white hover:bg-white/18">
-                Request an estimate
+                Book a free inspection
                 <ArrowRight size={18} />
               </Link>
             </div>
@@ -57,15 +75,18 @@ export default function HomePage() {
                 </div>
               ))}
             </div>
+            <div className="mt-8 max-w-xl lg:hidden">
+              <CustomerReviews compact />
+            </div>
           </Reveal>
-        </div>
 
-        <div className="absolute right-6 top-1/2 hidden -translate-y-1/2 lg:block xl:right-10">
-          <div className="w-[26rem] xl:w-[28rem]">
+          <div className="hidden lg:block">
             <CustomerReviews compact />
           </div>
         </div>
       </section>
+
+      <SpecialsSection />
 
       <section className="py-12">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">

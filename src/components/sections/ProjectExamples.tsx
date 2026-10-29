@@ -131,16 +131,20 @@ export function ProjectExamples() {
             </div>
 
             <div className="flex flex-col items-center gap-4">
-              <div className="flex items-center gap-2">
+              <div className="flex items-center">
                 {EXAMPLES.map((_, i) => (
                   <button
                     key={i}
                     onClick={() => goTo(i)}
                     aria-label={`Go to example ${i + 1}`}
-                    className={`h-1.5 rounded-full transition-all duration-300 ${
-                      i === index ? "w-6 bg-[var(--color-accent)]" : "w-1.5 bg-slate-300 hover:bg-slate-400"
-                    }`}
-                  />
+                    className="group flex h-6 min-w-6 items-center justify-center"
+                  >
+                    <span
+                      className={`h-1.5 rounded-full transition-all duration-300 ${
+                        i === index ? "w-6 bg-[var(--color-accent)]" : "w-1.5 bg-slate-300 group-hover:bg-slate-400"
+                      }`}
+                    />
+                  </button>
                 ))}
               </div>
 
